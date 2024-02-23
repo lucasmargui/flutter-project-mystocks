@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../common/constants/app_colors.dart';
 import '../../common/constants/app_text_style.dart';
+import '../../common/widgets/custom_text_field.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 
@@ -25,6 +26,15 @@ class SignUpPage extends StatelessWidget {
             style: AppTextStyles.mediumText
                 .copyWith(color: AppColors.bluedarkOne)),
         Image.asset('assets/images/sign_up_image.png'),
+        Form(
+            child: Column(
+          children: [
+            CustomTextFormField(
+              labelText: 'your name',
+              hintText: "lucas pereira",
+            )
+          ],
+        )),
         TextFormField(),
         TextField(),
         Padding(

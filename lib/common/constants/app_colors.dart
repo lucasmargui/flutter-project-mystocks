@@ -11,6 +11,7 @@ class AppColors {
   static const Color white = Colors.white;
   static const Color iceWhite = Color.fromARGB(255, 239, 240, 247);
   static const Color grey = Colors.grey;
+  static const Color darkgrey = Color.fromARGB(255, 90, 90, 90);
 
   static const List<Color> blueDarkGradient = [
     Color.fromARGB(246, 1, 10, 24),
