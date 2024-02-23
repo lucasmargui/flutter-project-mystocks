@@ -1,9 +1,13 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:developer';
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mystock_app/common/constants/app_colors.dart';
 import 'package:mystock_app/common/constants/app_text_style.dart';
 
+import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -42,9 +46,18 @@ class OnboardingPage extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              Text('Already have account? Log In',
-                  style:
-                      AppTextStyles.smallText.copyWith(color: AppColors.grey)),
+              MultiTextButton(
+                onPressed: () => log('message'),
+                children: [
+                  Text('Already have account?',
+                      style: AppTextStyles.smallText.copyWith(
+                        color: AppColors.grey,
+                      )),
+                  Text('Log In',
+                      style: AppTextStyles.smallText
+                          .copyWith(color: AppColors.bluedarkThree)),
+                ],
+              ),
               SizedBox(
                 height: 40,
               )
