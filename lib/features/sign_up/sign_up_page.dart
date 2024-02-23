@@ -3,10 +3,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mystock_app/common/widgets/password_form_field.dart';
 
 import '../../common/constants/app_colors.dart';
 import '../../common/constants/app_text_style.dart';
-import '../../common/widgets/custom_text_field.dart';
+import '../../common/widgets/custom_text_form_field.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 
@@ -32,11 +33,17 @@ class SignUpPage extends StatelessWidget {
             CustomTextFormField(
               labelText: 'your name',
               hintText: "lucas pereira",
+            ),
+            PasswordFormField(
+              labelText: 'choose your password',
+              hintText: '****************',
+            ),
+            PasswordFormField(
+              labelText: 'Confirm your password',
+              hintText: '****************',
             )
           ],
         )),
-        TextFormField(),
-        TextField(),
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 32.0,

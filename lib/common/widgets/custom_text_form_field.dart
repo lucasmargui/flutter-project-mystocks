@@ -15,6 +15,8 @@ class CustomTextFormField extends StatefulWidget {
   final TextInputType? keyboardType;
   final int? maxLength;
   final TextInputAction? textInputAction;
+  final Widget? suffixIcon;
+  final bool? obscureText;
 
   const CustomTextFormField({
     Key? key,
@@ -26,6 +28,8 @@ class CustomTextFormField extends StatefulWidget {
     this.keyboardType,
     this.maxLength,
     this.textInputAction,
+    this.suffixIcon,
+    this.obscureText,
   }) : super(key: key);
 
   @override
@@ -46,6 +50,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       padding:
           widget.padding ?? EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       child: TextFormField(
+        obscureText: widget.obscureText ?? false,
         textInputAction: widget.textInputAction,
         maxLength: widget.maxLength,
         keyboardType: widget.keyboardType,
@@ -53,6 +58,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         textCapitalization:
             widget.textCapitalization ?? TextCapitalization.none,
         decoration: InputDecoration(
+          suffixIcon: widget.suffixIcon,
           hintText: widget.hintText,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           //necessário ? pois toUpperCase é uma função que não pode ser invocada se labelText for nulo
