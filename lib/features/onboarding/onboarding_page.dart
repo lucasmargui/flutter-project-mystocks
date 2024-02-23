@@ -22,7 +22,7 @@ class OnboardingPage extends StatelessWidget {
             children: [
               Expanded(
                 flex: 2,
-                child: Image.asset('assets/images/man.png'),
+                child: Image.asset('assets/images/onboarding_image.png'),
               ),
               Text('Spend Smarter',
                   style: AppTextStyles.mediumText

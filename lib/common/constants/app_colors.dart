@@ -9,7 +9,7 @@ class AppColors {
   static const Color bluedarkTwo = Color.fromARGB(246, 1, 10, 24);
   static const Color bluedarkThree = Color.fromARGB(255, 0, 0, 0);
   static const Color white = Colors.white;
-  static const Color iceWhite = Color.fromARGB(10, 0, 10, 143);
+  static const Color iceWhite = Color.fromARGB(255, 239, 240, 247);
   static const Color grey = Colors.grey;
 
   static const List<Color> blueDarkGradient = [
