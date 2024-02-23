@@ -7,4 +7,10 @@ class AppTextStyles {
 
   static const TextStyle bigText =
       TextStyle(fontSize: 50.0, fontWeight: FontWeight.w700);
+
+  static const TextStyle mediumText =
+      TextStyle(fontSize: 36.0, fontWeight: FontWeight.w700);
+
+  static const TextStyle smallText =
+      TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500);
 }

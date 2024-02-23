@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const Color bluedarkOne = Color.fromARGB(246, 1, 10, 24);
-  static const Color bluedarkTwo = Color.fromARGB(255, 0, 0, 0);
+  static const Color bluedarkOne = Color.fromARGB(246, 1, 25, 63);
+  static const Color bluedarkTwo = Color.fromARGB(246, 1, 10, 24);
+  static const Color bluedarkThree = Color.fromARGB(255, 0, 0, 0);
   static const Color white = Colors.white;
+  static const Color iceWhite = Color.fromARGB(10, 0, 10, 143);
+  static const Color grey = Colors.grey;
 
   static const List<Color> blueDarkGradient = [
     Color.fromARGB(246, 1, 10, 24),
