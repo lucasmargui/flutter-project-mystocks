@@ -16,4 +16,8 @@ class AppColors {
     Color.fromARGB(246, 1, 10, 24),
     Color.fromARGB(255, 0, 0, 0)
   ];
+  static const List<Color> greyDarkGradient = [
+    Color.fromARGB(246, 207, 207, 207),
+    Color.fromARGB(246, 207, 207, 207)
+  ];
 }
