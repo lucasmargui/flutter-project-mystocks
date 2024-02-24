@@ -6,9 +6,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mystock_app/common/constants/app_colors.dart';
 import 'package:mystock_app/common/constants/app_text_style.dart';
+import 'package:mystock_app/common/constants/routes.dart';
 
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
+import '../sign_up/sign_up_page.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -40,7 +42,9 @@ class OnboardingPage extends StatelessWidget {
             ),
             child: PrimaryButton(
               text: 'Get Started',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, NamedRoute.signUp);
+              },
             ),
           ),
           SizedBox(
