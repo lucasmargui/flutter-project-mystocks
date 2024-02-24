@@ -65,6 +65,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 PasswordFormField(
                   labelText: 'choose your password',
                   hintText: '****************',
+                  helperText:
+                      'Must have at least 8 characters, 1 capital letter and 1 number',
                   validator: (value) {
                     if (value != null && value.isEmpty) {
                       return "esse campo não pode ser vazio";
