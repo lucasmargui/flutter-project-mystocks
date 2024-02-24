@@ -6,7 +6,8 @@ import 'package:mystock_app/common/widgets/primary_button.dart';
 
 import '../constants/app_colors.dart';
 
-Future<void> customModalBottomSheet(BuildContext context) {
+Future<void> customModalBottomSheet(
+    BuildContext context, String content, String buttonText) {
   return showModalBottomSheet<void>(
     context: context,
     shape: RoundedRectangleBorder(
@@ -25,7 +26,7 @@ Future<void> customModalBottomSheet(BuildContext context) {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text('Ops, Algo deu errado.',
+              Text(content,
                   style: AppTextStyles.mediumText20
                       .copyWith(color: AppColors.bluedarkOne)),
               Padding(
@@ -34,7 +35,7 @@ Future<void> customModalBottomSheet(BuildContext context) {
                   horizontal: 32,
                 ),
                 child: PrimaryButton(
-                  text: 'Tentar Novamente',
+                  text: buttonText,
                   onPressed: () => Navigator.pop(context),
                 ),
               )

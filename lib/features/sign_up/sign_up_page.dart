@@ -16,6 +16,7 @@ import '../../common/widgets/custom_circular_progress_indicator.dart';
 import '../../common/widgets/custom_text_form_field.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
+import '../../services/mock_auth_service.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -26,12 +27,18 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _controller = SignUpController();
+  final _controller = SignUpController(MockAuthService());
 
   @override
   void dispose() {
+    ///Destrói nossos controllers
+    _nameController.dispose();
+    _emailController.dispose();
     _passwordController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -56,8 +63,9 @@ class _SignUpPageState extends State<SignUpPage> {
       }
 
       if (_controller.state is SignUpErrorState) {
+        final error = _controller.state as SignUpErrorState;
         Navigator.pop(context);
-        customModalBottomSheet(context);
+        customModalBottomSheet(context, error.message, 'Tentar novamente');
       }
       log(_controller.state.toString());
     });
@@ -82,12 +90,14 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Column(
               children: [
                 CustomTextFormField(
+                  controller: _nameController,
                   labelText: 'your name',
                   hintText: "LUCAS MARTINS",
                   inputFormatters: [UpperCaseTextInputFormatter()],
                   validator: (value) => Validator.validateName(value),
                 ),
                 CustomTextFormField(
+                  controller: _emailController,
                   labelText: 'email',
                   hintText: "email@email.com",
                   validator: (value) => Validator.validateEmail(value),
@@ -121,7 +131,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
               if (valid) {
                 ///lógica de login
-                _controller.doSignUp();
+                _controller.SignUp(
+                  name: _nameController.text,
+                  email: _emailController.text,
+                  password: _passwordController.text,
+                );
                 log("continuar lógica de login");
               } else {
                 log("erro ao logar");

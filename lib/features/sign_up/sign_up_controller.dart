@@ -5,8 +5,13 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:mystock_app/features/sign_up/sign_up_state.dart';
 
+import '../../services/auth_service.dart';
+
 class SignUpController extends ChangeNotifier {
   SignUpState _state = SignUpInitialState();
+
+  final AuthService _service;
+  SignUpController(this._service);
 
   //Privamos o objeto _state para que ele só possa ser alterado dentro da classe
   //para recuperarmos esse valo utilizamos o get state
@@ -18,20 +23,19 @@ class SignUpController extends ChangeNotifier {
   }
 
   //Função faça o login
-  Future<bool> doSignUp() async {
+  Future<void> SignUp(
+      {required String name,
+      required String email,
+      required String password}) async {
     //
     _changeState(SignUpLoadingState());
 
     try {
-      await Future.delayed(const Duration(seconds: 2));
-      //throw Exception("Erro ao logar");
-      log('Usuário logado com sucesso');
+      await _service.signUp(name: name, email: email, password: password);
 
       _changeState(SignUpSuccessState());
-      return true;
     } catch (e) {
-      _changeState(SignUpErrorState());
-      return false;
+      _changeState(SignUpErrorState(e.toString()));
     }
   }
 }
