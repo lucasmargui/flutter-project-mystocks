@@ -3,6 +3,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mystock_app/common/utils/uppercase_text_formatter.dart';
 import 'package:mystock_app/common/widgets/password_form_field.dart';
 
 import '../../common/constants/app_colors.dart';
@@ -32,7 +33,8 @@ class SignUpPage extends StatelessWidget {
           children: [
             CustomTextFormField(
               labelText: 'your name',
-              hintText: "lucas pereira",
+              hintText: "LUCAS MARTINS",
+              inputFormatters: [UpperCaseTextInputFormatter()],
             ),
             PasswordFormField(
               labelText: 'choose your password',
