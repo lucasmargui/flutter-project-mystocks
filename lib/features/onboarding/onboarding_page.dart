@@ -43,7 +43,7 @@ class OnboardingPage extends StatelessWidget {
             child: PrimaryButton(
               text: 'Get Started',
               onPressed: () {
-                Navigator.pushNamed(context, NamedRoute.signUp);
+                Navigator.pushNamed(context, NamedRoute.signIn);
               },
             ),
           ),

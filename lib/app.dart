@@ -7,6 +7,7 @@ import 'package:mystock_app/features/sign_up/sign_up_page.dart';
 import 'package:mystock_app/features/splash/splash_page.dart';
 
 import 'common/constants/routes.dart';
+import 'features/sign_in/sign_in_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -18,7 +19,8 @@ class App extends StatelessWidget {
       routes: {
         NamedRoute.initial: (context) => const OnboardingPage(),
         NamedRoute.splash: (context) => const SplashPage(),
-        NamedRoute.signUp: (context) => const SignUpPage()
+        NamedRoute.signUp: (context) => const SignUpPage(),
+        NamedRoute.signIn: (context) => const SignInPage(),
       },
     );
   }
