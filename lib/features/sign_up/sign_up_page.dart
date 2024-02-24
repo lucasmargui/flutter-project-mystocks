@@ -8,6 +8,7 @@ import 'package:mystock_app/common/widgets/password_form_field.dart';
 
 import '../../common/constants/app_colors.dart';
 import '../../common/constants/app_text_style.dart';
+import '../../common/utils/validator.dart';
 import '../../common/widgets/custom_text_form_field.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
@@ -21,6 +22,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,48 +45,26 @@ class _SignUpPageState extends State<SignUpPage> {
                   labelText: 'your name',
                   hintText: "LUCAS MARTINS",
                   inputFormatters: [UpperCaseTextInputFormatter()],
-                  validator: (value) {
-                    if (value != null && value.isEmpty) {
-                      return "esse campo não pode ser vazio";
-                    }
-
-                    return null;
-                  },
+                  validator: (value) => Validator.validateName(value),
                 ),
                 CustomTextFormField(
                   labelText: 'email',
                   hintText: "email@email.com",
-                  validator: (value) {
-                    if (value != null && value.isEmpty) {
-                      return "esse campo não pode ser vazio";
-                    }
-
-                    return null;
-                  },
+                  validator: (value) => Validator.validateEmail(value),
                 ),
                 PasswordFormField(
+                  controller: _passwordController,
                   labelText: 'choose your password',
                   hintText: '****************',
                   helperText:
                       'Must have at least 8 characters, 1 capital letter and 1 number',
-                  validator: (value) {
-                    if (value != null && value.isEmpty) {
-                      return "esse campo não pode ser vazio";
-                    }
-
-                    return null;
-                  },
+                  validator: (value) => Validator.validatePassword(value),
                 ),
                 PasswordFormField(
                   labelText: 'Confirm your password',
                   hintText: '****************',
-                  validator: (value) {
-                    if (value != null && value.isEmpty) {
-                      return "esse campo não pode ser vazio";
-                    }
-
-                    return null;
-                  },
+                  validator: (value) => Validator.validateConfirmPassword(
+                      value, _passwordController.text),
                 )
               ],
             )),
