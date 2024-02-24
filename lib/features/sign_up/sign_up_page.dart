@@ -12,8 +12,15 @@ import '../../common/widgets/custom_text_form_field.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -29,23 +36,56 @@ class SignUpPage extends StatelessWidget {
                 .copyWith(color: AppColors.bluedarkOne)),
         Image.asset('assets/images/sign_up_image.png'),
         Form(
+            key: _formKey,
             child: Column(
-          children: [
-            CustomTextFormField(
-              labelText: 'your name',
-              hintText: "LUCAS MARTINS",
-              inputFormatters: [UpperCaseTextInputFormatter()],
-            ),
-            PasswordFormField(
-              labelText: 'choose your password',
-              hintText: '****************',
-            ),
-            PasswordFormField(
-              labelText: 'Confirm your password',
-              hintText: '****************',
-            )
-          ],
-        )),
+              children: [
+                CustomTextFormField(
+                  labelText: 'your name',
+                  hintText: "LUCAS MARTINS",
+                  inputFormatters: [UpperCaseTextInputFormatter()],
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "esse campo não pode ser vazio";
+                    }
+
+                    return null;
+                  },
+                ),
+                CustomTextFormField(
+                  labelText: 'email',
+                  hintText: "email@email.com",
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "esse campo não pode ser vazio";
+                    }
+
+                    return null;
+                  },
+                ),
+                PasswordFormField(
+                  labelText: 'choose your password',
+                  hintText: '****************',
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "esse campo não pode ser vazio";
+                    }
+
+                    return null;
+                  },
+                ),
+                PasswordFormField(
+                  labelText: 'Confirm your password',
+                  hintText: '****************',
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "esse campo não pode ser vazio";
+                    }
+
+                    return null;
+                  },
+                )
+              ],
+            )),
         Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 32.0,
@@ -53,7 +93,16 @@ class SignUpPage extends StatelessWidget {
           ),
           child: PrimaryButton(
             text: 'Sign Up',
-            onPressed: () => log('message'),
+            onPressed: () {
+              final valid = _formKey.currentState != null &&
+                  _formKey.currentState!.validate();
+
+              if (valid) {
+                log("continuar lógica de login");
+              } else {
+                log("erro ao logar");
+              }
+            },
           ),
         ),
         SizedBox(

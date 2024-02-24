@@ -19,6 +19,7 @@ class CustomTextFormField extends StatefulWidget {
   final Widget? suffixIcon;
   final bool? obscureText;
   final List<TextInputFormatter>? inputFormatters;
+  final FormFieldValidator<String>? validator;
 
   const CustomTextFormField({
     Key? key,
@@ -33,6 +34,7 @@ class CustomTextFormField extends StatefulWidget {
     this.suffixIcon,
     this.obscureText,
     this.inputFormatters,
+    this.validator,
   }) : super(key: key);
 
   @override
@@ -53,6 +55,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       padding:
           widget.padding ?? EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       child: TextFormField(
+        validator: widget.validator,
         style: AppTextStyles.inputText.copyWith(color: AppColors.grey),
         inputFormatters: widget.inputFormatters,
         obscureText: widget.obscureText ?? false,
