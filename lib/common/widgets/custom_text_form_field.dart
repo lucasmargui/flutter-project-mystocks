@@ -7,7 +7,7 @@ import '../constants/app_colors.dart';
 import '../constants/app_text_style.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  //EdgeInsetsGeometry? pode ser nulo
+  //? pode ser nulo
   final EdgeInsetsGeometry? padding;
   final String? hintText;
   final String? labelText;
@@ -20,6 +20,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool? obscureText;
   final List<TextInputFormatter>? inputFormatters;
   final FormFieldValidator<String>? validator;
+  final String? helperText;
 
   const CustomTextFormField({
     Key? key,
@@ -35,6 +36,7 @@ class CustomTextFormField extends StatefulWidget {
     this.obscureText,
     this.inputFormatters,
     this.validator,
+    this.helperText,
   }) : super(key: key);
 
   @override
@@ -44,6 +46,15 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   final defaultBorder = const OutlineInputBorder(
       borderSide: BorderSide(color: AppColors.bluedarkOne));
+
+  String? _helperText;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _helperText = widget.helperText;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +66,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       padding:
           widget.padding ?? EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       child: TextFormField(
+        onChanged: (value) {
+          if (value.length == 1) {
+            setState(() {
+              _helperText = null;
+            });
+          } else if (value.isEmpty) {
+            setState(() {
+              _helperText = widget.helperText;
+            });
+          }
+        },
         validator: widget.validator,
         style: AppTextStyles.inputText.copyWith(color: AppColors.grey),
         inputFormatters: widget.inputFormatters,
@@ -66,6 +88,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         textCapitalization:
             widget.textCapitalization ?? TextCapitalization.none,
         decoration: InputDecoration(
+          helperText: _helperText,
+          helperMaxLines: 3,
           suffixIcon: widget.suffixIcon,
           hintText: widget.hintText,
           floatingLabelBehavior: FloatingLabelBehavior.always,
