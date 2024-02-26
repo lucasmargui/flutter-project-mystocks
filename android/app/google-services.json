@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "948666910325",
+    "project_id": "financy-app-2f050",
+    "storage_bucket": "financy-app-2f050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948666910325:android:52ab6aa0a4328d92e91a3c",
+        "android_client_info": {
+          "package_name": "com.example.financy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJCQPZ7LD1val47IYW4eYzahuFpGhtNoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948666910325:android:023b356760aa5cece91a3c",
+        "android_client_info": {
+          "package_name": "com.example.mystock_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJCQPZ7LD1val47IYW4eYzahuFpGhtNoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
