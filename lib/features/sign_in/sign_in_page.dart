@@ -20,6 +20,7 @@ import '../../common/widgets/custom_text_form_field.dart';
 import '../../common/widgets/custom_text_title.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
+import '../../locator/locator.dart';
 import '../../services/mock_auth_service.dart';
 
 class SignInPage extends StatefulWidget {
@@ -34,8 +35,7 @@ class _SignInPageState extends State<SignInPage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _controller = SignInController(MockAuthService());
-
+  final _controller = locator.get<SignInController>();
   @override
   void dispose() {
     ///Destrói nossos controllers
