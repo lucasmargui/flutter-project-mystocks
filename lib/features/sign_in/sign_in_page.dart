@@ -17,6 +17,7 @@ import '../../common/utils/validator.dart';
 import '../../common/widgets/custom_bottom_sheet.dart';
 import '../../common/widgets/custom_circular_progress_indicator.dart';
 import '../../common/widgets/custom_text_form_field.dart';
+import '../../common/widgets/custom_text_title.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 import '../../services/mock_auth_service.dart';
@@ -79,15 +80,18 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: [
-        Text('Spend Smarter',
-            textAlign: TextAlign.center,
-            style: AppTextStyles.mediumText
-                .copyWith(color: AppColors.bluedarkOne)),
-        Text('Save More',
-            textAlign: TextAlign.center,
-            style: AppTextStyles.mediumText
-                .copyWith(color: AppColors.bluedarkOne)),
-        Image.asset('assets/images/sign_in_image.png'),
+        Container(
+          color: AppColors.iceWhite,
+          child: Column(
+            children: [
+              CustomTextTitle(),
+              Image.asset(
+                'assets/images/sign_in_image.png',
+                height: 300,
+              ),
+            ],
+          ),
+        ),
         Form(
             key: _formKey,
             child: Column(
@@ -141,7 +145,7 @@ class _SignInPageState extends State<SignInPage> {
                 style: AppTextStyles.smallText.copyWith(
                   color: AppColors.grey,
                 )),
-            Text('Sign Up',
+            Text('Log In',
                 style: AppTextStyles.smallText
                     .copyWith(color: AppColors.bluedarkThree)),
           ],

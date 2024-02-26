@@ -78,7 +78,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           }
         },
         validator: widget.validator,
-        style: AppTextStyles.inputText.copyWith(color: AppColors.grey),
+        style: AppTextStyles.inputText.copyWith(color: AppColors.darkgrey),
         inputFormatters: widget.inputFormatters,
         obscureText: widget.obscureText ?? false,
         textInputAction: widget.textInputAction,
@@ -93,6 +93,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           helperMaxLines: 3,
           suffixIcon: widget.suffixIcon,
           hintText: widget.hintText,
+          hintStyle:
+              AppTextStyles.inputText.copyWith(color: AppColors.lightgrey),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           //necessário ? pois toUpperCase é uma função que não pode ser invocada se labelText for nulo
           //então só invocará a função se o valor widget.labelText não for nulo

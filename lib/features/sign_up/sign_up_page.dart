@@ -15,6 +15,7 @@ import '../../common/utils/validator.dart';
 import '../../common/widgets/custom_bottom_sheet.dart';
 import '../../common/widgets/custom_circular_progress_indicator.dart';
 import '../../common/widgets/custom_text_form_field.dart';
+import '../../common/widgets/custom_text_title.dart';
 import '../../common/widgets/multi_text_button.dart';
 import '../../common/widgets/primary_button.dart';
 import '../../services/mock_auth_service.dart';
@@ -77,15 +78,15 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: [
-        Text('Spend Smarter',
-            textAlign: TextAlign.center,
-            style: AppTextStyles.mediumText
-                .copyWith(color: AppColors.bluedarkOne)),
-        Text('Save More',
-            textAlign: TextAlign.center,
-            style: AppTextStyles.mediumText
-                .copyWith(color: AppColors.bluedarkOne)),
-        Image.asset('assets/images/sign_up_image.png'),
+        Container(
+          color: AppColors.iceWhite,
+          child: Column(
+            children: [
+              CustomTextTitle(),
+              Image.asset('assets/images/sign_up_image.png'),
+            ],
+          ),
+        ),
         Form(
             key: _formKey,
             child: Column(
