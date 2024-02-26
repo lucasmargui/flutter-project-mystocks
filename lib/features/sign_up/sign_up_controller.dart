@@ -23,7 +23,7 @@ class SignUpController extends ChangeNotifier {
   }
 
   //Função faça o login
-  Future<void> SignUp(
+  Future<void> signUp(
       {required String name,
       required String email,
       required String password}) async {

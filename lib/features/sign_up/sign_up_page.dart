@@ -133,7 +133,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
               if (valid) {
                 ///lógica de login
-                _controller.SignUp(
+                _controller.signUp(
                   name: _nameController.text,
                   email: _emailController.text,
                   password: _passwordController.text,
