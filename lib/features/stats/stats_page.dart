@@ -5,6 +5,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import '../../common/extensions/sizes.dart';
+
 class StatsPage extends StatefulWidget {
   const StatsPage({Key? key}) : super(key: key);
 
@@ -27,6 +29,11 @@ class _StatsPageState extends State<StatsPage>
   @override
   void initState() {
     // TODO: implement initState
+
+    //No momento que renderizar o objeto SplashPage na minha tela eu vou ter um tempo entre construir esse objeto e renderizar um frame nessa tela
+    //quando eu renderizar esse frame eu vou chamar a função inicializadora
+    WidgetsBinding.instance.addPostFrameCallback((_) => Sizes.init(context));
+
     super.initState();
     timer;
   }
