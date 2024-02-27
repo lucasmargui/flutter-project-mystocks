@@ -2,6 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:mystock_app/features/sign_in/sign_in_state.dart';
+import 'package:mystock_app/services/secure_storage.dart';
 
 import '../../services/auth_service.dart';
 
@@ -21,13 +22,19 @@ class SignInController extends ChangeNotifier {
 
   //Função faça o login
   Future<void> signIn({required String email, required String password}) async {
-    //
+    const secureStorage = SecureStorageService();
+
     _changeState(SignInLoadingState());
 
     try {
-      await _service.signIn(email: email, password: password);
+      final user = await _service.signIn(email: email, password: password);
 
-      _changeState(SignInSuccessState());
+      if (user.id != null) {
+        secureStorage.write(key: "CURRENT_USER", value: user.toJson());
+        _changeState(SignInSuccessState());
+      } else {
+        throw Exception();
+      }
     } catch (e) {
       _changeState(SignInErrorState(e.toString()));
     }

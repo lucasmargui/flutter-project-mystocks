@@ -51,7 +51,7 @@ class OnboardingPage extends StatelessWidget {
             height: 16,
           ),
           MultiTextButton(
-            onPressed: () => log('message'),
+            onPressed: () => Navigator.pushNamed(context, NamedRoute.signIn),
             children: [
               Text('Already have account?',
                   style: AppTextStyles.smallText.copyWith(

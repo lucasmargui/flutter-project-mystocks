@@ -1,14 +1,17 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mystock_app/common/constants/app_colors.dart';
 import 'package:mystock_app/common/constants/app_text_style.dart';
 import 'package:mystock_app/common/constants/routes.dart';
-import 'package:mystock_app/features/onboarding/onboarding_page.dart';
+import 'package:mystock_app/features/splash/splash_controller.dart';
+import 'package:mystock_app/features/splash/splash_state.dart';
 
 import '../../common/widgets/custom_circular_progress_indicator.dart';
+import '../../locator/locator.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -18,21 +21,20 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  final _splashController = locator.get<SplashController>();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    init();
-  }
-
-  Timer init() {
-    return Timer(Duration(seconds: 2), () {
-      navigateToOnBoarding();
+    _splashController.isUserLogged();
+    _splashController.addListener(() {
+      if (_splashController.state is SplashSuccessState) {
+        Navigator.pushReplacementNamed(context, NamedRoute.home);
+      } else {
+        Navigator.pushReplacementNamed(context, NamedRoute.initial);
+      }
     });
-  }
-
-  void navigateToOnBoarding() {
-    Navigator.pushReplacementNamed(context, NamedRoute.initial);
   }
 
   @override

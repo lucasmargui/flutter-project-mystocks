@@ -161,7 +161,7 @@ packages:
     source: hosted
     version: "2.0.2"
   flutter_secure_storage:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_secure_storage
       url: "https://pub.dartlang.org"

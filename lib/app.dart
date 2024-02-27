@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mystock_app/features/home/home_page.dart';
 import 'package:mystock_app/features/onboarding/onboarding_page.dart';
 import 'package:mystock_app/features/sign_up/sign_up_page.dart';
 
@@ -21,6 +22,7 @@ class App extends StatelessWidget {
         NamedRoute.splash: (context) => const SplashPage(),
         NamedRoute.signUp: (context) => const SignUpPage(),
         NamedRoute.signIn: (context) => const SignInPage(),
+        NamedRoute.home: (context) => const HomePage(),
       },
     );
   }

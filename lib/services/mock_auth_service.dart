@@ -34,4 +34,9 @@ class MockAuthService implements AuthService {
       throw 'Não foi possivel criar sua conta nesse momento. Tente mais tarde';
     }
   }
+
+  @override
+  Future<void> signOut() async {
+    try {} catch (e) {}
+  }
 }

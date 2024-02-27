@@ -58,12 +58,7 @@ class _SignInPageState extends State<SignInPage> {
       }
       if (_controller.state is SignInSuccessState) {
         Navigator.pop(context);
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: ((context) => Scaffold(
-                      body: Center(child: Text('Nova tela')),
-                    ))));
+        Navigator.pushReplacementNamed(context, NamedRoute.home);
       }
 
       if (_controller.state is SignInErrorState) {
@@ -145,7 +140,7 @@ class _SignInPageState extends State<SignInPage> {
                 style: AppTextStyles.smallText.copyWith(
                   color: AppColors.grey,
                 )),
-            Text('Log In',
+            Text('Sign up',
                 style: AppTextStyles.smallText
                     .copyWith(color: AppColors.bluedarkThree)),
           ],
