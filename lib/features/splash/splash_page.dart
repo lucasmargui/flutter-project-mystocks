@@ -10,6 +10,7 @@ import 'package:mystock_app/common/constants/routes.dart';
 import 'package:mystock_app/features/splash/splash_controller.dart';
 import 'package:mystock_app/features/splash/splash_state.dart';
 
+import '../../common/extensions/sizes.dart';
 import '../../common/widgets/custom_circular_progress_indicator.dart';
 import '../../locator/locator.dart';
 
@@ -26,7 +27,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     // TODO: implement initState
+    WidgetsBinding.instance.addPostFrameCallback((_) => Sizes.init(context));
     super.initState();
+
     _splashController.isUserLogged();
     _splashController.addListener(() {
       if (_splashController.state is SplashSuccessState) {
@@ -57,7 +60,7 @@ class _SplashPageState extends State<SplashPage> {
           Text(
             'MyStock',
             //CopyWith copia a Classe de estilização em AppTextStyles e depois adiciona o color com a propriedade AppColors.white
-            style: AppTextStyles.bigText.copyWith(color: AppColors.white),
+            style: AppTextStyles.bigText50.copyWith(color: AppColors.white),
           ),
           CustomCircularProgressIndicator()
         ],
