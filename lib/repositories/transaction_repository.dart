@@ -25,9 +25,20 @@ class TransactionRepositoryImpl implements TransactionRepository {
         title: 'Dinner',
         value: -50,
         date: DateTime.now()
-            .subtract(const Duration(days: 7))
+            .subtract(const Duration(days: 4))
             .millisecondsSinceEpoch,
-      )
+      ),
+      TransactionModel(
+          title: 'Bar',
+          value: -75,
+          date: DateTime.now().millisecondsSinceEpoch),
+      TransactionModel(
+        title: 'Cripto',
+        value: 458,
+        date: DateTime.now()
+            .subtract(const Duration(days: 3))
+            .millisecondsSinceEpoch,
+      ),
     ];
   }
 }

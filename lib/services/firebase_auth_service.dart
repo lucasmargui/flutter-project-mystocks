@@ -1,10 +1,13 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mystock_app/common/models/user_model.dart';
-
+import 'package:cloud_functions/cloud_functions.dart';
 import 'auth_service.dart';
 
 class FirebaseAuthService implements AuthService {
   final _auth = FirebaseAuth.instance;
+  final _functions = FirebaseFunctions.instance;
 
   @override
   Future<UserModel> signIn(
@@ -38,7 +41,6 @@ class FirebaseAuthService implements AuthService {
           email: email, password: password);
 
       if (result.user != null) {
-        //interrogação na frente de result.user! garante que user não é nulo
         await result.user!.updateDisplayName(name);
         return UserModel(
             name: result.user!.displayName,
