@@ -13,10 +13,9 @@ class TransactionPage extends StatefulWidget {
 }
 
 class _TransactionPageState extends State<TransactionPage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
+     {
+
+
 
   @override
   void dispose() {
@@ -35,7 +34,7 @@ class _TransactionPageState extends State<TransactionPage>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
+
     return Scaffold(
       body: Center(
           child: Column(

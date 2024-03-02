@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:mystock_app/services/auth_service.dart';
 import 'package:mystock_app/services/secure_storage.dart';
 
+import '../../common/widgets/widgets.dart';
 import '../../locator/locator.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -42,10 +43,11 @@ class _ProfilePageState extends State<ProfilePage>
     super.build(context);
 
     return Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
+          const AppHeader(
+            title: 'Profile',
+          ),
           Text('ProfilePage'),
           TextButton(
             onPressed: () async {
@@ -58,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage>
             child: const Text("Logout"),
           )
         ],
-      )),
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
-import '../constants/app_text_style.dart';
+import '../constants/app_text_styles.dart';
 
 class PrimaryButton extends StatelessWidget {
   final VoidCallback? onPressed;

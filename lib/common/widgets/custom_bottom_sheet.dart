@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mystock_app/common/constants/app_text_style.dart';
+import 'package:mystock_app/common/constants/app_text_styles.dart';
 import 'package:mystock_app/common/widgets/primary_button.dart';
 
 import '../constants/app_colors.dart';

@@ -11,7 +11,7 @@ import 'package:mystock_app/features/sign_up/sign_up_controller.dart';
 import 'package:mystock_app/features/sign_up/sign_up_state.dart';
 
 import '../../common/constants/app_colors.dart';
-import '../../common/constants/app_text_style.dart';
+import '../../common/constants/app_text_styles.dart';
 import '../../common/constants/routes.dart';
 import '../../common/utils/validator.dart';
 import '../../common/widgets/custom_bottom_sheet.dart';

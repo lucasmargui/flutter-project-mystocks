@@ -5,7 +5,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import '../../common/extensions/sizes.dart';
+import '../../common/extensions/extensions.dart';
+import '../../common/widgets/widgets.dart';
 
 class StatsPage extends StatefulWidget {
   const StatsPage({Key? key}) : super(key: key);
@@ -14,12 +15,7 @@ class StatsPage extends StatefulWidget {
   _StatsPageState createState() => _StatsPageState();
 }
 
-class _StatsPageState extends State<StatsPage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
-
+class _StatsPageState extends State<StatsPage> {
   @override
   void dispose() {
     log('disposed');
@@ -30,10 +26,6 @@ class _StatsPageState extends State<StatsPage>
   void initState() {
     // TODO: implement initState
 
-    //No momento que renderizar o objeto SplashPage na minha tela eu vou ter um tempo entre construir esse objeto e renderizar um frame nessa tela
-    //quando eu renderizar esse frame eu vou chamar a função inicializadora
-    WidgetsBinding.instance.addPostFrameCallback((_) => Sizes.init(context));
-
     super.initState();
     timer;
   }
@@ -42,15 +34,15 @@ class _StatsPageState extends State<StatsPage>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
+          const AppHeader(
+            title: 'StatsPage',
+          ),
           Text('Nova tela: StatsPage'),
         ],
-      )),
+      ),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../constants/app_colors.dart';
-import '../constants/app_text_style.dart';
+import '../constants/app_text_styles.dart';
 
 class CustomTextFormField extends StatefulWidget {
   //? pode ser nulo

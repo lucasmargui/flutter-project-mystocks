@@ -5,7 +5,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:mystock_app/common/constants/app_colors.dart';
-import 'package:mystock_app/common/constants/app_text_style.dart';
+import 'package:mystock_app/common/constants/app_text_styles.dart';
 import 'package:mystock_app/common/constants/routes.dart';
 import 'package:mystock_app/features/splash/splash_controller.dart';
 import 'package:mystock_app/features/splash/splash_state.dart';

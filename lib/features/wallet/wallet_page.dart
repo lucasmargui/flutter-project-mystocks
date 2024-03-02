@@ -5,6 +5,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import '../../common/widgets/widgets.dart';
+
 class WalletPage extends StatefulWidget {
   const WalletPage({Key? key}) : super(key: key);
 
@@ -12,12 +14,7 @@ class WalletPage extends StatefulWidget {
   _WalletPageState createState() => _WalletPageState();
 }
 
-class _WalletPageState extends State<WalletPage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
-
+class _WalletPageState extends State<WalletPage> {
   @override
   void dispose() {
     log('disposed');
@@ -34,15 +31,15 @@ class _WalletPageState extends State<WalletPage>
   Timer timer = Timer(const Duration(seconds: 2), (() => log('finished')));
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
-          Text('Nova tela: WalletPage'),
+          const AppHeader(
+            title: 'Wallet',
+          ),
+          Text('Nova tela: Wallet'),
         ],
-      )),
+      ),
     );
   }
 }
