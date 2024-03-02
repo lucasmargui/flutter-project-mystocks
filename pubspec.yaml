@@ -46,6 +46,7 @@ dependencies:
   cloud_functions: ^4.6.0
   intl: ^0.18.1
   uuid: ^4.1.0
+  fl_chart: ^0.62.0
 
 dev_dependencies:
   flutter_test:

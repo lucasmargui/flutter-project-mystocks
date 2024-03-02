@@ -7,6 +7,7 @@ import '../../repositories/transaction_repository.dart';
 import '../common/features/balance/balance.dart';
 import '../common/features/transaction/transaction.dart';
 import '../features/sign_up/sign_up_controller.dart';
+import '../features/stats/stats_controller.dart';
 import '../features/wallet/wallet_controller.dart';
 import '../services/services.dart';
 
@@ -55,4 +56,7 @@ void setupDependencies() {
       transactionRepository: locator.get<TransactionRepository>(),
     ),
   );
+
+  // locator.registerLazySingleton<StatsController>(() => StatsController(
+  //     transactionRepository: locator.get<TransactionRepository>()));
 }
