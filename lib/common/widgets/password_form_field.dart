@@ -1,7 +1,10 @@
-// ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutablesm, sort_child_properties_last
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import '../../common/widgets/widgets.dart';
+import 'package:mystock_app/common/widgets/widgets.dart';
+
+import '../constants/constants.dart';
 
 class PasswordFormField extends StatefulWidget {
   final TextEditingController? controller;
@@ -10,19 +13,27 @@ class PasswordFormField extends StatefulWidget {
   final String? labelText;
   final FormFieldValidator<String>? validator;
   final String? helperText;
-  const PasswordFormField(
-      {Key? key,
-      this.controller,
-      this.padding,
-      this.hintText,
-      this.labelText,
-      this.validator,
-      this.helperText})
-      : super(key: key);
+  final FocusNode? focusNode;
+  final VoidCallback? onTap;
+  final ValueSetter<PointerEvent>? onTapOutside;
+  final VoidCallback? onEditingComplete;
+
+  const PasswordFormField({
+    Key? key,
+    this.controller,
+    this.padding,
+    this.hintText,
+    this.labelText,
+    this.validator,
+    this.helperText,
+    this.focusNode,
+    this.onTap,
+    this.onTapOutside,
+    this.onEditingComplete,
+  }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _PasswordFormFieldState createState() => _PasswordFormFieldState();
+  State<PasswordFormField> createState() => _PasswordFormFieldState();
 }
 
 class _PasswordFormFieldState extends State<PasswordFormField> {
@@ -31,29 +42,37 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      onTap: widget.onTap,
+      onEditingComplete: widget.onEditingComplete ??
+          () {
+            FocusScope.of(context).nextFocus();
+          },
+      focusNode: widget.focusNode,
+      onTapOutside: widget.onTapOutside ??
+          (_) {
+            if (FocusScope.of(context).hasFocus) {
+              FocusScope.of(context).unfocus();
+            }
+          },
       helperText: widget.helperText,
       validator: widget.validator,
-      //Se controller de PassworFormField for nulo
-      //significa que controller de CustomTextFormField também será
-      controller: widget.controller,
-
-      //Se valor de padding de PassworFormField for Nulo
-      //significa que Valor de CustomTextFormField também será fazendo aquela verificação de ?? em CustomTextFormField
-      padding: widget.padding,
-
       obscureText: isHidden,
+      controller: widget.controller,
+      padding: widget.padding,
       hintText: widget.hintText,
       labelText: widget.labelText,
       suffixIcon: InkWell(
-        borderRadius: BorderRadius.circular(23),
-        child: Icon(
-          isHidden ? Icons.visibility : Icons.visibility_off,
-        ),
+        borderRadius: BorderRadius.circular(23.0),
         onTap: () {
+          log("pressed");
           setState(() {
             isHidden = !isHidden;
           });
         },
+        child: Icon(
+          isHidden ? Icons.visibility : Icons.visibility_off,
+          color: AppColors.bluedarkOne,
+        ),
       ),
     );
   }

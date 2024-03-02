@@ -1,3 +1,5 @@
+import 'package:mystock_app/common/data/data.dart';
+
 import '../common/models/models.dart';
 
 abstract class TransactionRepository {
@@ -10,7 +12,7 @@ abstract class TransactionRepository {
   Future<TransactionModel> deleteTransaction(
       {required TransactionModel transaction});
 
-  Future<List<TransactionModel>> getAllTransactions();
+  Future<DataResult<List<TransactionModel>>> getAllTransactions();
 
   Future<BalancesModel> getBalances();
 
@@ -69,37 +71,51 @@ class TransactionRepositoryImpl implements TransactionRepository {
   }
 
   @override
-  Future<List<TransactionModel>> getAllTransactions() async {
-    return [
+  Future<DataResult<List<TransactionModel>>> getAllTransactions() async {
+    final List<TransactionModel> list = [
       TransactionModel(
-          category: 'Income',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804),
+        category: 'Income',
+        description: "Bar",
+        value: 500,
+        date:
+            DateTime.now().add(const Duration(days: 5)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 5)).millisecondsSinceEpoch,
+      ),
       TransactionModel(
-          category: 'Income',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804),
+        category: 'Expense',
+        description: "VideoGame",
+        value: -200,
+        date:
+            DateTime.now().add(const Duration(days: 7)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 7)).millisecondsSinceEpoch,
+      ),
       TransactionModel(
-          category: 'Income',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804),
+        category: 'Income',
+        description: "Site",
+        value: 150.52,
+        date:
+            DateTime.now().add(const Duration(days: 24)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 24)).millisecondsSinceEpoch,
+      ),
       TransactionModel(
-          category: 'Income',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804),
+        category: 'Income',
+        description: "Cartão",
+        value: 325.45,
+        date:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+      ),
     ];
+
+    return DataResult.success(list);
   }
 
   @override

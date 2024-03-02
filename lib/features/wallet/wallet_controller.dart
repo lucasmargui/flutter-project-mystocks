@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:mystock_app/common/data/data_result.dart';
 
 import '../../common/models/transaction_model.dart';
 import '../../repositories/transaction_repository.dart';
@@ -26,27 +27,29 @@ class WalletController extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<List<TransactionModel>> getAllTransactions() async {
+  Future<void> getAllTransactions() async {
     _changeState(WalletStateLoading());
 
     final result = await transactionRepository.getAllTransactions();
 
-    _changeState(WalletStateSuccess());
-
-    return result;
+    result.fold(
+      (error) => _changeState(WalletStateError(message: error.message)),
+      (data) {
+        _transactions = data;
+        _changeState(WalletStateSuccess());
+      },
+    );
   }
 
   void changeSelectedDate(DateTime newDate) {
     _selectedDate = newDate;
   }
 
-  Future<List<TransactionModel>> getTransactionsByDateRange() async {
+  Future<void> getTransactionsByDateRange() async {
     _changeState(WalletStateLoading());
 
     final result = await transactionRepository.getAllTransactions();
 
     _changeState(WalletStateSuccess());
-
-    return result;
   }
 }

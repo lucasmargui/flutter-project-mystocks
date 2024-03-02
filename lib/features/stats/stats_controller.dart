@@ -1,251 +1,251 @@
-// import 'package:fl_chart/fl_chart.dart';
-// import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 
-// import '../../common/constants/constants.dart';
-// import '../../common/extensions/date_formatter.dart';
-// import '../../common/models/models.dart';
-// import '../../repositories/repositories.dart';
-// import 'stats_state.dart';
+import '../../common/constants/constants.dart';
+import '../../common/extensions/date_formatter.dart';
+import '../../common/models/models.dart';
 
-// enum StatsPeriod { day, week, month, year }
+import '../../repositories/transaction_repository.dart';
+import 'stats_state.dart';
 
-// class StatsController extends ChangeNotifier {
-//   StatsController({
-//     required TransactionRepository transactionRepository,
-//   }) : _transactionRepository = transactionRepository;
+enum StatsPeriod { day, week, month, year }
 
-//   final TransactionRepository _transactionRepository;
+class StatsController extends ChangeNotifier {
+  StatsController({
+    required TransactionRepository transactionRepository,
+  }) : _transactionRepository = transactionRepository;
 
-//   StatsState _state = StatsStateInitial();
+  final TransactionRepository _transactionRepository;
 
-//   StatsState get state => _state;
+  StatsState _state = StatsStateInitial();
 
-//   void _changeState(StatsState newState) {
-//     _state = newState;
-//     notifyListeners();
-//   }
+  StatsState get state => _state;
 
-//   List<StatsPeriod> get periods => StatsPeriod.values;
+  void _changeState(StatsState newState) {
+    _state = newState;
+    notifyListeners();
+  }
 
-//   List<TransactionModel> _transactions = [];
-//   List<TransactionModel> get transactions => _transactions;
+  List<StatsPeriod> get periods => StatsPeriod.values;
 
-//   List<FlSpot> _valueSpots = [];
-//   List<FlSpot> get valueSpots => _valueSpots;
+  List<TransactionModel> _transactions = [];
+  List<TransactionModel> get transactions => _transactions;
 
-//   /// Used to set chart interval by [selectedPeriod]
-//   double get interval {
-//     switch (selectedPeriod) {
-//       case StatsPeriod.day:
-//         return 4;
-//       case StatsPeriod.week:
-//         return 1;
-//       case StatsPeriod.month:
-//         return 1;
-//       case StatsPeriod.year:
-//         return 1;
-//     }
-//   }
+  List<FlSpot> _valueSpots = [];
+  List<FlSpot> get valueSpots => _valueSpots;
 
-//   double get minY =>
-//       _valueSpots.map((e) => e.y).reduce((a, b) => a < b ? a : b);
-//   double get maxY =>
-//       _valueSpots.map((e) => e.y).reduce((a, b) => a > b ? a : b);
-//   double get minX =>
-//       _valueSpots.map((e) => e.x).reduce((a, b) => a < b ? a : b);
-//   double get maxX =>
-//       _valueSpots.map((e) => e.x).reduce((a, b) => a > b ? a : b);
+  /// Used to set chart interval by [selectedPeriod]
+  double get interval {
+    switch (selectedPeriod) {
+      case StatsPeriod.day:
+        return 4;
+      case StatsPeriod.week:
+        return 1;
+      case StatsPeriod.month:
+        return 1;
+      case StatsPeriod.year:
+        return 1;
+    }
+  }
 
-//   bool _sorted = false;
-//   bool get sorted => _sorted;
-//   void sortTransactions() {
-//     _changeState(StatsStateLoading());
-//     _sorted = !_sorted;
-//     if (_sorted) {
-//       _transactions.sort((a, b) => a.value.compareTo(b.value));
-//     } else {
-//       _transactions.sort((a, b) => b.value.compareTo(a.value));
-//     }
-//     _changeState(StatsStateSuccess());
-//   }
+  double get minY =>
+      _valueSpots.map((e) => e.y).reduce((a, b) => a < b ? a : b);
+  double get maxY =>
+      _valueSpots.map((e) => e.y).reduce((a, b) => a > b ? a : b);
+  double get minX =>
+      _valueSpots.map((e) => e.x).reduce((a, b) => a < b ? a : b);
+  double get maxX =>
+      _valueSpots.map((e) => e.x).reduce((a, b) => a > b ? a : b);
 
-//   StatsPeriod _selectedPeriod = StatsPeriod.month;
-//   StatsPeriod get selectedPeriod => _selectedPeriod;
-//   Future<void> getTrasactionsByPeriod({StatsPeriod? period}) async {
-//     _selectedPeriod = period ?? selectedPeriod;
-//     _changeState(StatsStateLoading());
+  bool _sorted = false;
+  bool get sorted => _sorted;
+  void sortTransactions() {
+    _changeState(StatsStateLoading());
+    _sorted = !_sorted;
+    if (_sorted) {
+      _transactions.sort((a, b) => a.value.compareTo(b.value));
+    } else {
+      _transactions.sort((a, b) => b.value.compareTo(a.value));
+    }
+    _changeState(StatsStateSuccess());
+  }
 
-//     DateTime start;
-//     DateTime end;
-//     DateTime currentDate = DateTime.now();
+  StatsPeriod _selectedPeriod = StatsPeriod.month;
+  StatsPeriod get selectedPeriod => _selectedPeriod;
+  Future<void> getTrasactionsByPeriod({StatsPeriod? period}) async {
+    _selectedPeriod = period ?? selectedPeriod;
+    _changeState(StatsStateLoading());
 
-//     switch (selectedPeriod) {
-//       case StatsPeriod.day:
-//         start = DateTime(
-//             currentDate.year, currentDate.month, currentDate.day, 0, 0, 0);
-//         end = DateTime(
-//             currentDate.year, currentDate.month, currentDate.day, 23, 59, 59);
-//         break;
-//       case StatsPeriod.week:
-//         start = currentDate.subtract(Duration(days: currentDate.weekday - 1));
-//         start = DateTime(start.year, start.month, start.day, 0, 0, 0);
-//         end = start
-//             .add(const Duration(days: 6, hours: 23, minutes: 59, seconds: 59));
-//         break;
-//       case StatsPeriod.month:
-//         start = DateTime(currentDate.year, currentDate.month, 1, 0, 0, 0);
-//         end = DateTime(currentDate.year, currentDate.month + 1, 0, 23, 59, 59);
-//         break;
-//       case StatsPeriod.year:
-//         start = DateTime(currentDate.year, 1, 1, 0, 0, 0);
-//         end = DateTime(currentDate.year, 12, 31, 23, 59, 59);
-//         break;
-//     }
+    DateTime start;
+    DateTime end;
+    DateTime currentDate = DateTime.now();
 
-//     final result = await _transactionRepository.getTransactionsByDateRange(
-//       startDate: start,
-//       endDate: end,
-//     );
-//     result.fold(
-//       (error) => _changeState(StatsStateError()),
-//       (data) {
-//         _transactions = data;
+    switch (selectedPeriod) {
+      case StatsPeriod.day:
+        start = DateTime(
+            currentDate.year, currentDate.month, currentDate.day, 0, 0, 0);
+        end = DateTime(
+            currentDate.year, currentDate.month, currentDate.day, 23, 59, 59);
+        break;
+      case StatsPeriod.week:
+        start = currentDate.subtract(Duration(days: currentDate.weekday - 1));
+        start = DateTime(start.year, start.month, start.day, 0, 0, 0);
+        end = start
+            .add(const Duration(days: 6, hours: 23, minutes: 59, seconds: 59));
+        break;
+      case StatsPeriod.month:
+        start = DateTime(currentDate.year, currentDate.month, 1, 0, 0, 0);
+        end = DateTime(currentDate.year, currentDate.month + 1, 0, 23, 59, 59);
+        break;
+      case StatsPeriod.year:
+        start = DateTime(currentDate.year, 1, 1, 0, 0, 0);
+        end = DateTime(currentDate.year, 12, 31, 23, 59, 59);
+        break;
+    }
 
-//         _getValueSpots();
+    final result = await _transactionRepository.getAllTransactions();
+    result.fold(
+      (error) => _changeState(StatsStateError()),
+      (data) {
+        _transactions = data;
 
-//         _changeState(StatsStateSuccess());
-//       },
-//     );
-//   }
+        _getValueSpots();
 
-//   String dayName(double day) {
-//     switch (day) {
-//       case 0:
-//         return 'Mon';
-//       case 1:
-//         return 'Tue';
-//       case 2:
-//         return 'Wed';
-//       case 3:
-//         return 'Thu';
-//       case 4:
-//         return 'Fri';
-//       case 5:
-//         return 'Sat';
-//       case 6:
-//         return 'Sun';
-//       default:
-//         return '';
-//     }
-//   }
+        _changeState(StatsStateSuccess());
+      },
+    );
+  }
 
-//   String monthName(double month) {
-//     switch (month) {
-//       case 0:
-//         return 'Jan';
-//       case 1:
-//         return 'Feb';
-//       case 2:
-//         return 'Mar';
-//       case 3:
-//         return 'Apr';
-//       case 4:
-//         return 'May';
-//       case 5:
-//         return 'Jun';
-//       case 6:
-//         return 'Jul';
-//       case 7:
-//         return 'Aug';
-//       case 8:
-//         return 'Sep';
-//       case 9:
-//         return 'Oct';
-//       case 10:
-//         return 'Nov';
-//       case 11:
-//         return 'Dec';
-//       default:
-//         return '';
-//     }
-//   }
+  String dayName(double day) {
+    int dayInt = day.toInt(); // Converte o double para int
+    switch (dayInt) {
+      case 0:
+        return 'Mon';
+      case 1:
+        return 'Tue';
+      case 2:
+        return 'Wed';
+      case 3:
+        return 'Thu';
+      case 4:
+        return 'Fri';
+      case 5:
+        return 'Sat';
+      case 6:
+        return 'Sun';
+      default:
+        return '';
+    }
+  }
 
-//   void _getValueSpots() {
-//     int groupingCount;
-//     bool Function(int, TransactionModel) groupingFunction;
+  String monthName(double month) {
+    int monthInt = month.toInt();
+    switch (monthInt) {
+      case 0:
+        return 'Jan';
+      case 1:
+        return 'Feb';
+      case 2:
+        return 'Mar';
+      case 3:
+        return 'Apr';
+      case 4:
+        return 'May';
+      case 5:
+        return 'Jun';
+      case 6:
+        return 'Jul';
+      case 7:
+        return 'Aug';
+      case 8:
+        return 'Sep';
+      case 9:
+        return 'Oct';
+      case 10:
+        return 'Nov';
+      case 11:
+        return 'Dec';
+      default:
+        return '';
+    }
+  }
 
-//     switch (selectedPeriod) {
-//       case StatsPeriod.day:
-//         groupingCount = hoursInDay;
-//         groupingFunction = _groupByHour;
-//         break;
-//       case StatsPeriod.week:
-//         groupingCount = daysInWeek;
-//         groupingFunction = _groupByDayOfWeek;
-//         break;
-//       case StatsPeriod.month:
-//         groupingCount = weeksInMonth;
-//         groupingFunction = _groupByWeekOfMonth;
-//         break;
-//       case StatsPeriod.year:
-//         groupingCount = monthsInYear;
-//         groupingFunction = _groupByMonth;
-//         break;
-//     }
+  void _getValueSpots() {
+    int groupingCount;
+    bool Function(int, TransactionModel) groupingFunction;
 
-//     _generateTransactionsByGrouping(groupingCount, groupingFunction);
-//   }
+    switch (selectedPeriod) {
+      case StatsPeriod.day:
+        groupingCount = hoursInDay;
+        groupingFunction = _groupByHour;
+        break;
+      case StatsPeriod.week:
+        groupingCount = daysInWeek;
+        groupingFunction = _groupByDayOfWeek;
+        break;
+      case StatsPeriod.month:
+        groupingCount = weeksInMonth;
+        groupingFunction = _groupByWeekOfMonth;
+        break;
+      case StatsPeriod.year:
+        groupingCount = monthsInYear;
+        groupingFunction = _groupByMonth;
+        break;
+    }
 
-//   void _generateTransactionsByGrouping(
-//     int groupingCount,
-//     bool Function(int, TransactionModel) groupingFunction,
-//   ) {
-//     final spots = <FlSpot>[];
-//     for (int i = 0; i < groupingCount; i++) {
-//       final List<TransactionModel> transactionsByGroup =
-//           transactions.where((t) => groupingFunction(i, t)).toList();
+    _generateTransactionsByGrouping(groupingCount, groupingFunction);
+  }
 
-//       final double totalAmount = transactionsByGroup.fold(
-//         0.0,
-//         (previous, transaction) => previous + transaction.value,
-//       );
+  void _generateTransactionsByGrouping(
+    int groupingCount,
+    bool Function(int, TransactionModel) groupingFunction,
+  ) {
+    final spots = <FlSpot>[];
+    for (int i = 0; i < groupingCount; i++) {
+      final List<TransactionModel> transactionsByGroup =
+          transactions.where((t) => groupingFunction(i, t)).toList();
 
-//       spots.add(FlSpot(i.toDouble(), totalAmount));
-//     }
-//     _valueSpots = spots;
-//   }
+      final double totalAmount = transactionsByGroup.fold(
+        0.0,
+        (previous, transaction) => previous + transaction.value,
+      );
 
-//   bool _groupByHour(
-//     int i,
-//     TransactionModel t,
-//   ) {
-//     final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
-//     return transactionDate.hour == i &&
-//         transactionDate.day == DateTime.now().day;
-//   }
+      spots.add(FlSpot(i.toDouble(), totalAmount));
+    }
+    _valueSpots = spots;
+  }
 
-//   bool _groupByDayOfWeek(
-//     int i,
-//     TransactionModel t,
-//   ) {
-//     final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
-//     return transactionDate.weekday == i + 1;
-//   }
+  bool _groupByHour(
+    int i,
+    TransactionModel t,
+  ) {
+    final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
+    return transactionDate.hour == i &&
+        transactionDate.day == DateTime.now().day;
+  }
 
-//   bool _groupByWeekOfMonth(
-//     int i,
-//     TransactionModel t,
-//   ) {
-//     final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
-//     return transactionDate.week == i + 1;
-//   }
+  bool _groupByDayOfWeek(
+    int i,
+    TransactionModel t,
+  ) {
+    final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
+    return transactionDate.weekday == i + 1;
+  }
 
-//   bool _groupByMonth(
-//     int i,
-//     TransactionModel t,
-//   ) {
-//     final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
-//     return transactionDate.month == i + 1 &&
-//         transactionDate.year == DateTime.now().year;
-//   }
-// }
+  bool _groupByWeekOfMonth(
+    int i,
+    TransactionModel t,
+  ) {
+    final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
+    return transactionDate.week == i + 1;
+  }
+
+  bool _groupByMonth(
+    int i,
+    TransactionModel t,
+  ) {
+    final transactionDate = DateTime.fromMillisecondsSinceEpoch(t.date);
+    return transactionDate.month == i + 1 &&
+        transactionDate.year == DateTime.now().year;
+  }
+}

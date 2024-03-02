@@ -34,12 +34,16 @@ class HomeController extends ChangeNotifier {
   Future<void> getAllTransactions() async {
     _changeState(HomeLoadingState());
 
-    try {
-      _transactions = await _transactionRepository.getAllTransactions();
+    final result = await _transactionRepository.getAllTransactions();
 
-      _changeState(HomeSuccessState());
-    } catch (e) {
-      _changeState(HomeErrorState(e.toString()));
-    }
+    result.fold(
+      (error) => _changeState(HomeErrorState(error.message)),
+      (data) {
+        _transactions = data;
+        _transactions.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+
+        _changeState(HomeSuccessState());
+      },
+    );
   }
 }
