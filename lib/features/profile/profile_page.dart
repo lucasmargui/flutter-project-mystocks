@@ -4,9 +4,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mystock_app/services/auth_service.dart';
-import 'package:mystock_app/services/secure_storage.dart';
-
+import '../../services/services.dart';
 import '../../common/widgets/widgets.dart';
 import '../../locator/locator.dart';
 

@@ -4,8 +4,6 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-
-import '../../common/extensions/extensions.dart';
 import '../../common/widgets/widgets.dart';
 
 class StatsPage extends StatefulWidget {

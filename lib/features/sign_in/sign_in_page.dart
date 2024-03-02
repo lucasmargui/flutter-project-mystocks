@@ -3,25 +3,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mystock_app/common/utils/uppercase_text_formatter.dart';
-import 'package:mystock_app/common/widgets/password_form_field.dart';
-import 'package:mystock_app/features/sign_in/sign_in_controller.dart';
-import 'package:mystock_app/features/sign_in/sign_in_state.dart';
-import 'package:mystock_app/features/sign_up/sign_up_controller.dart';
-import 'package:mystock_app/features/sign_up/sign_up_state.dart';
 
-import '../../common/constants/app_colors.dart';
-import '../../common/constants/app_text_styles.dart';
-import '../../common/constants/routes.dart';
-import '../../common/utils/validator.dart';
-import '../../common/widgets/custom_bottom_sheet.dart';
-import '../../common/widgets/custom_circular_progress_indicator.dart';
-import '../../common/widgets/custom_text_form_field.dart';
-import '../../common/widgets/custom_text_title.dart';
-import '../../common/widgets/multi_text_button.dart';
-import '../../common/widgets/primary_button.dart';
+import '../../features/sign_in/sign_in.dart';
+
+import '../../common/constants/constants.dart';
+import '../../common/utils/utils.dart';
+import '../../common/widgets/widgets.dart';
 import '../../locator/locator.dart';
-import '../../services/mock_auth_service.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -30,7 +18,7 @@ class SignInPage extends StatefulWidget {
   State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignInPageState extends State<SignInPage> with CustomModalSheetMixin {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
@@ -64,7 +52,11 @@ class _SignInPageState extends State<SignInPage> {
       if (_controller.state is SignInErrorState) {
         final error = _controller.state as SignInErrorState;
         Navigator.pop(context);
-        customModalBottomSheet(context, error.message, 'Tentar novamente');
+        showCustomModalBottomSheet(
+          context: context,
+          content: (_controller.state as SignInErrorState).message,
+          buttonText: "Try again",
+        );
       }
       log(_controller.state.toString());
     });

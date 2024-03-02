@@ -1,16 +1,8 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:developer';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:mystock_app/common/constants/app_colors.dart';
-import 'package:mystock_app/common/constants/app_text_styles.dart';
-import 'package:mystock_app/common/constants/routes.dart';
-
-import '../../common/widgets/multi_text_button.dart';
-import '../../common/widgets/primary_button.dart';
-import '../sign_up/sign_up_page.dart';
+import '../../common/constants/constants.dart';
+import '../../common/widgets/widgets.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);

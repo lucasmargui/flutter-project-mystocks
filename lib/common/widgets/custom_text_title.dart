@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../constants/app_colors.dart';
-import '../constants/app_text_styles.dart';
+import '../constants/constants.dart';
 
 class CustomTextTitle extends StatelessWidget {
   const CustomTextTitle({

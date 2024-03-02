@@ -1,12 +1,9 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:developer';
-
 import 'package:flutter/foundation.dart';
-import 'package:mystock_app/features/sign_up/sign_up_state.dart';
+import '../../features/sign_up/sign_up.dart';
 
-import '../../services/auth_service.dart';
-import '../../services/secure_storage.dart';
+import '../../services/services.dart';
 
 class SignUpController extends ChangeNotifier {
   SignUpState _state = SignUpInitialState();

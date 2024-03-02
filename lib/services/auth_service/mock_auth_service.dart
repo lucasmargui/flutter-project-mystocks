@@ -1,5 +1,5 @@
-import 'package:mystock_app/common/models/user_model.dart';
-import 'package:mystock_app/services/auth_service.dart';
+import '../../common/models/user_model.dart';
+import '../../services/auth_service/auth_service.dart';
 
 class MockAuthService implements AuthService {
   @override

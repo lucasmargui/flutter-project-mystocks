@@ -1,10 +1,8 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/foundation.dart';
-import 'package:mystock_app/features/sign_in/sign_in_state.dart';
-import 'package:mystock_app/services/secure_storage.dart';
-
-import '../../services/auth_service.dart';
+import '../../features/sign_in/sign_in.dart';
+import '../../services/services.dart';
 
 class SignInController extends ChangeNotifier {
   final AuthService _service;

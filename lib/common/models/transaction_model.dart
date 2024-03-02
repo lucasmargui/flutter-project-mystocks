@@ -1,11 +1,13 @@
 class TransactionModel {
-  final String title;
+  final String description;
   final double value;
   final int date;
+  final bool status;
 
   TransactionModel({
-    required this.title,
+    required this.description,
     required this.value,
     required this.date,
+    required this.status,
   });
 }

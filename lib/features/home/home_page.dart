@@ -3,18 +3,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mystock_app/app.dart';
-import 'package:mystock_app/common/constants/app_text_styles.dart';
-import 'package:mystock_app/common/constants/routes.dart';
-import 'package:mystock_app/common/extensions/sizes.dart';
-import 'package:mystock_app/common/widgets/app_header.dart';
-import 'package:mystock_app/common/widgets/custom_circular_progress_indicator.dart';
-import 'package:mystock_app/common/widgets/primary_button.dart';
-import 'package:mystock_app/features/home/home_controller.dart';
-import 'package:mystock_app/features/home/home_state.dart';
-import 'package:mystock_app/services/secure_storage.dart';
-
-import '../../common/constants/app_colors.dart';
+import '../../common/constants/constants.dart';
+import '../../common/extensions/extensions.dart';
+import '../../common/widgets/widgets.dart';
+import '../../features/home/home.dart';
 import '../../locator/locator.dart';
 
 class HomePage extends StatefulWidget {
@@ -252,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               title: Text(
-                                item.title,
+                                item.description,
                                 style: AppTextStyles.mediumText16w500,
                               ),
                               subtitle: Text(

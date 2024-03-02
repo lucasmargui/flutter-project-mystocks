@@ -1,13 +1,10 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/foundation.dart';
-import 'package:mystock_app/features/home/home_state.dart';
-import 'package:mystock_app/repositories/transaction_repository.dart';
+import '../../features/home/home_state.dart';
+import '../../repositories/transaction_repository.dart';
 
-import 'package:mystock_app/services/secure_storage.dart';
-
-import '../../common/models/transaction_model.dart';
-import '../../services/auth_service.dart';
+import '../../common/models/models.dart';
 
 class HomeController extends ChangeNotifier {
   final TransactionRepository _transactionRepository;

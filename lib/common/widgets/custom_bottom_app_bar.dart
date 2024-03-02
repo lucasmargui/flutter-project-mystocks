@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/app_colors.dart';
+import '../constants/constants.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
   final Color? selectedItemColor;

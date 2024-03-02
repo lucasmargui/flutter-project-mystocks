@@ -1,17 +1,11 @@
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:async';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:mystock_app/common/constants/app_colors.dart';
-import 'package:mystock_app/common/constants/app_text_styles.dart';
-import 'package:mystock_app/common/constants/routes.dart';
-import 'package:mystock_app/features/splash/splash_controller.dart';
-import 'package:mystock_app/features/splash/splash_state.dart';
+import '../../common/constants/constants.dart';
+import '../../features/splash/splash.dart';
 
-import '../../common/extensions/sizes.dart';
-import '../../common/widgets/custom_circular_progress_indicator.dart';
+import '../../common/extensions/extensions.dart';
+import '../../common/widgets/widgets.dart';
 import '../../locator/locator.dart';
 
 class SplashPage extends StatefulWidget {

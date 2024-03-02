@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../features/home/home_controller.dart';
-import '../../locator/locator.dart';
 import '../constants/constants.dart';
-import '../extensions/extensions.dart';
 
 class GreetingsWidget extends StatelessWidget {
   const GreetingsWidget({

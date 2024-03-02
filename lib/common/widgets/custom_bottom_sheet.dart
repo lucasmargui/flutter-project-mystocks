@@ -1,48 +1,75 @@
-// ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:mystock_app/common/constants/app_text_styles.dart';
-import 'package:mystock_app/common/widgets/primary_button.dart';
+import '../constants/constants.dart';
+import 'primary_button.dart';
 
-import '../constants/app_colors.dart';
+mixin CustomModalSheetMixin<T extends StatefulWidget> on State<T> {
+  Future<bool?> showCustomModalBottomSheet({
+    required BuildContext context,
+    required String content,
+    String? buttonText,
+    VoidCallback? onPressed,
+    List<Widget>? actions,
+    bool isDismissible = true,
+  }) {
+    assert(buttonText != null || actions != null);
 
-Future<void> customModalBottomSheet(
-    BuildContext context, String content, String buttonText) {
-  return showModalBottomSheet<void>(
-    context: context,
-    shape: RoundedRectangleBorder(
+    return showModalBottomSheet(
+      isDismissible: isDismissible,
+      context: context,
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(38.0), topRight: Radius.circular(38.0))),
-    builder: (BuildContext context) {
-      return Container(
-        decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(38.0),
-                topRight: Radius.circular(38.0))),
-        height: 200,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text(content,
-                  style: AppTextStyles.mediumText20
-                      .copyWith(color: AppColors.bluedarkOne)),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 32,
-                ),
-                child: PrimaryButton(
-                  text: buttonText,
-                  onPressed: () => Navigator.pop(context),
-                ),
-              )
-            ],
-          ),
+          topLeft: Radius.circular(38.0),
+          topRight: Radius.circular(38.0),
         ),
-      );
-    },
-  );
+      ),
+      builder: (BuildContext context) {
+        return WillPopScope(
+          onWillPop: () => Future.value(isDismissible),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(38.0),
+                topRight: Radius.circular(38.0),
+              ),
+            ),
+            height: 200,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16.0,
+                    horizontal: 32.0,
+                  ),
+                  child: Text(
+                    content,
+                    style: AppTextStyles.mediumText20.copyWith(
+                      color: AppColors.bluedarkOne,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8.0,
+                    horizontal: 32.0,
+                  ),
+                  child: actions != null
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: actions,
+                        )
+                      : PrimaryButton(
+                          text: buttonText!,
+                          onPressed: onPressed ?? () => Navigator.pop(context),
+                        ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }

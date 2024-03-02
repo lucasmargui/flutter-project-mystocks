@@ -1,14 +1,11 @@
 import 'package:get_it/get_it.dart';
-import 'package:mystock_app/features/home/home_controller.dart';
-import 'package:mystock_app/features/sign_in/sign_in_controller.dart';
-import 'package:mystock_app/features/splash/splash_controller.dart';
-import 'package:mystock_app/repositories/transaction_repository.dart';
-import 'package:mystock_app/services/auth_service.dart';
-import 'package:mystock_app/services/firebase_auth_service.dart';
-import 'package:mystock_app/services/mock_auth_service.dart';
-import 'package:mystock_app/services/secure_storage.dart';
+import '../../features/home/home_controller.dart';
+import '../../features/sign_in/sign_in_controller.dart';
+import '../../features/splash/splash_controller.dart';
+import '../../repositories/transaction_repository.dart';
 
 import '../features/sign_up/sign_up_controller.dart';
+import '../services/services.dart';
 
 final locator = GetIt.instance;
 

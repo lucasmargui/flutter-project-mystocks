@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mystock_app/common/models/user_model.dart';
 import 'package:cloud_functions/cloud_functions.dart';
+import '../../common/models/models.dart';
 import 'auth_service.dart';
 
 class FirebaseAuthService implements AuthService {

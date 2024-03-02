@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
-import '../extensions/extensions.dart';
 
 class GreetingsWidget extends StatelessWidget {
   const GreetingsWidget({

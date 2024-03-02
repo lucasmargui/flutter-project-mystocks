@@ -3,11 +3,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import '../../common/constants/app_colors.dart';
-import '../../common/widgets/custom_bottom_app_bar.dart';
-import '../profile/profile_page.dart';
-import '../stats/stats_page.dart';
-import '../wallet/wallet_page.dart';
+import '../../common/constants/constants.dart';
+import '../../common/widgets/widgets.dart';
+import '../profile/profile.dart';
+import '../stats/stats.dart';
+import '../wallet/wallet.dart';
 import 'home_page.dart';
 
 class HomePageView extends StatefulWidget {

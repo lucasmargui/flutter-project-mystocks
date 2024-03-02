@@ -1,4 +1,4 @@
-import 'package:mystock_app/common/models/user_model.dart';
+import '../../common/models/models.dart';
 
 abstract class AuthService {
   Future<UserModel> signUp({
