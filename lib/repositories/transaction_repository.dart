@@ -14,7 +14,7 @@ abstract class TransactionRepository {
 
   Future<DataResult<List<TransactionModel>>> getAllTransactions();
 
-  Future<BalancesModel> getBalances();
+  Future<DataResult<BalancesModel>> getBalances();
 
   Future<BalancesModel> updateBalances({required BalancesModel balance});
 }
@@ -119,10 +119,10 @@ class TransactionRepositoryImpl implements TransactionRepository {
   }
 
   @override
-  Future<BalancesModel> getBalances() async {
+  Future<DataResult<BalancesModel>> getBalances() async {
     try {
-      return BalancesModel(
-          totalIncome: 500.00, totalOutcome: 200.00, totalBalance: 1300.00);
+      return DataResult.success(BalancesModel(
+          totalIncome: 500.00, totalOutcome: 200.00, totalBalance: 1300.00));
     } catch (e) {
       rethrow;
     }

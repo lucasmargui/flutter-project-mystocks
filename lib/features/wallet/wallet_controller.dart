@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:mystock_app/common/data/data_result.dart';
 
 import '../../common/models/transaction_model.dart';
 import '../../repositories/transaction_repository.dart';

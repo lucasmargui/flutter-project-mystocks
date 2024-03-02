@@ -30,10 +30,29 @@ class BalanceController extends ChangeNotifier {
   Future<void> getBalances() async {
     _changeState(BalanceLoadingState());
 
-    final result = await transactionRepository.getBalances();
-    _balances = result;
+    final result = await transactionRepository.getAllTransactions();
+    double totalIncome = 0;
+    double totalOutcome = 0;
+    double totalBalance = 0;
+    result.fold(
+      (error) => _changeState(BalanceErrorState()),
+      (data) {
+        for (TransactionModel transaction in data) {
+          totalBalance += transaction.value;
+          if (transaction.value < 0) {
+            totalOutcome += transaction.value;
+          } else {
+            totalIncome += transaction.value;
+          }
+        }
 
-    _changeState(BalanceSuccessState());
+        _balances = BalancesModel(
+            totalIncome: totalIncome,
+            totalOutcome: totalOutcome,
+            totalBalance: totalBalance);
+        _changeState(BalanceSuccessState());
+      },
+    );
   }
 
   Future<void> updateBalance(
