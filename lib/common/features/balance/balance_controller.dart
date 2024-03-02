@@ -31,6 +31,7 @@ class BalanceController extends ChangeNotifier {
     _changeState(BalanceLoadingState());
 
     final result = await transactionRepository.getBalances();
+    _balances = result;
 
     _changeState(BalanceSuccessState());
   }

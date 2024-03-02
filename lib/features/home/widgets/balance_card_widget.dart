@@ -49,7 +49,7 @@ class _BalanceCardWidgetState extends State<BalanceCardWidget> {
           vertical: 32.h,
         ),
         decoration: const BoxDecoration(
-          color: AppColors.darkGreen,
+          color: AppColors.bluedarkOne,
           borderRadius: BorderRadius.all(
             Radius.circular(16.0),
           ),
