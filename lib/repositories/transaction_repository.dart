@@ -25,11 +25,12 @@ class TransactionRepositoryImpl implements TransactionRepository {
   }) async {
     try {
       return TransactionModel(
-        date: 48498,
-        description: 'teste',
-        value: 500,
-        status: true,
-      );
+          category: 'Income',
+          description: "Descricao",
+          value: 500,
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804);
     } catch (e) {
       rethrow;
     }
@@ -40,11 +41,12 @@ class TransactionRepositoryImpl implements TransactionRepository {
       {required TransactionModel transaction}) async {
     try {
       return TransactionModel(
-        date: 48498,
-        description: 'teste',
-        value: 500,
-        status: true,
-      );
+          category: 'Income',
+          description: "Descricao",
+          value: 500,
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804);
     } catch (e) {
       rethrow;
     }
@@ -55,11 +57,12 @@ class TransactionRepositoryImpl implements TransactionRepository {
       {required TransactionModel transaction}) async {
     try {
       return TransactionModel(
-        date: 48498,
-        description: 'teste',
-        value: 500,
-        status: true,
-      );
+          category: 'Income',
+          description: "Descricao",
+          value: 500,
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804);
     } catch (e) {
       rethrow;
     }
@@ -71,32 +74,33 @@ class TransactionRepositoryImpl implements TransactionRepository {
 
     return [
       TransactionModel(
-          description: 'Salary',
+          category: 'Income',
+          description: "Descricao",
           value: 500,
-          date: DateTime.now().millisecondsSinceEpoch,
-          status: true),
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804),
       TransactionModel(
-        description: 'Dinner',
-        value: -50,
-        date: DateTime.now()
-            .subtract(const Duration(days: 4))
-            .millisecondsSinceEpoch,
-        status: true,
-      ),
+          category: 'Income',
+          description: "Descricao",
+          value: 500,
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804),
       TransactionModel(
-        description: 'Bar',
-        value: -75,
-        date: DateTime.now().millisecondsSinceEpoch,
-        status: true,
-      ),
+          category: 'Income',
+          description: "Descricao",
+          value: 500,
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804),
       TransactionModel(
-        description: 'Cripto',
-        value: 458,
-        date: DateTime.now()
-            .subtract(const Duration(days: 3))
-            .millisecondsSinceEpoch,
-        status: true,
-      ),
+          category: 'Income',
+          description: "Descricao",
+          value: 500,
+          date: 1468959781804,
+          status: true,
+          createdAt: 1468959781804),
     ];
   }
 

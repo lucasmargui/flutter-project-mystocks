@@ -45,6 +45,7 @@ dependencies:
   mocktail: ^0.3.0
   cloud_functions: ^4.6.0
   intl: ^0.18.1
+  uuid: ^4.1.0
 
 dev_dependencies:
   flutter_test:

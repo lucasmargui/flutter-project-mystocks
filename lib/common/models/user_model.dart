@@ -7,7 +7,12 @@ class UserModel {
   final String? email;
   final String? password;
 
-  UserModel({this.id, this.name, this.email, this.password});
+  UserModel({
+    this.id,
+    this.name,
+    this.email,
+    this.password,
+  });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -31,4 +36,33 @@ class UserModel {
 
   factory UserModel.fromJson(String source) =>
       UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  UserModel copyWith({
+    String? id,
+    String? name,
+    String? email,
+    String? password,
+  }) {
+    return UserModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      email: email ?? this.email,
+      password: password ?? this.password,
+    );
+  }
+
+  @override
+  bool operator ==(covariant UserModel other) {
+    if (identical(this, other)) return true;
+
+    return other.id == id &&
+        other.name == name &&
+        other.email == email &&
+        other.password == password;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^ name.hashCode ^ email.hashCode ^ password.hashCode;
+  }
 }
