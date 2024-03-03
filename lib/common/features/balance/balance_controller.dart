@@ -30,6 +30,7 @@ class BalanceController extends ChangeNotifier {
   Future<void> getBalances() async {
     _changeState(BalanceLoadingState());
 
+    //se eu invoco a função estou gerando todos os valores randomicos novamente
     final result = await transactionRepository.getAllTransactions();
     double totalIncome = 0;
     double totalOutcome = 0;

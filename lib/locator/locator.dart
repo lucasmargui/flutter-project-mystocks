@@ -12,6 +12,7 @@ import '../features/profile/profile.dart';
 import '../features/sign_up/sign_up_controller.dart';
 import '../features/stats/stats_controller.dart';
 import '../features/wallet/wallet_controller.dart';
+import '../repositories/transaction_repository_impl.dart';
 import '../services/services.dart';
 import '../services/user_data_service/user_data_service.dart';
 

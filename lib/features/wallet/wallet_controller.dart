@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 
 import '../../common/models/transaction_model.dart';
@@ -47,8 +49,17 @@ class WalletController extends ChangeNotifier {
   Future<void> getTransactionsByDateRange() async {
     _changeState(WalletStateLoading());
 
-    final result = await transactionRepository.getAllTransactions();
+    final result = await transactionRepository.getTransactionsByDateRange(
+        startDate: DateTime(_selectedDate.year, _selectedDate.month, 0),
+        endDate: DateTime(_selectedDate.year, _selectedDate.month + 1, 0));
 
-    _changeState(WalletStateSuccess());
+    result.fold(
+      (error) => _changeState(WalletStateError(message: error.message)),
+      (data) {
+        log(data.toString());
+        _transactions = data;
+        _changeState(WalletStateSuccess());
+      },
+    );
   }
 }

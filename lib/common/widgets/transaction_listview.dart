@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:mystock_app/common/extensions/extensions.dart';
 
 import '../../locator/locator.dart';
 import '../constants/constants.dart';
@@ -159,7 +161,7 @@ class _TransactionListViewState extends State<TransactionListView>
                     style: AppTextStyles.mediumText16w500,
                   ),
                   subtitle: Text(
-                    DateTime.fromMillisecondsSinceEpoch(item.date).toString(),
+                    DateTime.fromMillisecondsSinceEpoch(item.date).toText,
                     style: AppTextStyles.smallText13,
                   ),
                   trailing: Column(

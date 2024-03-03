@@ -16,7 +16,7 @@ extension DateTimeFormatter on DateTime {
         isBefore(endOfToday.subtract(const Duration(days: 1)))) {
       return 'Yesterday';
     } else {
-      return DateFormat('EEE, MMM d, ' 'yy').format(this);
+      return DateFormat('dd/MM/yyyy').format(this);
     }
   }
 
