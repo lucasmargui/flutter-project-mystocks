@@ -290,23 +290,20 @@ class _TransactionPageState extends State<TransactionPage>
                           return null;
                         },
                         onTap: () async {
-                          // _newDate = await showDatePicker(
-                          //   context: context,
-                          //   initialDate: DateTime.now(),
-                          //   firstDate: DateTime(1970),
-                          //   lastDate: DateTime(2030),
-                          // );
+                          _newDate = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1970),
+                            lastDate: DateTime(2030),
+                          );
 
-                          // _newDate = _newDate != null
-                          //     ? DateTime.now().copyWith(
-                          //         day: _newDate?.day,
-                          //         month: _newDate?.month,
-                          //         year: _newDate?.year,
-                          //       )
-                          //     : null;
+                          _newDate = _newDate != null
+                              ? DateTime(_newDate!.year, _newDate!.month,
+                                  _newDate!.day)
+                              : null;
 
-                          // _dateController.text =
-                          //     _newDate != null ? _newDate!.toText : _date;
+                          _dateController.text =
+                              _newDate != null ? _newDate!.toText : _date;
                         },
                       ),
                       const SizedBox(height: 16.0),

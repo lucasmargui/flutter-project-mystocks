@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 
 import '../../../repositories/transaction_repository.dart';
+import '../../../repositories/transaction_repository_list.dart';
 import '../../../services/secure_storage.dart';
 import '../../models/transaction_model.dart';
 import '../../models/user_model.dart';
@@ -27,22 +30,46 @@ class TransactionController extends ChangeNotifier {
   Future<void> addTransaction(TransactionModel transaction) async {
     _changeState(TransactionLoadingState());
 
-    final data = await secureStorageService.readOne(key: 'CURRENT_USER');
-    final user = UserModel.fromJson(data ?? '');
+    // final data = await secureStorageService.readOne(key: 'CURRENT_USER');
+    // final user = UserModel.fromJson(data ?? '');
+    // final result = await transactionRepository.addTransaction(
+    //   transaction: transaction,
+    //   userId: user.id!,
+    // );
+
     final result = await transactionRepository.addTransaction(
       transaction: transaction,
-      userId: user.id!,
+      userId: 'UIDFIREBASE',
     );
 
-    _changeState(TransactionSuccessState());
+    result.fold(
+      (error) => _changeState(TransactionErrorState(message: error.message)),
+      (data) {
+        log(GenerateTransactionList().transactions.length.toString());
+
+        GenerateTransactionList().transactions.add(data);
+
+        log(GenerateTransactionList().transactions.length.toString());
+
+        _changeState(TransactionSuccessState());
+      },
+    );
   }
 
   Future<void> updateTransaction(TransactionModel transaction) async {
     _changeState(TransactionLoadingState());
     final result =
         await transactionRepository.updateTransaction(transaction: transaction);
+    result.fold(
+      (error) => _changeState(TransactionErrorState(message: error.message)),
+      (data) {
+        log(GenerateTransactionList().transactions.length.toString());
 
-    _changeState(TransactionSuccessState());
+        log(GenerateTransactionList().transactions.length.toString());
+
+        _changeState(TransactionSuccessState());
+      },
+    );
   }
 
   Future<void> deleteTransaction(TransactionModel transaction) async {

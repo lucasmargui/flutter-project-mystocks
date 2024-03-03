@@ -10,50 +10,37 @@ import 'transaction_repository.dart';
 
 class TransactionRepositoryImpl implements TransactionRepository {
   @override
-  Future<TransactionModel> addTransaction({
+  Future<DataResult<TransactionModel>> addTransaction({
     required TransactionModel transaction,
     required String userId,
   }) async {
     try {
-      return TransactionModel(
-          category: 'Income',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804);
+      ////Lógica de inserção de dados
+
+      return DataResult.success(transaction);
     } catch (e) {
       rethrow;
     }
   }
 
   @override
-  Future<TransactionModel> updateTransaction(
+  Future<DataResult<TransactionModel>> updateTransaction(
       {required TransactionModel transaction}) async {
     try {
-      return TransactionModel(
-          category: 'Income',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804);
+      ////Lógica de atualização de dados
+
+      return DataResult.success(transaction);
     } catch (e) {
       rethrow;
     }
   }
 
   @override
-  Future<TransactionModel> deleteTransaction(
+  Future<DataResult<TransactionModel>> deleteTransaction(
       {required TransactionModel transaction}) async {
     try {
-      return TransactionModel(
-          category: 'Other',
-          description: "Descricao",
-          value: 500,
-          date: 1468959781804,
-          status: true,
-          createdAt: 1468959781804);
+      ////Lógica de remoção de dados
+      return DataResult.success(transaction);
     } catch (e) {
       rethrow;
     }
@@ -61,6 +48,8 @@ class TransactionRepositoryImpl implements TransactionRepository {
 
   @override
   Future<DataResult<List<TransactionModel>>> getAllTransactions() async {
+    ////Lógica de leitura de dados
+
     return DataResult.success(GenerateTransactionList().transactions);
   }
 
@@ -68,8 +57,8 @@ class TransactionRepositoryImpl implements TransactionRepository {
   Future<DataResult<List<TransactionModel>>> getTransactionsByDateRange(
       {required DateTime startDate, required DateTime endDate}) async {
     try {
-      log(startDate.toText);
-      log(endDate.toText);
+      ////Lógica de leitura de dados com filtro
+
       var data = GenerateTransactionList()
           .transactions
           .where((transaction) =>
@@ -88,8 +77,25 @@ class TransactionRepositoryImpl implements TransactionRepository {
   @override
   Future<DataResult<BalancesModel>> getBalances() async {
     try {
+      ////Lógica de leitura de dados
+      double totalIncome = 0;
+      double totalOutcome = 0;
+      double totalBalance = 0;
+
+      for (TransactionModel transaction
+          in GenerateTransactionList().transactions) {
+        totalBalance += transaction.value;
+        if (transaction.value < 0) {
+          totalOutcome += transaction.value;
+        } else {
+          totalIncome += transaction.value;
+        }
+      }
+
       return DataResult.success(BalancesModel(
-          totalIncome: 500.00, totalOutcome: 200.00, totalBalance: 1300.00));
+          totalIncome: totalIncome,
+          totalOutcome: totalOutcome,
+          totalBalance: totalBalance));
     } catch (e) {
       rethrow;
     }
@@ -99,6 +105,7 @@ class TransactionRepositoryImpl implements TransactionRepository {
   Future<DataResult<BalancesModel>> getBalancesByDateRange(
       {required DateTime startDate, required DateTime endDate}) async {
     try {
+      ////Lógica de leitura com filtro
       double totalIncome = 0;
       double totalOutcome = 0;
       double totalBalance = 0;
@@ -130,10 +137,28 @@ class TransactionRepositoryImpl implements TransactionRepository {
   }
 
   @override
-  Future<BalancesModel> updateBalances({required BalancesModel balance}) async {
+  Future<DataResult<BalancesModel>> updateBalances(
+      {required BalancesModel balance}) async {
     try {
-      return BalancesModel(
-          totalIncome: 100.00, totalOutcome: 100.00, totalBalance: 2300.00);
+      ////Lógica de atualização de dados
+      double totalIncome = 0;
+      double totalOutcome = 0;
+      double totalBalance = 0;
+
+      for (TransactionModel transaction
+          in GenerateTransactionList().transactions) {
+        totalBalance += transaction.value;
+        if (transaction.value < 0) {
+          totalOutcome += transaction.value;
+        } else {
+          totalIncome += transaction.value;
+        }
+      }
+
+      return DataResult.success(BalancesModel(
+          totalIncome: totalIncome,
+          totalOutcome: totalOutcome,
+          totalBalance: totalBalance));
     } catch (e) {
       rethrow;
     }

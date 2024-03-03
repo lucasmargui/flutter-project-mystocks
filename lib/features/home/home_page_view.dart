@@ -4,11 +4,14 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import '../../common/constants/constants.dart';
+import '../../common/features/balance/balance.dart';
+import '../../common/features/transaction/transaction.dart';
 import '../../common/widgets/widgets.dart';
+import '../../locator/locator.dart';
 import '../profile/profile.dart';
 import '../stats/stats.dart';
 import '../wallet/wallet.dart';
-import 'home_page.dart';
+import 'home.dart';
 
 class HomePageView extends StatefulWidget {
   const HomePageView({super.key});
@@ -19,6 +22,10 @@ class HomePageView extends StatefulWidget {
 
 class _HomePageViewState extends State<HomePageView> {
   final pageController = PageController();
+  final homeController = locator.get<HomeController>();
+  final walletController = locator.get<WalletController>();
+  final balanceController = locator.get<BalanceController>();
+  final statsController = locator.get<StatsController>();
 
   @override
   void initState() {
@@ -30,6 +37,10 @@ class _HomePageViewState extends State<HomePageView> {
 
   @override
   void dispose() {
+    locator.resetLazySingleton<HomeController>();
+    locator.resetLazySingleton<BalanceController>();
+    locator.resetLazySingleton<WalletController>();
+    locator.resetLazySingleton<TransactionController>();
     super.dispose();
   }
 
@@ -48,7 +59,29 @@ class _HomePageViewState extends State<HomePageView> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          final result = await Navigator.pushNamed(context, '/transaction');
+          log(pageController.page.toString());
+          // if (result != null) {
+          //   int page = homeController.pageController.page!.toInt();
+          //   switch (page) {
+          //     case 0:
+
+          //       // homeController.getAllTransactions();
+          //       break;
+          //     case 1:
+
+          //       // statsController.getTrasactionsByPeriod();
+          //       break;
+          //     case 2:
+
+          //       // walletController.getTransactionsByDateRange();
+          //       break;
+          //   }
+
+          //   balanceController.getBalances();
+          // }
+        },
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
