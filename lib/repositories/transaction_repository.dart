@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:mystock_app/common/data/data.dart';
 
 import '../common/models/models.dart';
+import 'extensions.dart/generate_random_number.dart';
 
 abstract class TransactionRepository {
   Future<TransactionModel> addTransaction({
@@ -76,7 +79,7 @@ class TransactionRepositoryImpl implements TransactionRepository {
       TransactionModel(
         category: 'Income',
         description: "Bar",
-        value: 500,
+        value: GenerateRandomNumber.generate(),
         date:
             DateTime.now().add(const Duration(days: 5)).millisecondsSinceEpoch,
         status: true,
@@ -86,7 +89,7 @@ class TransactionRepositoryImpl implements TransactionRepository {
       TransactionModel(
         category: 'Expense',
         description: "VideoGame",
-        value: -200,
+        value: GenerateRandomNumber.generate(),
         date:
             DateTime.now().add(const Duration(days: 7)).millisecondsSinceEpoch,
         status: true,
@@ -96,7 +99,7 @@ class TransactionRepositoryImpl implements TransactionRepository {
       TransactionModel(
         category: 'Income',
         description: "Site",
-        value: 150.52,
+        value: GenerateRandomNumber.generate(),
         date:
             DateTime.now().add(const Duration(days: 24)).millisecondsSinceEpoch,
         status: true,
@@ -106,7 +109,37 @@ class TransactionRepositoryImpl implements TransactionRepository {
       TransactionModel(
         category: 'Income',
         description: "Cartão",
-        value: 325.45,
+        value: GenerateRandomNumber.generate(),
+        date:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+      ),
+      TransactionModel(
+        category: 'Expense',
+        description: "Cartão",
+        value: GenerateRandomNumber.generate(),
+        date:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+      ),
+      TransactionModel(
+        category: 'Income',
+        description: "Cartão",
+        value: GenerateRandomNumber.generate(),
+        date:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+        status: true,
+        createdAt:
+            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
+      ),
+      TransactionModel(
+        category: 'Expense',
+        description: "Cartão",
+        value: GenerateRandomNumber.generate(),
         date:
             DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
         status: true,
