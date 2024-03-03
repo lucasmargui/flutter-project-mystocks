@@ -50,14 +50,16 @@ class WalletController extends ChangeNotifier {
     _changeState(WalletStateLoading());
 
     final result = await transactionRepository.getTransactionsByDateRange(
-        startDate: DateTime(_selectedDate.year, _selectedDate.month, 0),
-        endDate: DateTime(_selectedDate.year, _selectedDate.month + 1, 0));
+      startDate: DateTime(_selectedDate.year, _selectedDate.month, 0),
+      endDate: DateTime(_selectedDate.year, _selectedDate.month + 1, 0),
+    );
 
     result.fold(
       (error) => _changeState(WalletStateError(message: error.message)),
       (data) {
         log(data.toString());
         _transactions = data;
+
         _changeState(WalletStateSuccess());
       },
     );

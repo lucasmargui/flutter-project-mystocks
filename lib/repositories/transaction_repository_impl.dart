@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:mystock_app/common/data/data.dart';
 import 'package:mystock_app/common/extensions/extensions.dart';
+import 'package:mystock_app/repositories/transaction_repository_list.dart';
 
 import '../common/models/models.dart';
 import 'extensions.dart/generate_random_number.dart';
@@ -60,176 +61,17 @@ class TransactionRepositoryImpl implements TransactionRepository {
 
   @override
   Future<DataResult<List<TransactionModel>>> getAllTransactions() async {
-    final List<TransactionModel> list = [
-      TransactionModel(
-        category: 'Other',
-        description: "Bar",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 5)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 5)).millisecondsSinceEpoch,
-      ),
-      TransactionModel(
-        category: 'Other',
-        description: "VideoGame",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 7)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 7)).millisecondsSinceEpoch,
-      ),
-      TransactionModel(
-        category: 'Other',
-        description: "Site",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 24)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 24)).millisecondsSinceEpoch,
-      ),
-      TransactionModel(
-        category: 'Other',
-        description: "Cartão",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-      ),
-      TransactionModel(
-        category: 'Other',
-        description: "Cartão",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-      ),
-      TransactionModel(
-        category: 'Other',
-        description: "Cartão",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-      ),
-      TransactionModel(
-        category: 'Other',
-        description: "Cartão",
-        value: GenerateRandomNumber.generate(),
-        date:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-        status: true,
-        createdAt:
-            DateTime.now().add(const Duration(days: 36)).millisecondsSinceEpoch,
-      ),
-    ];
-
-    return DataResult.success(list);
+    return DataResult.success(GenerateTransactionList().transactions);
   }
 
   @override
   Future<DataResult<List<TransactionModel>>> getTransactionsByDateRange(
       {required DateTime startDate, required DateTime endDate}) async {
     try {
-      final List<TransactionModel> list = [
-        TransactionModel(
-          category: 'Other',
-          description: "Bar",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .subtract(const Duration(days: 5))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .subtract(const Duration(days: 5))
-              .millisecondsSinceEpoch,
-        ),
-        TransactionModel(
-          category: 'Other',
-          description: "VideoGame",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .subtract(const Duration(days: 7))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .subtract(const Duration(days: 7))
-              .millisecondsSinceEpoch,
-        ),
-        TransactionModel(
-          category: 'Other',
-          description: "Site",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .subtract(const Duration(days: 13))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .subtract(const Duration(days: 13))
-              .millisecondsSinceEpoch,
-        ),
-        TransactionModel(
-          category: 'Other',
-          description: "Cartão",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .add(const Duration(days: 7))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .add(const Duration(days: 7))
-              .millisecondsSinceEpoch,
-        ),
-        TransactionModel(
-          category: 'Other',
-          description: "Cartão",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .add(const Duration(days: 9))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .add(const Duration(days: 9))
-              .millisecondsSinceEpoch,
-        ),
-        TransactionModel(
-          category: 'Other',
-          description: "Cartão",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .add(const Duration(days: 15))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .add(const Duration(days: 18))
-              .millisecondsSinceEpoch,
-        ),
-        TransactionModel(
-          category: 'Other',
-          description: "Cartão",
-          value: GenerateRandomNumber.generate(),
-          date: DateTime.now()
-              .add(const Duration(days: 25))
-              .millisecondsSinceEpoch,
-          status: true,
-          createdAt: DateTime.now()
-              .add(const Duration(days: 25))
-              .millisecondsSinceEpoch,
-        ),
-      ];
-
       log(startDate.toText);
       log(endDate.toText);
-      var data = list
+      var data = GenerateTransactionList()
+          .transactions
           .where((transaction) =>
               DateTime.fromMillisecondsSinceEpoch(transaction.date)
                   .isAfter(startDate) &&
@@ -248,6 +90,40 @@ class TransactionRepositoryImpl implements TransactionRepository {
     try {
       return DataResult.success(BalancesModel(
           totalIncome: 500.00, totalOutcome: 200.00, totalBalance: 1300.00));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<DataResult<BalancesModel>> getBalancesByDateRange(
+      {required DateTime startDate, required DateTime endDate}) async {
+    try {
+      double totalIncome = 0;
+      double totalOutcome = 0;
+      double totalBalance = 0;
+      var data = GenerateTransactionList()
+          .transactions
+          .where((transaction) =>
+              DateTime.fromMillisecondsSinceEpoch(transaction.date)
+                  .isAfter(startDate) &&
+              DateTime.fromMillisecondsSinceEpoch(transaction.date)
+                  .isBefore(endDate))
+          .toList();
+
+      for (TransactionModel transaction in data) {
+        totalBalance += transaction.value;
+        if (transaction.value < 0) {
+          totalOutcome += transaction.value;
+        } else {
+          totalIncome += transaction.value;
+        }
+      }
+
+      return DataResult.success(BalancesModel(
+          totalIncome: totalIncome,
+          totalOutcome: totalOutcome,
+          totalBalance: totalBalance));
     } catch (e) {
       rethrow;
     }

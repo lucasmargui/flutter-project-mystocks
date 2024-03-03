@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 
+import '../../../features/wallet/wallet.dart';
+import '../../../locator/locator.dart';
 import '../../../repositories/transaction_repository.dart';
+import '../../../repositories/transaction_repository_list.dart';
 import '../../models/models.dart';
 import 'balance_state.dart';
 
@@ -15,11 +20,15 @@ class BalanceController extends ChangeNotifier {
 
   BalanceState get state => _state;
 
+  DateTime _selectedDate = DateTime.now();
+  DateTime get selectedDate => _selectedDate;
+
   BalancesModel _balances = BalancesModel(
     totalIncome: 0,
     totalOutcome: 0,
     totalBalance: 0,
   );
+
   BalancesModel get balances => _balances;
 
   void _changeState(BalanceState newState) {
@@ -30,27 +39,70 @@ class BalanceController extends ChangeNotifier {
   Future<void> getBalances() async {
     _changeState(BalanceLoadingState());
 
-    //se eu invoco a função estou gerando todos os valores randomicos novamente
-    final result = await transactionRepository.getAllTransactions();
+    // final result = await transactionRepository.getAllTransactions();
+    // double totalIncome = 0;
+    // double totalOutcome = 0;
+    // double totalBalance = 0;
+    // result.fold(
+    //   (error) => _changeState(BalanceErrorState()),
+    //   (data) {
+    //     for (TransactionModel transaction in data) {
+    //       totalBalance += transaction.value;
+    //       if (transaction.value < 0) {
+    //         totalOutcome += transaction.value;
+    //       } else {
+    //         totalIncome += transaction.value;
+    //       }
+    //     }
+
+    //     _balances = BalancesModel(
+    //         totalIncome: totalIncome,
+    //         totalOutcome: totalOutcome,
+    //         totalBalance: totalBalance);
+    //     _changeState(BalanceSuccessState());
+    //   },
+    // );
+
     double totalIncome = 0;
     double totalOutcome = 0;
     double totalBalance = 0;
+
+    for (TransactionModel transaction
+        in GenerateTransactionList().transactions) {
+      totalBalance += transaction.value;
+      if (transaction.value < 0) {
+        totalOutcome += transaction.value;
+      } else {
+        totalIncome += transaction.value;
+      }
+    }
+
+    _balances = BalancesModel(
+        totalIncome: totalIncome,
+        totalOutcome: totalOutcome,
+        totalBalance: totalBalance);
+    _changeState(BalanceSuccessState());
+  }
+
+  void changeSelectedDate(DateTime newDate) {
+    _selectedDate = newDate;
+  }
+
+  Future<void> getBalancesByDateRange() async {
+    _changeState(BalanceLoadingState());
+
+    final result = await transactionRepository.getBalancesByDateRange(
+      startDate: DateTime(_selectedDate.year, _selectedDate.month, 0),
+      endDate: DateTime(_selectedDate.year, _selectedDate.month + 1, 0),
+    );
+
     result.fold(
       (error) => _changeState(BalanceErrorState()),
       (data) {
-        for (TransactionModel transaction in data) {
-          totalBalance += transaction.value;
-          if (transaction.value < 0) {
-            totalOutcome += transaction.value;
-          } else {
-            totalIncome += transaction.value;
-          }
-        }
+        log(data.toString());
 
-        _balances = BalancesModel(
-            totalIncome: totalIncome,
-            totalOutcome: totalOutcome,
-            totalBalance: totalBalance);
+        _balances = data;
+
         _changeState(BalanceSuccessState());
       },
     );

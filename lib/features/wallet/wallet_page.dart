@@ -37,7 +37,7 @@ class _WalletPageState extends State<WalletPage>
     );
 
     _walletController.getTransactionsByDateRange();
-    _balanceController.getBalances();
+    _balanceController.getBalancesByDateRange();
 
     _walletController.addListener(_handleWalletStateChange);
   }
@@ -76,17 +76,23 @@ class _WalletPageState extends State<WalletPage>
 
     _walletController.changeSelectedDate(
         DateTime(selectedDate.year, selectedDate.month - 1));
+    _balanceController.changeSelectedDate(
+        DateTime(selectedDate.year, selectedDate.month - 1));
     _monthsTabController.index = 0;
     _walletController.getTransactionsByDateRange();
+    _balanceController.getBalancesByDateRange();
   }
 
   void _goToNextMonth() {
-    final selectedDate = _walletController.selectedDate;
+    final DateTime selectedDate = _walletController.selectedDate;
 
     _walletController.changeSelectedDate(
         DateTime(selectedDate.year, selectedDate.month + 1));
+    _balanceController.changeSelectedDate(
+        DateTime(selectedDate.year, selectedDate.month + 1));
     _monthsTabController.index = 0;
     _walletController.getTransactionsByDateRange();
+    _balanceController.getBalancesByDateRange();
   }
 
   @override

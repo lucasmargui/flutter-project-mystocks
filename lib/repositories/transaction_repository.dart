@@ -19,5 +19,8 @@ abstract class TransactionRepository {
 
   Future<DataResult<BalancesModel>> getBalances();
 
+  Future<DataResult<BalancesModel>> getBalancesByDateRange(
+      {required DateTime startDate, required DateTime endDate});
+
   Future<BalancesModel> updateBalances({required BalancesModel balance});
 }
