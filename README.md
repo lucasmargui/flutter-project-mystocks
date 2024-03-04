@@ -74,6 +74,12 @@
   <summary>Clique para mostrar detalhes sobre "locator.dart"</summary>
 
 
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1b8478b9-4900-4c77-94bc-69cddb76028d" style="width:90%">
+
+</div>
+
 <div align="center">
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/a40cd655-6878-4383-a2ea-98ad9e0c3bdb" style="width:90%">
 
@@ -103,8 +109,7 @@ Em seguida, há uma função chamada "setupDependencies()" que registra diferent
 
 </div>
 
-HomeController recebe um parâmetro no seu construtor que é TransactionRepository _transactionRepository, significa que ao registrar ele no locator eu posso utilizar novamente o locator para que ele possa me retornar o TransactionRepository que ja foi registrado anteriormente e que me retornará TransactionRepositoryImpl, dessa forma dentro de HomeController posso acessar todas os métodos de TransactionRepositoryImpl
-
+A configuração do HomeController no locator inclui a injeção de dependência do TransactionRepositoryImpl. Isso permite que, ao registrar o HomeController, possamos usar o locator para recuperar o TransactionRepository previamente registrado. Dentro do HomeController, podemos então acessar todos os métodos definidos na implementação do TransactionRepository, ou seja, no TransactionRepositoryImpl.
 
 
 <div align="center">
