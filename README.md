@@ -121,6 +121,44 @@ A configuração do HomeController no locator inclui a injeção de dependência
 
 
 
+## Common
+Contém funcionalidades ou recursos compartilhados que são utilizados em diferentes partes do projeto. Evitando a duplicação de código e centralizando funcionalidades que são frequentemente usadas em várias partes da aplicação.
+
+### constants
+Contém arquivos ou módulos que definem constantes ou valores fixos que são usados em diferentes partes do código. Essas constantes podem incluir valores como configurações, chaves de API, URLs, mensagens de erro, códigos de status HTTP e outras informações que são utilizadas em várias partes do sistema.
+
+### data
+Diretório que contém um arquivo responsável por personalizar as exceções. Nesse diretório, você pode encontrar arquivos que definem classes de exceção personalizadas, lidam com o tratamento de exceções de maneira específica para o projeto ou fornecem funções para lidar com erros de forma mais granular.
+
+### extensions
+Contém extensões ou complementos adicionais para o projeto principal. Essas extensões podem incluir funcionalidades adicionais, módulos específicos, plugins ou qualquer outro tipo de código que estenda ou aprimore o projeto principal de alguma forma.
+
+### features
+ São armazenados os arquivos relacionados a funcionalidades específicas do sistema ou aplicação. Essas funcionalidades podem ser agrupadas em pastas ou módulos dentro do diretório "features", facilitando a organização e manutenção do código. Por serem funcionalidades que são utilizadas em diferentes partes do projeto são incluídas em commons
+
+### models
+São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
+
+### utils
+
+Contém arquivos e módulos com funções auxiliares ou utilitárias que são utilizadas em diferentes partes do projeto. Essas funções podem incluir:
+
+### widgets
+
+Contém componentes ou elementos de interface do usuário (UI) que são compartilhados e reutilizados em várias partes do projeto. Esses widgets podem incluir botões, campos de entrada, barras de progresso, ou qualquer outro elemento de interface que seja comum e utilizado em diferentes partes da aplicação.
+
+## features
+
+## repositories
+
+## services
+
+## themes
+
+
+
+
+
 
 
 
