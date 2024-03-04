@@ -6,7 +6,7 @@ import '../../features/splash/splash.dart';
 
 import '../../common/extensions/extensions.dart';
 import '../../common/widgets/widgets.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

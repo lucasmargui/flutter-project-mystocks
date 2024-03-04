@@ -7,7 +7,7 @@ import '../../common/constants/constants.dart';
 import '../../common/features/balance/balance.dart';
 import '../../common/features/transaction/transaction.dart';
 import '../../common/widgets/widgets.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 import '../profile/profile.dart';
 import '../stats/stats.dart';
 import '../wallet/wallet.dart';

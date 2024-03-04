@@ -4,7 +4,7 @@ import 'package:mystock_app/common/extensions/extensions.dart';
 
 import '../../common/constants/constants.dart';
 import '../../common/widgets/widgets.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 import 'stats_controller.dart';
 import 'stats_state.dart';
 

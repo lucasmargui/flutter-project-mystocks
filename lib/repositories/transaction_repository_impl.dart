@@ -1,11 +1,6 @@
-import 'dart:developer';
-
 import 'package:mystock_app/common/data/data.dart';
-import 'package:mystock_app/common/extensions/extensions.dart';
 import 'package:mystock_app/repositories/transaction_repository_list.dart';
-
 import '../common/models/models.dart';
-import 'extensions.dart/generate_random_number.dart';
 import 'transaction_repository.dart';
 
 class TransactionRepositoryImpl implements TransactionRepository {

@@ -5,7 +5,7 @@ import '../../common/constants/constants.dart';
 import '../../common/extensions/extensions.dart';
 import '../../common/features/balance/balance.dart';
 import '../../common/widgets/widgets.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 import '../home/home_controller.dart';
 import 'wallet_controller.dart';
 import 'wallet_state.dart';

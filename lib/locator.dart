@@ -1,20 +1,18 @@
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
-import '../../features/home/home_controller.dart';
-import '../../features/sign_in/sign_in_controller.dart';
-import '../../features/splash/splash_controller.dart';
-import '../../repositories/transaction_repository.dart';
-
-import '../common/features/balance/balance.dart';
-import '../common/features/transaction/transaction.dart';
-import '../features/profile/profile.dart';
-import '../features/sign_up/sign_up_controller.dart';
-import '../features/stats/stats_controller.dart';
-import '../features/wallet/wallet_controller.dart';
-import '../repositories/transaction_repository_impl.dart';
-import '../services/services.dart';
-import '../services/user_data_service/user_data_service.dart';
+import '../features/home/home.dart';
+import '../features/sign_in/sign_in.dart';
+import '../features/splash/splash.dart';
+import 'common/features/balance/balance.dart';
+import 'common/features/transaction/transaction.dart';
+import 'features/profile/profile.dart';
+import 'features/sign_up/sign_up.dart';
+import 'features/stats/stats.dart';
+import 'features/wallet/wallet.dart';
+import 'repositories/repositories.dart';
+import 'services/services.dart';
+import 'services/user_data_service/user_data_service.dart';
 
 final locator = GetIt.instance;
 

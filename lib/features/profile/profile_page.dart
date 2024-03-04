@@ -4,7 +4,7 @@ import 'package:mystock_app/common/extensions/extensions.dart';
 import '../../common/constants/constants.dart';
 import '../../common/widgets/widgets.dart';
 import '../../doc/agreements/agreements.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 import '../../services/services.dart';
 import 'profile_controller.dart';
 import 'profile_state.dart';

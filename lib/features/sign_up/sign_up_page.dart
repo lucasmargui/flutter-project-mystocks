@@ -7,7 +7,7 @@ import '../../common/utils/utils.dart';
 import '../../common/widgets/widgets.dart';
 import '../../features/sign_up/sign_up.dart';
 import '../../common/constants/constants.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);

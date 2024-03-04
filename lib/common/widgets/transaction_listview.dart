@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:mystock_app/common/extensions/extensions.dart';
 
-import '../../locator/locator.dart';
+import '../../locator.dart';
 import '../constants/constants.dart';
 import '../features/balance/balance.dart';
 import '../features/transaction/transaction.dart';

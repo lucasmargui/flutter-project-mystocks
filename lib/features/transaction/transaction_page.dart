@@ -10,7 +10,7 @@ import '../../common/features/transaction/transaction.dart';
 import '../../common/models/models.dart';
 import '../../common/utils/utils.dart';
 import '../../common/widgets/widgets.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 
 class TransactionPage extends StatefulWidget {
   final TransactionModel? transaction;

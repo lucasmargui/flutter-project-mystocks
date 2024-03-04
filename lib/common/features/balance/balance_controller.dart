@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 
 import '../../../features/wallet/wallet.dart';
-import '../../../locator/locator.dart';
+import '../../../locator.dart';
 import '../../../repositories/transaction_repository.dart';
 import '../../../repositories/transaction_repository_list.dart';
 import '../../models/models.dart';

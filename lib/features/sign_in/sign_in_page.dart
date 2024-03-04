@@ -9,7 +9,7 @@ import '../../features/sign_in/sign_in.dart';
 import '../../common/constants/constants.dart';
 import '../../common/utils/utils.dart';
 import '../../common/widgets/widgets.dart';
-import '../../locator/locator.dart';
+import '../../locator.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
