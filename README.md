@@ -64,12 +64,14 @@
 </div>
 
 
-Cada rota nomeada é mapeada para um widget correspondente, como OnboardingPage, SplashPage, SignUpPage, etc. O aplicativo usa rotas nomeadas para navegar entre diferentes telas ou páginas. Além disso, a rota "transaction" recebe argumentos, que são usados para passar informações adicionais para a página TransactionPage. Esse argumento passado é para identificar se uma transaction foi passada, se sim significa que estamos editando uma transaction da lista "GenerateTransactionList.transactions" se não, então está sendo adicionado uma nova transaction a lista "GenerateTransactionList.transactions".
+ Cada rota nomeada é mapeada para um widget correspondente, como OnboardingPage, SplashPage, SignUpPage, etc. O aplicativo usa rotas nomeadas para navegar entre diferentes telas ou páginas. Além disso, a rota "transaction" recebe argumentos, que são usados para passar informações adicionais para a página TransactionPage. Esse argumento passado é para identificar se uma transaction foi passada, se sim significa que estamos editando uma transaction da lista "GenerateTransactionList.transactions" se não, está sendo adicionado uma nova transaction a lista "GenerateTransactionList.transactions".
 
 </details>
 
 ## locator.dart
 
+<details>
+  <summary>Clique para mostrar detalhes sobre "locator.dart"</summary>
 
 
 <div align="center">
@@ -86,6 +88,31 @@ Cada rota nomeada é mapeada para um widget correspondente, como OnboardingPage,
 Configura e inicializa um gerenciador de dependências utilizando a biblioteca GetIt. Ele define um objeto chamado "locator" como uma instância do GetIt.
 
 Em seguida, há uma função chamada "setupDependencies()" que registra diferentes tipos de serviços e controladores no "locator" e é chamada na inicialização de main.dart:
+
+- AuthService é registrado como um singleton preguiçoso (lazy singleton) usando registerLazySingleton. Isso significa que uma única instância de AuthService será criada e compartilhada sempre que necessário.
+
+- SecureStorageService, UserDataService, SplashController, SignInController, SignUpController, TransactionRepository, HomeController e BalanceController são registrados como fábricas (factories) usando registerFactory. Isso significa que uma nova instância será criada sempre que uma dessas dependências for solicitada.
+
+- Algumas dependências, como UserDataService e HomeController, recebem parâmetros em seus construtores, que são resolvidos pelo GetIt usando outras dependências registradas anteriormente.
+
+
+
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/02cca10f-17e5-4909-b4b0-5f0122e63269" style="width:90%">
+
+</div>
+
+HomeController recebe um parâmetro no seu construtor que é TransactionRepository _transactionRepository, significa que ao registrar ele no locator eu posso utilizar novamente o locator para que ele possa me retornar o TransactionRepository que ja foi registrado anteriormente e que me retornará TransactionRepositoryImpl, dessa forma dentro de HomeController posso acessar todas os métodos de TransactionRepositoryImpl
+
+
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/3f65a7e7-1808-4bde-9a6c-823ad07b3c97" style="width:90%">
+
+</div>
+
+</details>
 
 
 
