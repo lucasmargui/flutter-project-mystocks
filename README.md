@@ -127,11 +127,51 @@ Contém funcionalidades ou recursos compartilhados que são utilizados em difere
 ### constants
 Contém arquivos ou módulos que definem constantes ou valores fixos que são usados em diferentes partes do código. Essas constantes podem incluir valores como configurações, chaves de API, URLs, mensagens de erro, códigos de status HTTP e outras informações que são utilizadas em várias partes do sistema.
 
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/34ddbbc0-2bdd-4375-8172-5234927ba702" style="width:90%">
+</div>
+
+- app_colors.dart : Define uma classe chamada AppColors que contém várias constantes de cores usadas em um aplicativo.
+- app_text_styles.dart : Define uma classe chamada AppTextStyles que contém várias constantes de estilos de texto usadas em um aplicativo.
+- date.dart: Define  métodos de acesso a constantes relacionadas ao tempo 
+- keys.dart: Define uma classe chamada Keys que contém constantes estáticas representando chaves usadas para testes de widgets em um aplicativo Flutter. 
+- routes.dart : Define uma classe chamada NamedRoute. Essa classe define rotas nomeadas 
+- constants.dart : um conjunto de declarações de exportação em um arquivo Dart
+
+
 ### data
 Diretório que contém um arquivo responsável por personalizar as exceções. Nesse diretório, você pode encontrar arquivos que definem classes de exceção personalizadas, lidam com o tratamento de exceções de maneira específica para o projeto ou fornecem funções para lidar com erros de forma mais granular.
 
+- data_result.dart: define uma classe abstrata simples "DataResult" e suas duas implementações "_SuccessResult" e "_FailureResult". Usado para lidar com resultados que podem ser bem-sucedidos ou representar uma falha, e ele fornece uma maneira conveniente de trabalhar com esses resultados usando o método fold.
+
+ <div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/7f062c07-a2f2-46cf-91ef-2367edd5d380" style="width:60%">
+</div>
+
+- exceptions.dart: define uma hierarquia de exceções personalizadas
+- data : um conjunto de declarações de exportação em um arquivo Dart
+
 ### extensions
 Contém extensões ou complementos adicionais para o projeto principal. Essas extensões podem incluir funcionalidades adicionais, módulos específicos, plugins ou qualquer outro tipo de código que estenda ou aprimore o projeto principal de alguma forma.
+
+
+ <div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/e2dc6fa6-d0dd-4395-ad93-5c9d8bbe81df" style="width:60%">
+</div>
+
+
+- date_formatter.dart: Define uma extensão (extension) chamada DateTimeFormatter para a classe DateTime. Isso significa que todas as instâncias de DateTime terão acesso aos métodos definidos nessa extensão sem precisar modificar a classe DateTime original.
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f874225b-4686-4cf0-a4e7-356a65b6b7c3" style="width:60%">
+</div>
+
+
+- page_controller_ext.dart: Define uma extensão para a classe PageController e uma enumeração chamada BottomAppBarItem destinada a uma barra de navegação na parte inferior (bottom navigation bar).
+- sizes.dart: Define uma classe Sizes que é responsável por ajudar na adaptação de tamanhos e layouts em diferentes dispositivos móveis e também define uma extensão para o tipo num (inteiros e doubles) que adiciona duas propriedades, w e h, para facilitar o cálculo e a adaptação de tamanhos em relação ao tamanho do dispositivo.
+- types_ext: A primeira extensão é chamada de BoolExt e estende a classe bool. Ela adiciona um método chamado toInt(), que converte um valor booleano em um inteiro. Se o valor booleano for verdadeiro, o método retorna 1; caso contrário, retorna 0. A segunda extensão é chamada de StringExt e estende a classe String. Ela adiciona três métodos:
+- extensions : um conjunto de declarações de exportação em um arquivo Dart
+
 
 ### features
  São armazenados os arquivos relacionados a funcionalidades específicas do sistema ou aplicação. Essas funcionalidades podem ser agrupadas em pastas ou módulos dentro do diretório "features", facilitando a organização e manutenção do código. Por serem funcionalidades que são utilizadas em diferentes partes do projeto são incluídas em commons
