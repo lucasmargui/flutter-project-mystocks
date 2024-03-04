@@ -99,8 +99,6 @@ class BalanceController extends ChangeNotifier {
     result.fold(
       (error) => _changeState(BalanceErrorState()),
       (data) {
-        log(data.toString());
-
         _balances = data;
 
         _changeState(BalanceSuccessState());

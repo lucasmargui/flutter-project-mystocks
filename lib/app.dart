@@ -5,6 +5,7 @@ import '../../features/onboarding/onboarding_page.dart';
 import '../../features/sign_up/sign_up_page.dart';
 import '../../features/splash/splash_page.dart';
 import 'common/constants/routes.dart';
+import 'common/models/models.dart';
 import 'features/home/home_page_view.dart';
 import 'features/profile/profile_page.dart';
 import 'features/sign_in/sign_in_page.dart';
@@ -29,8 +30,13 @@ class App extends StatelessWidget {
         NamedRoute.home: (context) => const HomePageView(),
         NamedRoute.profile: (context) => const ProfilePage(),
         NamedRoute.stats: (context) => const StatsPage(),
-        NamedRoute.transaction: (context) => const TransactionPage(),
         NamedRoute.wallet: (context) => const WalletPage(),
+        NamedRoute.transaction: (context) {
+          final args = ModalRoute.of(context)?.settings.arguments;
+          return TransactionPage(
+            transaction: args != null ? args as TransactionModel : null,
+          );
+        },
       },
     );
   }

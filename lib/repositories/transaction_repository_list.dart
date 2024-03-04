@@ -13,6 +13,7 @@ class GenerateTransactionList {
 
   List<TransactionModel> transactions = [
     TransactionModel(
+      id: "1",
       category: 'Other',
       description: "Bar",
       value: GenerateRandomNumber.generate(),
@@ -25,6 +26,7 @@ class GenerateTransactionList {
           .millisecondsSinceEpoch,
     ),
     TransactionModel(
+      id: "2",
       category: 'Other',
       description: "VideoGame",
       value: GenerateRandomNumber.generate(),
@@ -37,6 +39,7 @@ class GenerateTransactionList {
           .millisecondsSinceEpoch,
     ),
     TransactionModel(
+      id: "3",
       category: 'Other',
       description: "Site",
       value: GenerateRandomNumber.generate(),
@@ -49,6 +52,7 @@ class GenerateTransactionList {
           .millisecondsSinceEpoch,
     ),
     TransactionModel(
+      id: "4",
       category: 'Other',
       description: "Cartão",
       value: GenerateRandomNumber.generate(),
@@ -58,6 +62,7 @@ class GenerateTransactionList {
           DateTime.now().add(const Duration(days: 7)).millisecondsSinceEpoch,
     ),
     TransactionModel(
+      id: "5",
       category: 'Other',
       description: "Cartão",
       value: GenerateRandomNumber.generate(),
@@ -67,6 +72,7 @@ class GenerateTransactionList {
           DateTime.now().add(const Duration(days: 9)).millisecondsSinceEpoch,
     ),
     TransactionModel(
+      id: "6",
       category: 'Other',
       description: "Cartão",
       value: GenerateRandomNumber.generate(),
@@ -76,6 +82,7 @@ class GenerateTransactionList {
           DateTime.now().add(const Duration(days: 18)).millisecondsSinceEpoch,
     ),
     TransactionModel(
+      id: "7",
       category: 'Other',
       description: "Cartão",
       value: GenerateRandomNumber.generate(),

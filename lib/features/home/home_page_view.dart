@@ -61,26 +61,22 @@ class _HomePageViewState extends State<HomePageView> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final result = await Navigator.pushNamed(context, '/transaction');
-          log(pageController.page.toString());
-          // if (result != null) {
-          //   int page = homeController.pageController.page!.toInt();
-          //   switch (page) {
-          //     case 0:
 
-          //       // homeController.getAllTransactions();
-          //       break;
-          //     case 1:
+          if (result != null) {
+            switch (pageController.page!.toInt()) {
+              case 0:
+                homeController.getAllTransactions();
+                break;
+              case 1:
+                statsController.getTrasactionsByPeriod();
+                break;
+              case 2:
+                walletController.getTransactionsByDateRange();
+                break;
+            }
 
-          //       // statsController.getTrasactionsByPeriod();
-          //       break;
-          //     case 2:
-
-          //       // walletController.getTransactionsByDateRange();
-          //       break;
-          //   }
-
-          //   balanceController.getBalances();
-          // }
+            balanceController.getBalances();
+          }
         },
         child: const Icon(Icons.add),
       ),

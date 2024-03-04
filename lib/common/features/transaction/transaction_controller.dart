@@ -45,11 +45,7 @@ class TransactionController extends ChangeNotifier {
     result.fold(
       (error) => _changeState(TransactionErrorState(message: error.message)),
       (data) {
-        log(GenerateTransactionList().transactions.length.toString());
-
         GenerateTransactionList().transactions.add(data);
-
-        log(GenerateTransactionList().transactions.length.toString());
 
         _changeState(TransactionSuccessState());
       },
@@ -63,9 +59,14 @@ class TransactionController extends ChangeNotifier {
     result.fold(
       (error) => _changeState(TransactionErrorState(message: error.message)),
       (data) {
-        log(GenerateTransactionList().transactions.length.toString());
-
-        log(GenerateTransactionList().transactions.length.toString());
+        GenerateTransactionList()
+            .transactions
+            .asMap()
+            .forEach((index, transactionOld) {
+          if (transactionOld.id == transaction.id) {
+            GenerateTransactionList().transactions[index] = transaction;
+          }
+        });
 
         _changeState(TransactionSuccessState());
       },
@@ -76,7 +77,14 @@ class TransactionController extends ChangeNotifier {
     _changeState(TransactionLoadingState());
     final result =
         await transactionRepository.deleteTransaction(transaction: transaction);
+    result.fold(
+      (error) => _changeState(TransactionErrorState(message: error.message)),
+      (data) {
+        GenerateTransactionList().transactions.removeWhere(
+            (transactionDelete) => transactionDelete.id == transaction.id);
 
-    _changeState(TransactionSuccessState());
+        _changeState(TransactionSuccessState());
+      },
+    );
   }
 }
