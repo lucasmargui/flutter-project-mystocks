@@ -176,6 +176,32 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 ### features
  São armazenados os arquivos relacionados a funcionalidades específicas do sistema ou aplicação. Essas funcionalidades podem ser agrupadas em pastas ou módulos dentro do diretório "features", facilitando a organização e manutenção do código. Por serem funcionalidades que são utilizadas em diferentes partes do projeto são incluídas em commons
 
+#### balance
+- balance_controller.dart: Encapsula uma classe denominada "BalanceController", a qual tem a responsabilidade de controlar o estado dos saldos financeiros em diversas partes da aplicação. Especificamente, esta classe abrange a lógica para a obtenção, cálculo e atualização desses saldos, os quais são baseados nas transações presentes na instância da classe "GenerateTransactionList().transactions". Esta última serve como uma simulação de um repositório de dados. No construtor da classe "BalanceController", é especificado um parâmetro "TransactionRepository transactionRepository", o qual é registrado por meio do "locator". Ao se utilizar o "locator" para recuperar uma instância de "BalanceController", o objeto registrado em "locator.dart" com "TransactionRepository" será retornado.
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f0c4187c-2dc6-4bd9-82db-1c395b848bde" style="width:45%">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/e95d7bdc-d8aa-439b-a4c8-81d6cdcce893" style="width:45%">
+</div>
+
+
+
+
+
+
+
+
+<div align="center">
+<h3> Fluxo para acessar métodos através do controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd429985-95dd-4fed-8eb3-7c436e58feb4" style="width:100%">
+</div>
+
+  
+- ballance_state.dart
+- balance : um conjunto de declarações de exportação em um arquivo Dart
+
+#### transaction
+
 ### models
 São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
 
