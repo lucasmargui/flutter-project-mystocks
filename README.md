@@ -396,8 +396,11 @@ Página inicial da aplicação, onde os principais recursos e funcionalidades s�
 </div><br>
 
 
+- home_page.state: Classes que permitem modelar diferentes estados
 
+- home.dart : um conjunto de declarações de exportação em um arquivo Dart
 
+  
 
 
 
@@ -406,13 +409,35 @@ Página inicial da aplicação, onde os principais recursos e funcionalidades s�
 
 Página de introdução ou tutorial para novos usuários, fornecendo informações sobre como usar a aplicação e seus recursos.
 
+- onboarding_page.dart : Define a estrutura e o conteúdo básico de uma página de onboarding em um aplicativo.
+  
+- onboarding.dart : um conjunto de declarações de exportação em um arquivo Dart. 
+
+
 ### profile:
 
 Página onde os usuários podem visualizar e editar suas informações pessoais e realizar logout.
 
+- profile_controller.dart : Define o "controller" de perfil responsável por gerenciar o estado e as operações relacionadas ao perfil do usuário, como obter dados do usuário, atualizar o nome de usuário, atualizar a senha e excluir a conta.
+
+- profile_page.dart : A ProfilePage estabelece comunicação com controladores ProfileController, para a obtenção de dados do usuário. Essa comunicação ocorre por meio da invocação dos métodos _homeController.getUserData() durante a fase de inicialização (initState).
+
+
+  <div align="center">
+    <h3> Controllers </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/03a681f6-5b2b-455e-a02a-48dbae1b091b" style="width:100%">
+</div><br>
+
+- profile_state.state: Classes que permitem modelar diferentes estados
+
+
 ### sign_in: 
 
 Página de login onde os usuários inserem suas credenciais para acessar a aplicação.
+
+sign_in_controller.dart : Estrutura básica para gerenciar o estado e a lógica por trás da tela de login em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de autenticação do usuário.
+sign_in_page.dart :
+sign_in.dart : 
 
 ### sign_up: 
 
