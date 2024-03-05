@@ -516,6 +516,15 @@ Página onde são exibidas estatísticas, gráficos ou dados relevantes para o u
 
 Página onde os usuários podem visualizar e gerenciar suas transações financeiras, como pagamentos, transferências, depósitos, etc.
 
+- transaction_page.dart: Fornece uma interface para que os usuários adicionem ou editem transações financeiras, com validação de entrada de dados e manipulação de diferentes estados e eventos
+
+<div align="center">
+    <h3> Controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/471a6faf-d20d-4122-ae05-62ea001e4234" style="width:100%">
+</div><br>
+
+- transaction_state: Classes que permitem modelar diferentes estados
+
 ### wallet: 
 
 Página onde os usuários podem visualizar o saldo da sua carteira digital.
