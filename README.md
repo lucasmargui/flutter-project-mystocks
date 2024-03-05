@@ -39,6 +39,7 @@
 <hr>
 
 - WidgetsFlutterBinding.ensureInitialized() : Este método garante que os widgets do Flutter estejam inicializados antes de qualquer outra operação. É uma etapa importante, especialmente quando se trabalha com APIs assíncronas, como Firebase.
+  
 - setupDependencies() : Esta função é chamada para configurar as dependências do aplicativo. Isso pode incluir a configuração de serviços, instanciando objetos ou qualquer outra inicialização necessária antes de iniciar o aplicativo.Neste caso estamos inicializando os controllers,services e repositories registrados através do pacote instalado getIt, podendo acessar essas classes e suas propriedades de qualquer parte da aplicação
   
 </details>
@@ -124,23 +125,40 @@ A configuração do HomeController no locator inclui a injeção de dependência
 ## Common
 Contém funcionalidades ou recursos compartilhados que são utilizados em diferentes partes do projeto. Evitando a duplicação de código e centralizando funcionalidades que são frequentemente usadas em várias partes da aplicação.
 
+
+<details>
+  <summary>Clique para mostrar detalhes sobre common</summary>
+
+
 ### constants
 Contém arquivos ou módulos que definem constantes ou valores fixos que são usados em diferentes partes do código. Essas constantes podem incluir valores como configurações, chaves de API, URLs, mensagens de erro, códigos de status HTTP e outras informações que são utilizadas em várias partes do sistema.
 
-<div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/34ddbbc0-2bdd-4375-8172-5234927ba702" style="width:90%">
-</div>
+
+<details>
+  <summary>Clique para mostrar detalhes sobre constants</summary>
+
 
 - app_colors.dart : Define uma classe chamada AppColors que contém várias constantes de cores usadas em um aplicativo.
+  
 - app_text_styles.dart : Define uma classe chamada AppTextStyles que contém várias constantes de estilos de texto usadas em um aplicativo.
-- date.dart: Define  métodos de acesso a constantes relacionadas ao tempo 
-- keys.dart: Define uma classe chamada Keys que contém constantes estáticas representando chaves usadas para testes de widgets em um aplicativo Flutter. 
-- routes.dart : Define uma classe chamada NamedRoute. Essa classe define rotas nomeadas 
+  
+- date.dart: Define  métodos de acesso a constantes relacionadas ao tempo
+  
+- keys.dart: Define uma classe chamada Keys que contém constantes estáticas representando chaves usadas para testes de widgets em um aplicativo Flutter.
+  
+- routes.dart : Define uma classe chamada NamedRoute. Essa classe define rotas nomeadas
+  
 - constants.dart : um conjunto de declarações de exportação em um arquivo Dart
+
+</details>
 
 
 ### data
 Diretório que contém um arquivo responsável por personalizar as exceções. Nesse diretório, você pode encontrar arquivos que definem classes de exceção personalizadas, lidam com o tratamento de exceções de maneira específica para o projeto ou fornecem funções para lidar com erros de forma mais granular.
+
+<details>
+  <summary>Clique para detalhes sobre data. </summary>
+
 
 - data_result.dart: define uma classe abstrata simples "DataResult" e suas duas implementações "_SuccessResult" e "_FailureResult". Usado para lidar com resultados que podem ser bem-sucedidos ou representar uma falha, e ele fornece uma maneira conveniente de trabalhar com esses resultados usando o método fold.
 
@@ -149,15 +167,16 @@ Diretório que contém um arquivo responsável por personalizar as exceções. N
 </div>
 
 - exceptions.dart: define uma hierarquia de exceções personalizadas
+  
 - data : um conjunto de declarações de exportação em um arquivo Dart
+
+</details>
 
 ### extensions
 Contém extensões ou complementos adicionais para o projeto principal. Essas extensões podem incluir funcionalidades adicionais, módulos específicos, plugins ou qualquer outro tipo de código que estenda ou aprimore o projeto principal de alguma forma.
 
-
- <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/e2dc6fa6-d0dd-4395-ad93-5c9d8bbe81df" style="width:60%">
-</div>
+<details>
+  <summary>Clique para mostrar detalhes sobre extensions. </summary>
 
 
 - date_formatter.dart: Define uma extensão (extension) chamada DateTimeFormatter para a classe DateTime. Isso significa que todas as instâncias de DateTime terão acesso aos métodos definidos nessa extensão sem precisar modificar a classe DateTime original.
@@ -166,27 +185,40 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f874225b-4686-4cf0-a4e7-356a65b6b7c3" style="width:60%">
 </div>
 
-
 - page_controller_ext.dart: Define uma extensão para a classe PageController e uma enumeração chamada BottomAppBarItem destinada a uma barra de navegação na parte inferior (bottom navigation bar).
+  
 - sizes.dart: Define uma classe Sizes que é responsável por ajudar na adaptação de tamanhos e layouts em diferentes dispositivos móveis e também define uma extensão para o tipo num (inteiros e doubles) que adiciona duas propriedades, w e h, para facilitar o cálculo e a adaptação de tamanhos em relação ao tamanho do dispositivo.
+  
 - types_ext: A primeira extensão é chamada de BoolExt e estende a classe bool. Ela adiciona um método chamado toInt(), que converte um valor booleano em um inteiro. Se o valor booleano for verdadeiro, o método retorna 1; caso contrário, retorna 0. A segunda extensão é chamada de StringExt e estende a classe String. Ela adiciona três métodos:
+
 - extensions : um conjunto de declarações de exportação em um arquivo Dart
+
+
+</details>  
 
 
 ### features
  São armazenados os arquivos relacionados a funcionalidades específicas do sistema ou aplicação. Essas funcionalidades podem ser agrupadas em pastas ou módulos dentro do diretório "features", facilitando a organização e manutenção do código. Por serem funcionalidades que são utilizadas em diferentes partes do projeto são incluídas em commons
 
+<details>
+  <summary>Clique para mostrar detalhes sobre features. </summary>
+
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/950461f8-3b2f-4180-a091-ffad181d4be6" style="width:45%">
+
+</div><br>
+
+
 #### balance
+
+
 - balance_controller.dart: Encapsula uma classe denominada "BalanceController", a qual tem a responsabilidade de controlar o estado dos saldos financeiros em diversas partes da aplicação. Especificamente, esta classe abrange a lógica para a obtenção, cálculo e atualização desses saldos, os quais são baseados nas transações presentes na instância da classe "GenerateTransactionList().transactions". Esta última serve como uma simulação de um repositório de dados. No construtor da classe "BalanceController", é especificado um parâmetro "TransactionRepository transactionRepository", o qual é registrado por meio do "locator". Ao se utilizar o "locator" para recuperar uma instância de "BalanceController", o objeto registrado em "locator.dart" com "TransactionRepository" será retornado.
 
 <div align="center">
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f0c4187c-2dc6-4bd9-82db-1c395b848bde" style="width:45%">
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/e95d7bdc-d8aa-439b-a4c8-81d6cdcce893" style="width:45%">
 </div>
-
-
-
-
 
 
 
@@ -203,12 +235,12 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1cac6e6a-3150-41ab-9fad-3c4e47876c4f" style="width:75%">
 </div>
 
-
-
-
 - balance : um conjunto de declarações de exportação em um arquivo Dart
 
+
 #### transaction
+
+
 
 - trasaction_controller.dart : Encapsula uma classe denominada TransactionController onde os estados das transações são gerenciados centralmente e notificam os widgets interessados quando há mudanças. Ele também faz uso de repositórios (TransactionRepository) presentes na instância da classe "GenerateTransactionList().transactions" para interagir com os dados das transações e um serviço de armazenamento seguro (SecureStorageService) para lidar com a segurança dos dados sensíveis.
 
@@ -234,16 +266,104 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 - transaction.dart: um conjunto de declarações de exportação em um arquivo Dart
 
+
+</details>
+
 ### models
 São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
+
+
+<details>
+  <summary>Clique para mostrar detalhes sobre models. </summary>
+
+
+- agreements_model.dart : Define AgreementsModel. Suas propriedades incluem um título (title), um caminho para o ativo (assetPath), e uma rota nomeada (namedRoute).
+  
+- balances_model.dart :  Define BalancesModel e possui três propriedades: totalIncome, totalOutcome e totalBalance, que representam, respectivamente, o total de renda, o total de despesas e o saldo total.
+  
+- transaction_model.dart : Define TransactionModel, e as propriedades utilizadas são description, category, value, date, status, createdAt, id, userId e syncStatus.
+  
+- user_model.dart : Define  UserModel e possui as seguintes propriedades: id, name, email e password.
+   
+- models.dart : um conjunto de declarações de exportação em um arquivo Dart
+
+</details>
 
 ### utils
 
 Contém arquivos e módulos com funções auxiliares ou utilitárias que são utilizadas em diferentes partes do projeto. Essas funções podem incluir:
 
+
+<details>
+  <summary>Clique para mostrar detalhes sobre utils. </summary>
+
+
+- money_mask_controller.dart : Define uma classe chamada MoneyMaskedTextController, que é uma subclasse de TextEditingController. Essa classe é usada para controlar e formatar valores monetários em um campo de texto.
+
+<div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d250f3d2-c76c-4b20-9eea-023264fd96f4" style="width:50%">
+</div>
+
+- uppercase_text_formatter.dart : Esta classe é utilizada para formatar o texto inserido em um campo de entrada de texto para que todas as letras sejam convertidas para maiúsculas.
+  
+ <div align="center">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/3d4ade86-525a-452b-a7c2-74ac24d3b67a" style="width:50%">
+</div>
+
+
+- validator.dart: Define uma classe chamada Validator com métodos estáticos para validar diferentes tipos de entrada, como nome, email, senha e confirmação de senha.
+
+<div align="center">
+    <h3> Validação de formulário </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/24ad355a-21ad-47e9-bcfd-d2325f14c39f" style="width:100%">
+</div>
+
+- utils : um conjunto de declarações de exportação em um arquivo Dart
+
+
+</details>
+
 ### widgets
 
 Contém componentes ou elementos de interface do usuário (UI) que são compartilhados e reutilizados em várias partes do projeto. Esses widgets podem incluir botões, campos de entrada, barras de progresso, ou qualquer outro elemento de interface que seja comum e utilizado em diferentes partes da aplicação.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre widgets. </summary>
+
+- app_header.dart: Um componente que representa o cabeçalho da aplicação, geralmente contendo o logotipo, título e possivelmente botões de navegação.
+
+- base_page.dart: Uma página base que pode ser estendida por outras páginas para fornecer funcionalidades comuns, como a estrutura básica de layout e lógica de navegação.
+
+- custom_bottom_app_bar.dart: Uma barra de navegação inferior personalizada que pode conter ícones, texto e funcionalidades de navegação para diferentes partes da aplicação.
+
+- custom_bottom_sheet.dart: Um componente que exibe um painel inferior personalizado, geralmente usado para apresentar opções de ação adicionais ou informações contextuais.
+
+- custom_circular_progress_indicator.dart: Um indicador de progresso circular personalizado que pode ser usado para indicar carregamento ou processamento em segundo plano.
+
+- custom_snackbar.dart: Um componente personalizado para exibir mensagens temporárias na parte inferior da tela, geralmente usadas para fornecer feedback ao usuário sobre ações realizadas.
+
+- custom_text_form_field.dart: Um campo de formulário de texto personalizado que pode incluir validações, estilos e outras personalizações específicas.
+
+- custom_text_title.dart: Um componente de título de texto personalizado usado para títulos de seções, cabeçalhos de páginas, etc.
+
+- greetings.dart: Um componente que pode ser usado para exibir saudações personalizadas com base em diferentes condições, como a hora do dia ou o estado do usuário.
+
+- multi_text_button.dart: Um botão personalizado que pode exibir múltiplas linhas de texto e possivelmente ícones, usado para ações específicas na aplicação.
+
+- notification_widget.dart: Um componente que exibe notificações ou alertas para o usuário, como mensagens de erro, avisos ou confirmações.
+
+- password_form_field.dart: Um campo de formulário personalizado específico para entrada de senhas, geralmente incluindo funcionalidades de ocultação de texto e validação.
+
+- primary_button.dart: Um botão de destaque primário na aplicação, geralmente usado para ações principais ou de destaque.
+
+- transaction_listview.dart: Um componente que exibe uma lista de transações ou itens, com opções de filtragem, classificação e interações adicionais.
+
+- widgets.dart: Um arquivo de agregação que importa e exporta todos os widgets personalizados disponíveis na aplicação, facilitando o acesso e a utilização em outras partes do projeto.
+
+
+</details>
+
+</details>
 
 ## features
 
