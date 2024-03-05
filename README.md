@@ -196,11 +196,33 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd429985-95dd-4fed-8eb3-7c436e58feb4" style="width:100%">
 </div>
 
-  
-- ballance_state.dart
+- ballance_state.dart: Classes que permitem modelar diferentes estados 
 - balance : um conjunto de declarações de exportação em um arquivo Dart
 
 #### transaction
+
+- trasaction_controller.dart : Encapsula uma classe denominada TransactionController onde os estados das transações são gerenciados centralmente e notificam os widgets interessados quando há mudanças. Ele também faz uso de repositórios (TransactionRepository) presentes na instância da classe "GenerateTransactionList().transactions" para interagir com os dados das transações e um serviço de armazenamento seguro (SecureStorageService) para lidar com a segurança dos dados sensíveis.
+
+
+
+
+
+<div align="center">
+<h3> Fluxo para acessar métodos através do controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/43712960-3df2-48f2-8b5f-526a67ad4412" style="width:100%">
+</div>
+
+
+- transaction_state.dart: Classes que permitem modelar diferentes estados
+
+<div align="center">
+<h3> Fluxo dos estados </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b66d4d0d-4feb-4455-aa28-5dc3d9d5c69d" style="width:100%">
+</div>
+
+
+
+-transaction.dart: um conjunto de declarações de exportação em um arquivo Dart
 
 ### models
 São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
