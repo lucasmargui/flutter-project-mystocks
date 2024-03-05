@@ -428,6 +428,10 @@ Página onde os usuários podem visualizar e editar suas informações pessoais 
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/03a681f6-5b2b-455e-a02a-48dbae1b091b" style="width:100%">
 </div><br>
 
+
+
+
+
 - profile_state.state: Classes que permitem modelar diferentes estados
 
 
@@ -436,12 +440,45 @@ Página onde os usuários podem visualizar e editar suas informações pessoais 
 Página de login onde os usuários inserem suas credenciais para acessar a aplicação.
 
 sign_in_controller.dart : Estrutura básica para gerenciar o estado e a lógica por trás da tela de login em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de autenticação do usuário.
-sign_in_page.dart :
-sign_in.dart : 
+sign_in_page.dart : Uma página de login funcional com validação de entrada, processamento de login e tratamento de estados de carregamento, sucesso e erro. 
+
+
+<div align="center">
+    <h3> Controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/8803aada-9ba7-4379-b38c-4cae2cf1eb6a" style="width:100%">
+</div><br>
+
+Formulário: Form(key: _formKey) define um widget de formulário que pode ser referenciado e manipulado em outras partes do aplicativo, utilizando a chave _formKey para acessar e controlar seu estado. FormState é uma classe que mantém o estado do widget Form. 
+Ele é usado para realizar ações como validar, salvar ou redefinir o estado do formulário.Ao usar _formKey, você pode acessar métodos e propriedades do FormState associado ao widget Form realizando validações de formulário, salvar dados ou redefinir o estado do formulário, entre outras operações.
+
+<div align="center">
+    <h3> Formulário </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
+</div><br>
+
 
 ### sign_up: 
 
 Página de registro onde novos usuários podem criar uma conta na aplicação fornecendo informações como nome, e-mail, senha, etc.
+
+sign_up_controller.dart:  Estrutura básica para gerenciar o estado e a lógica por trás da tela de registro em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de registro do usuário.
+
+
+sign_up_page.dart: Uma página de registro funcional com validação de entrada, processamento de registro e tratamento de estados de carregamento, sucesso e erro. 
+
+<div align="center">
+    <h3> Controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/db469206-3757-445a-8642-2dbdae8395b8" style="width:100%">
+</div><br>
+
+Formulário: Form(key: _formKey) define um widget de formulário que pode ser referenciado e manipulado em outras partes do aplicativo, utilizando a chave _formKey para acessar e controlar seu estado. FormState é uma classe que mantém o estado do widget Form. 
+Ele é usado para realizar ações como validar, salvar ou redefinir o estado do formulário.Ao usar _formKey, você pode acessar métodos e propriedades do FormState associado ao widget Form realizando validações de formulário, salvar dados ou redefinir o estado do formulário, entre outras operações.
+
+<div align="center">
+    <h3> Formulário </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
+</div><br>
+
 
 ### splash: 
 
