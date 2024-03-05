@@ -484,6 +484,7 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
 Página de introdução ou carregamento exibida brevemente ao iniciar a aplicação, geralmente contendo o logotipo e/ou nome da aplicação.
 
 - splash_controller.dart: Estrutura básica para gerenciar o estado e a lógica por trás da tela de carregamento em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de início do aplicativo.
+  
 - splash_page.dart:  Fornece uma página de inicialização  funcional para o aplicativo, dando uma introdução visual e verificando o estado de login do usuário antes de redirecioná-lo para a tela apropriada.
 
 <div align="center">
@@ -500,9 +501,16 @@ Página onde são exibidas estatísticas, gráficos ou dados relevantes para o u
 
 - stats_controller.dart:  Responsável por gerenciar o estado e a lógica por trás das estatísticas em um aplicativo Flutter, oferecendo métodos para calcular e agrupar dados com base em diferentes períodos de tempo. 
   
-- stats_page.dart:
+- stats_page.dart: Estrutura básica para gerenciar o estado e a lógica por trás da tela de estatísticas, abordando os diferentes estados possíveis durante o processo de início do aplicativo.
+
+  <div align="center">
+    <h3> Controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/36ce6047-2b4d-426e-aa2a-1e60e1e0863a" style="width:100%">
+</div><br>
+
+
   
-- stats.state.dart:
+- stats_state.dart: Classes que permitem modelar diferentes estados
 
 ### transaction: 
 
