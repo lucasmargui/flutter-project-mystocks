@@ -216,6 +216,7 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 
 
+
 <div align="center">
 <h3> Fluxo para acessar métodos através do controller </h3>
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/43712960-3df2-48f2-8b5f-526a67ad4412" style="width:100%">
@@ -226,7 +227,7 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 <div align="center">
 <h3> Fluxo dos estados </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b66d4d0d-4feb-4455-aa28-5dc3d9d5c69d" style="width:100%">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2d0092e-6dc7-403a-8f80-73571c2498fa" style="width:100%">
 </div>
 
 
