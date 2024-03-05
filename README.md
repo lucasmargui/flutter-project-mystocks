@@ -498,6 +498,12 @@ Página de introdução ou carregamento exibida brevemente ao iniciar a aplicaç
 
 Página onde são exibidas estatísticas, gráficos ou dados relevantes para o usuário, como estatísticas de uso, consumo, desempenho, etc.
 
+- stats_controller.dart:  Responsável por gerenciar o estado e a lógica por trás das estatísticas em um aplicativo Flutter, oferecendo métodos para calcular e agrupar dados com base em diferentes períodos de tempo. 
+  
+- stats_page.dart:
+  
+- stats.state.dart:
+
 ### transaction: 
 
 Página onde os usuários podem visualizar e gerenciar suas transações financeiras, como pagamentos, transferências, depósitos, etc.
