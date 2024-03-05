@@ -428,11 +428,7 @@ Página onde os usuários podem visualizar e editar suas informações pessoais 
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/03a681f6-5b2b-455e-a02a-48dbae1b091b" style="width:100%">
 </div><br>
 
-
-
-
-
-- profile_state.state: Classes que permitem modelar diferentes estados
+- profile_state.dart: Classes que permitem modelar diferentes estados
 
 
 ### sign_in: 
@@ -456,6 +452,8 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
 </div><br>
 
+- sign_in_state.dart: Classes que permitem modelar diferentes estados
+
 
 ### sign_up: 
 
@@ -468,7 +466,7 @@ sign_up_page.dart: Uma página de registro funcional com validação de entrada,
 
 <div align="center">
     <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/db469206-3757-445a-8642-2dbdae8395b8" style="width:100%">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d4daab47-0284-41ac-9919-f0788a843e89" style="width:100%">
 </div><br>
 
 Formulário: Form(key: _formKey) define um widget de formulário que pode ser referenciado e manipulado em outras partes do aplicativo, utilizando a chave _formKey para acessar e controlar seu estado. FormState é uma classe que mantém o estado do widget Form. 
@@ -479,10 +477,22 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
 </div><br>
 
+- sign_up_state.dart: Classes que permitem modelar diferentes estados
 
 ### splash: 
 
 Página de introdução ou carregamento exibida brevemente ao iniciar a aplicação, geralmente contendo o logotipo e/ou nome da aplicação.
+
+- splash_controller.dart: Estrutura básica para gerenciar o estado e a lógica por trás da tela de carregamento em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de início do aplicativo.
+- splash_page.dart:  Fornece uma página de inicialização  funcional para o aplicativo, dando uma introdução visual e verificando o estado de login do usuário antes de redirecioná-lo para a tela apropriada.
+
+<div align="center">
+    <h3> Controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d977a17d-33c2-43e7-b13b-80a06648fca4" style="width:100%">
+</div><br>
+
+  
+- splash_state.dart: Classes que permitem modelar diferentes estados
 
 ### stats: 
 
