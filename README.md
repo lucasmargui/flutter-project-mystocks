@@ -367,6 +367,73 @@ Contém componentes ou elementos de interface do usuário (UI) que são comparti
 
 ## features
 
+O diretório "features" é uma abordagem organizacional adaptando os princípios de "Flux Architecture", que divide a aplicação em três componentes principais: a visualização (page), o controlador (controller) e state
+(estado)
+
+### home 
+
+Página inicial da aplicação, onde os principais recursos e funcionalidades são exibidos ao usuário logo após o login.
+
+
+- home_controller.dart: Define HomeController, gerencia o estado e a lógica de negócios relacionados à tela inicial da aplicação, busca as transações do repositório, ordena-as e atualiza o estado da tela de acordo com o resultado da busca. Ele também fornece acesso aos dados das transações e ao controlador de página
+
+- home_page_view.dart: Define a estrutura e a lógica para a página principal de um aplicativo Flutter, integrando os diferentes componentes e controladores necessários para funcionalidades como navegação entre telas, adição de transações e exibição de informações.
+
+    Quando floatingActionButton é pressionado, ele aguarda a navegação para a rota '/transaction' usando o Navigator.pushNamed. Após a navegação, ele verifica se o resultado retornado não é nulo. Dependendo da página atual do PageController, diferentes métodos dos controladores (homeController, statsController, walletController e balanceController) são chamados para atualizar os dados da aplicação
+ 
+  <div align="center">
+    <h3> PageController </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/7558867f-174f-44c7-b8be-76522365cafa" style="width:70%">
+</div><br>
+
+- home_page.dart: A HomePage estabelece comunicação com controladores HomeController e BalanceController, para a obtenção de dados, como transações e saldos. Essa comunicação ocorre por meio da invocação dos métodos _homeController.getAllTransactions() e _balanceController.getBalances() durante a fase de inicialização (initState).
+
+    Posteriormente, os dados obtidos são utilizados em diferentes partes da interface. O BalanceCardWidget é configurado para receber o _balanceController, permitindo assim o acesso e utilização dos dados de saldo. Por outro lado, o TransactionListView recebe as transações disponíveis através da propriedade _homeController.transactions, cujos valores são inicializados durante o initState.
+
+  <div align="center">
+    <h3> Controllers </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/a88aa315-3c31-4dbd-9b93-c5ec10ccf7c6" style="width:100%">
+</div><br>
+
+
+
+
+
+
+
+
+### onboarding: 
+
+Página de introdução ou tutorial para novos usuários, fornecendo informações sobre como usar a aplicação e seus recursos.
+
+### profile:
+
+Página onde os usuários podem visualizar e editar suas informações pessoais e realizar logout.
+
+### sign_in: 
+
+Página de login onde os usuários inserem suas credenciais para acessar a aplicação.
+
+### sign_up: 
+
+Página de registro onde novos usuários podem criar uma conta na aplicação fornecendo informações como nome, e-mail, senha, etc.
+
+### splash: 
+
+Página de introdução ou carregamento exibida brevemente ao iniciar a aplicação, geralmente contendo o logotipo e/ou nome da aplicação.
+
+### stats: 
+
+Página onde são exibidas estatísticas, gráficos ou dados relevantes para o usuário, como estatísticas de uso, consumo, desempenho, etc.
+
+### transaction: 
+
+Página onde os usuários podem visualizar e gerenciar suas transações financeiras, como pagamentos, transferências, depósitos, etc.
+
+### wallet: 
+
+Página onde os usuários podem visualizar o saldo da sua carteira digital.
+
 ## repositories
 
 ## services
