@@ -26,6 +26,7 @@ class TransactionPage extends StatefulWidget {
 class _TransactionPageState extends State<TransactionPage>
     with SingleTickerProviderStateMixin, CustomSnackBar {
   final _transactionController = locator.get<TransactionController>();
+
   final _balanceController = locator.get<BalanceController>();
 
   final _formKey = GlobalKey<FormState>();

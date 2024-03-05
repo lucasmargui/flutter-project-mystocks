@@ -1,3 +1,17 @@
+// Classe Abstrata Failure: Serve como a classe base para todas as exceções personalizadas definidas no código. E implementa a interface Exception, o que significa que todas as subclasses de Failure também são consideradas exceções.
+//
+// Ela possui um método getter abstrato message que deve ser implementado por suas subclasses.
+// Sobrescreve o método toString() para fornecer uma representação de string padrão para exceções.
+// Subclasses de Failure:
+// GeneralException: Representa uma exceção geral com uma mensagem de erro padrão.
+// APIException: Representa exceções relacionadas a erros de API. Inclui propriedades para códigos de erro e mensagens.
+// AuthException: Representa exceções relacionadas a erros de autenticação.
+// SecureStorageException: Representa exceções relacionadas a erros ao buscar dados do armazenamento seguro.
+// CacheException: Representa exceções relacionadas a erros ao interagir com o cache local.
+// UserDataException: Representa exceções relacionadas a erros ao buscar ou atualizar dados do usuário.
+// ConnectionException: Representa exceções relacionadas a erros de conexão.
+// SyncException: Representa exceções relacionadas a erros de sincronização.
+
 abstract class Failure implements Exception {
   const Failure();
 

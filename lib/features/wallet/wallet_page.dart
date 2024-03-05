@@ -80,6 +80,7 @@ class _WalletPageState extends State<WalletPage>
         DateTime(selectedDate.year, selectedDate.month - 1));
     _monthsTabController.index = 0;
     _walletController.getTransactionsByDateRange();
+
     _balanceController.getBalancesByDateRange();
   }
 

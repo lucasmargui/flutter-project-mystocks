@@ -26,8 +26,6 @@ void setupDependencies() {
         firebaseAuth: FirebaseAuth.instance,
         firebaseFunctions: FirebaseFunctions.instance,
       ));
-
-  //não há necessidade de fazer um singleton pois passamos ele como constante
   locator.registerFactory<SplashController>(
       () => SplashController(const SecureStorageService()));
 
@@ -38,15 +36,15 @@ void setupDependencies() {
       () => SignUpController(locator.get<AuthService>()));
 
   locator.registerFactory<TransactionRepository>(
-    () => TransactionRepositoryImpl(),
-  );
+      () => TransactionRepositoryImpl());
+
   locator.registerLazySingleton<HomeController>(
     () => HomeController(locator.get<TransactionRepository>()),
   );
 
   locator.registerLazySingleton<BalanceController>(
     () => BalanceController(
-      transactionRepository: locator.get<TransactionRepository>(),
+      transactionRepository: TransactionRepositoryImpl(),
     ),
   );
 

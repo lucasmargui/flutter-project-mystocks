@@ -1,7 +1,5 @@
 abstract class HomeState {}
 
-//a classe HomeLoadingState está herdando de HomeSate
-
 class HomeInitialState extends HomeState {}
 
 class HomeLoadingState extends HomeState {}
