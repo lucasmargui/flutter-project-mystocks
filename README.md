@@ -196,7 +196,16 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd429985-95dd-4fed-8eb3-7c436e58feb4" style="width:100%">
 </div>
 
-- ballance_state.dart: Classes que permitem modelar diferentes estados 
+- ballance_state.dart: Classes que permitem modelar diferentes estados
+
+<div align="center">
+<h3> Fluxo dos estados </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1cac6e6a-3150-41ab-9fad-3c4e47876c4f" style="width:75%">
+</div>
+
+
+
+
 - balance : um conjunto de declarações de exportação em um arquivo Dart
 
 #### transaction
@@ -222,7 +231,7 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 
 
--transaction.dart: um conjunto de declarações de exportação em um arquivo Dart
+- transaction.dart: um conjunto de declarações de exportação em um arquivo Dart
 
 ### models
 São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
