@@ -1,15 +1,19 @@
-<H1 align="center">Projeto MyStock</H1>
-<p align="center">🚀 Desenvolvimento de um projeto contendo separação por funcionalidade, utilização do padrão MVC, modularização ,gerenciamento de estado e service pattern para referências futuras</p>
 
-## Recursos Utilizados
-- Flutter 3.3.5
+<div align="center">
 
+# Projeto MyStock #
 
+</div>
 
-# Documentação
+------------------------------------
+ 
+<div align="center">
 
+## Main 
 
-## main.dart
+</div>
+
+------------------------------------
 
 <details>
   <summary>Clique para mostrar detalhes sobre "main.dart" </summary>
@@ -34,10 +38,13 @@
 </details>
 
 
+<div align="center">
 
+## App
 
-## app.dart
+</div>
 
+------------------------------------
 
 <details>
   <summary>Clique para mostrar detalhes sobre "app.dart"</summary>
@@ -58,7 +65,14 @@
 
 </details>
 
-## locator.dart
+
+<div align="center">
+
+## Locator
+
+</div>
+
+------------------------------------
 
 <details>
   <summary>Clique para mostrar detalhes sobre "locator.dart"</summary>
@@ -111,7 +125,14 @@ A configuração do HomeController no locator inclui a injeção de dependência
 
 
 
+<div align="center">
+
 ## Common
+
+</div>
+
+------------------------------------
+
 Contém funcionalidades ou recursos compartilhados que são utilizados em diferentes partes do projeto. Evitando a duplicação de código e centralizando funcionalidades que são frequentemente usadas em várias partes da aplicação.
 
 
@@ -354,14 +375,28 @@ Contém componentes ou elementos de interface do usuário (UI) que são comparti
 
 </details>
 
-## features
+
+<div align="center">
+
+## Features
+
+</div>
+
+------------------------------------
 
 O diretório "features" é uma abordagem organizacional adaptando os princípios de "Flux Architecture", que divide a aplicação em três componentes principais: a visualização (page), o controlador (controller) e state
 (estado)
 
+<details>
+  <summary>Clique para mostrar detalhes sobre features</summary>
+
+
 ### home 
 
 Página inicial da aplicação, onde os principais recursos e funcionalidades são exibidos ao usuário logo após o login.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre home </summary>
 
 
 - home_controller.dart: Define HomeController, gerencia o estado e a lógica de negócios relacionados à tela inicial da aplicação, busca as transações do repositório, ordena-as e atualiza o estado da tela de acordo com o resultado da busca. Ele também fornece acesso aos dados das transações e ao controlador de página
@@ -390,7 +425,7 @@ Página inicial da aplicação, onde os principais recursos e funcionalidades s�
 - home.dart : um conjunto de declarações de exportação em um arquivo Dart
 
   
-
+</details>
 
 
 
@@ -398,14 +433,23 @@ Página inicial da aplicação, onde os principais recursos e funcionalidades s�
 
 Página de introdução ou tutorial para novos usuários, fornecendo informações sobre como usar a aplicação e seus recursos.
 
+<details>
+  <summary>Clique para mostrar detalhes sobre onboarding. </summary>
+
+
 - onboarding_page.dart : Define a estrutura e o conteúdo básico de uma página de onboarding em um aplicativo.
   
 - onboarding.dart : um conjunto de declarações de exportação em um arquivo Dart. 
 
+</details>
 
 ### profile:
 
 Página onde os usuários podem visualizar e editar suas informações pessoais e realizar logout.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre profile</summary>
+
 
 - profile_controller.dart : Define o "controller" de perfil responsável por gerenciar o estado e as operações relacionadas ao perfil do usuário, como obter dados do usuário, atualizar o nome de usuário, atualizar a senha e excluir a conta.
 
@@ -419,10 +463,15 @@ Página onde os usuários podem visualizar e editar suas informações pessoais 
 
 - profile_state.dart: Classes que permitem modelar diferentes estados
 
+</details>
 
 ### sign_in: 
 
 Página de login onde os usuários inserem suas credenciais para acessar a aplicação.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre sign_in </summary>
+
 
 sign_in_controller.dart : Estrutura básica para gerenciar o estado e a lógica por trás da tela de login em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de autenticação do usuário.
 sign_in_page.dart : Uma página de login funcional com validação de entrada, processamento de login e tratamento de estados de carregamento, sucesso e erro. 
@@ -443,10 +492,15 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
 
 - sign_in_state.dart: Classes que permitem modelar diferentes estados
 
+</details>
 
 ### sign_up: 
 
 Página de registro onde novos usuários podem criar uma conta na aplicação fornecendo informações como nome, e-mail, senha, etc.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre sign_up </summary>
+
 
 sign_up_controller.dart:  Estrutura básica para gerenciar o estado e a lógica por trás da tela de registro em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de registro do usuário.
 
@@ -468,9 +522,16 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
 
 - sign_up_state.dart: Classes que permitem modelar diferentes estados
 
+</details>
+
 ### splash: 
 
 Página de introdução ou carregamento exibida brevemente ao iniciar a aplicação, geralmente contendo o logotipo e/ou nome da aplicação.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre splash </summary>
+
+
 
 - splash_controller.dart: Estrutura básica para gerenciar o estado e a lógica por trás da tela de carregamento em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de início do aplicativo.
   
@@ -484,9 +545,15 @@ Página de introdução ou carregamento exibida brevemente ao iniciar a aplicaç
   
 - splash_state.dart: Classes que permitem modelar diferentes estados
 
+</details>
+
 ### stats: 
 
 Página onde são exibidas estatísticas, gráficos ou dados relevantes para o usuário, como estatísticas de uso, consumo, desempenho, etc.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre stats </summary>
+
 
 - stats_controller.dart:  Responsável por gerenciar o estado e a lógica por trás das estatísticas em um aplicativo Flutter, oferecendo métodos para calcular e agrupar dados com base em diferentes períodos de tempo. 
   
@@ -501,9 +568,15 @@ Página onde são exibidas estatísticas, gráficos ou dados relevantes para o u
   
 - stats_state.dart: Classes que permitem modelar diferentes estados
 
+ </details> 
+
 ### transaction: 
 
 Página onde os usuários podem visualizar e gerenciar suas transações financeiras, como pagamentos, transferências, depósitos, etc.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre transaction </summary>
+
 
 - transaction_page.dart: Fornece uma interface para que os usuários adicionem ou editem transações financeiras, com validação de entrada de dados e manipulação de diferentes estados e eventos
 
@@ -514,9 +587,15 @@ Página onde os usuários podem visualizar e gerenciar suas transações finance
 
 - transaction_state: Classes que permitem modelar diferentes estados
 
+ </details>
+
 ### wallet: 
 
 Página onde os usuários podem visualizar o saldo da sua carteira digital.
+
+<details>
+  <summary>Clique para mostrar detalhes sobre wallet </summary>
+
 
 - wallet_controller.dart: Responsável por gerenciar o estado da carteira e as interações com o repositório de transações.
   
@@ -527,15 +606,37 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/29122770-0b35-4038-a00a-d84f76be3ca7" style="width:100%">
 </div><br>
   
-- wallet_state.dart: Classes que permitem modelar diferentes estados 
+- wallet_state.dart: Classes que permitem modelar diferentes estados
+  
+</details>
+
+</details>
+
+<div align="center">
+
+## Repositories
+
+</div>
+
+------------------------------------
 
 
-## repositories
+<div align="center">
 
-## services
+## Services
 
-## themes
+</div>
 
+------------------------------------
+
+
+<div align="center">
+
+## Themes
+
+</div>
+
+------------------------------------
 
 
 
