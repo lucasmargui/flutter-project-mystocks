@@ -4,8 +4,8 @@
 # Projeto MyStock #
 
 </div>
+<br>
 
-------------------------------------
  
 <div align="center">
 
@@ -14,6 +14,8 @@
 </div>
 
 ------------------------------------
+
+O arquivo "main.dart" é onde você configura e define toda a estrutura inicial do aplicativo, incluindo a definição da árvore de widgets que compõem a interface do usuário, a definição de rotas de navegação e qualquer lógica de inicialização necessária para o seu aplicativo.
 
 <details>
   <summary>Clique para mostrar detalhes sobre "main.dart" </summary>
@@ -37,12 +39,14 @@
   
 </details>
 
+------------------------------------
 
+<br>
 <div align="center">
 
 ## App
 
-</div>
+</div> 
 
 ------------------------------------
 
@@ -65,7 +69,8 @@
 
 </details>
 
-
+------------------------------------
+<br>
 <div align="center">
 
 ## Locator
@@ -124,7 +129,8 @@ A configuração do HomeController no locator inclui a injeção de dependência
 </details>
 
 
-
+------------------------------------
+<br>
 <div align="center">
 
 ## Common
@@ -375,7 +381,8 @@ Contém componentes ou elementos de interface do usuário (UI) que são comparti
 
 </details>
 
-
+------------------------------------
+<br>
 <div align="center">
 
 ## Features
@@ -612,6 +619,9 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 
 </details>
 
+
+------------------------------------
+<br>
 <div align="center">
 
 ## Repositories
@@ -621,6 +631,9 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 ------------------------------------
 
 
+
+------------------------------------
+<br>
 <div align="center">
 
 ## Services
@@ -630,6 +643,9 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 ------------------------------------
 
 
+
+------------------------------------
+<br>
 <div align="center">
 
 ## Themes
