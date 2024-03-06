@@ -49,6 +49,7 @@ O arquivo "main.dart" é onde você configura e define toda a estrutura inicial 
 </div> 
 
 ------------------------------------
+Define a estrutura básica do aplicativo, incluindo configurações de tema, rotas e associações de widgets para cada rota específica. Ele organiza o fluxo do aplicativo e define como cada tela deve ser construída e exibida.
 
 <details>
   <summary>Clique para mostrar detalhes sobre "app.dart"</summary>
@@ -78,6 +79,7 @@ O arquivo "main.dart" é onde você configura e define toda a estrutura inicial 
 </div>
 
 ------------------------------------
+Define um contêiner de injeção de dependência usando GetIt e configura uma implementação específica . Isso permite que, por exemplo, a classe AuthService seja facilmente substituível por outras implementações sem modificar o código do cliente, promovendo a modularidade e a testabilidade do aplicativo.
 
 <details>
   <summary>Clique para mostrar detalhes sobre "locator.dart"</summary>
@@ -142,9 +144,15 @@ A configuração do HomeController no locator inclui a injeção de dependência
 Contém funcionalidades ou recursos compartilhados que são utilizados em diferentes partes do projeto. Evitando a duplicação de código e centralizando funcionalidades que são frequentemente usadas em várias partes da aplicação.
 
 
+
 <details>
   <summary>Clique para mostrar detalhes sobre common</summary>
 
+
+
+
+
+------------------------------------
 
 ### constants
 Contém arquivos ou módulos que definem constantes ou valores fixos que são usados em diferentes partes do código. Essas constantes podem incluir valores como configurações, chaves de API, URLs, mensagens de erro, códigos de status HTTP e outras informações que são utilizadas em várias partes do sistema.
@@ -169,6 +177,11 @@ Contém arquivos ou módulos que definem constantes ou valores fixos que são us
 </details>
 
 
+------------------------------------
+
+
+
+
 ### data
 Diretório que contém um arquivo responsável por personalizar as exceções. Nesse diretório, você pode encontrar arquivos que definem classes de exceção personalizadas, lidam com o tratamento de exceções de maneira específica para o projeto ou fornecem funções para lidar com erros de forma mais granular.
 
@@ -187,6 +200,8 @@ Diretório que contém um arquivo responsável por personalizar as exceções. N
 - data : um conjunto de declarações de exportação em um arquivo Dart
 
 </details>
+
+------------------------------------
 
 ### extensions
 Contém extensões ou complementos adicionais para o projeto principal. Essas extensões podem incluir funcionalidades adicionais, módulos específicos, plugins ou qualquer outro tipo de código que estenda ou aprimore o projeto principal de alguma forma.
@@ -212,6 +227,7 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 </details>  
 
+------------------------------------
 
 ### features
  São armazenados os arquivos relacionados a funcionalidades específicas do sistema ou aplicação. Essas funcionalidades podem ser agrupadas em pastas ou módulos dentro do diretório "features", facilitando a organização e manutenção do código. Por serem funcionalidades que são utilizadas em diferentes partes do projeto são incluídas em commons
@@ -225,6 +241,7 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 </div><br>
 
+------------------------------------
 
 #### balance
 
@@ -253,6 +270,7 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 - balance : um conjunto de declarações de exportação em um arquivo Dart
 
+------------------------------------
 
 #### transaction
 
@@ -285,6 +303,8 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 
 </details>
 
+------------------------------------
+
 ### models
 São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
 
@@ -304,6 +324,8 @@ São armazenados os modelos de dados da aplicação. Esses modelos representam a
 - models.dart : um conjunto de declarações de exportação em um arquivo Dart
 
 </details>
+
+------------------------------------
 
 ### utils
 
@@ -338,6 +360,8 @@ Contém arquivos e módulos com funções auxiliares ou utilitárias que são ut
 
 
 </details>
+
+------------------------------------
 
 ### widgets
 
@@ -398,6 +422,9 @@ O diretório "features" é uma abordagem organizacional adaptando os princípios
   <summary>Clique para mostrar detalhes sobre features</summary>
 
 
+
+------------------------------------
+
 ### home 
 
 Página inicial da aplicação, onde os principais recursos e funcionalidades são exibidos ao usuário logo após o login.
@@ -435,6 +462,7 @@ Página inicial da aplicação, onde os principais recursos e funcionalidades s�
 </details>
 
 
+------------------------------------
 
 ### onboarding: 
 
@@ -449,6 +477,8 @@ Página de introdução ou tutorial para novos usuários, fornecendo informaçõ
 - onboarding.dart : um conjunto de declarações de exportação em um arquivo Dart. 
 
 </details>
+
+------------------------------------
 
 ### profile:
 
@@ -471,6 +501,8 @@ Página onde os usuários podem visualizar e editar suas informações pessoais 
 - profile_state.dart: Classes que permitem modelar diferentes estados
 
 </details>
+
+------------------------------------
 
 ### sign_in: 
 
@@ -500,6 +532,8 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
 - sign_in_state.dart: Classes que permitem modelar diferentes estados
 
 </details>
+
+------------------------------------
 
 ### sign_up: 
 
@@ -531,6 +565,8 @@ Ele é usado para realizar ações como validar, salvar ou redefinir o estado do
 
 </details>
 
+------------------------------------
+
 ### splash: 
 
 Página de introdução ou carregamento exibida brevemente ao iniciar a aplicação, geralmente contendo o logotipo e/ou nome da aplicação.
@@ -553,6 +589,8 @@ Página de introdução ou carregamento exibida brevemente ao iniciar a aplicaç
 - splash_state.dart: Classes que permitem modelar diferentes estados
 
 </details>
+
+------------------------------------
 
 ### stats: 
 
@@ -577,6 +615,8 @@ Página onde são exibidas estatísticas, gráficos ou dados relevantes para o u
 
  </details> 
 
+ ------------------------------------
+
 ### transaction: 
 
 Página onde os usuários podem visualizar e gerenciar suas transações financeiras, como pagamentos, transferências, depósitos, etc.
@@ -595,6 +635,8 @@ Página onde os usuários podem visualizar e gerenciar suas transações finance
 - transaction_state: Classes que permitem modelar diferentes estados
 
  </details>
+
+ ------------------------------------
 
 ### wallet: 
 
@@ -629,7 +671,7 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 </div>
 
 ------------------------------------
-
+Repositório é responsável por lidar com operações relacionadas a transações, como adicionar, atualizar, excluir e obter transações, bem como calcular saldos. Segue o padrão de repositório para gerenciar os dados de transações de forma abstrata e desacoplada da camada de interface do usuário.
 
 
 ------------------------------------
@@ -641,7 +683,7 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 </div>
 
 ------------------------------------
-
+Service é responsável para agrupar classes e arquivos relacionados a serviços, como acesso a APIs, bancos de dados locais, gerenciamento de estado global e outras operações de lógica de negócios.
 
 
 ------------------------------------
@@ -653,7 +695,7 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 </div>
 
 ------------------------------------
-
+Themes é responsável em armazenar classes relacionados à definição de temas e estilos da aplicação.
 
 
 
