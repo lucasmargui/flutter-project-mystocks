@@ -691,21 +691,28 @@ Repositório é responsável por lidar com operações relacionadas a transaçõ
     <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/cdbc5c5f-1e39-4395-a9c3-f304f2f09711" style="width:100%">
 </div><br>
 
+   No método locator.registerLazySingleton, foram empregadas duas abordagens para passar a classe TransactionRepositoryImpl. Uma delas utiliza o locator para localizar o TransactionRepository que já foi registrado anteriormente e que irá instanciar um TransactionRepositoryImpl. A outra abordagem envolve passar diretamente a classe TransactionRepositoryImpl para o registro.
 
+
+
+  
 <div align="center">
     <h3> Exemplo </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd2b7682-3926-4fe1-82a7-c86fcfe45fd0" style="width:100%">
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/c43fb53d-ad0a-4c6d-be69-6d0f3b660628" style="width:100%">
 </div><br>
 
-No método locator.registerLazySingleton, foram empregadas duas abordagens para passar a classe TransactionRepositoryImpl. Uma delas utiliza o locator para localizar o TransactionRepository que já foi registrado anteriormente e que irá instanciar um TransactionRepositoryImpl. A outra abordagem envolve passar diretamente a classe TransactionRepositoryImpl para o registro.
+ 
 
 
+- transaction_repository_list.dart:  Define uma classe que gera uma lista de transações fictícias, utilizando o padrão Singleton para garantir que apenas uma instância da classe seja criada e fornecendo um método conveniente para acessar essa instância. Essa lista pode ser útil para testes ou para preencher dados de exemplo em uma aplicação.
 
 
+   class GenerateTransactionList { ... }: Aqui, estamos definindo uma classe chamada GenerateTransactionList. Esta classe é responsável por gerar uma lista de transações.
+static final GenerateTransactionList _instance = GenerateTransactionList._internal();: Esta linha declara uma variável estática _instance que é do tipo GenerateTransactionList. A variável é marcada como final, o que significa que ela não pode ser modificada após ser inicializada. É inicializada com uma nova instância de GenerateTransactionList por meio do construtor privado _internal(), que será explicado na próxima linha.
 
+    factory GenerateTransactionList() { return _instance; }: Este é um construtor de fábrica (factory constructor) que retorna uma instância de _instance. Quando o código chama GenerateTransactionList(), ele não cria uma nova instância da classe, mas sim retorna a mesma instância que foi criada anteriormente e atribuída a _instance. Isso garante que sempre haja apenas uma única instância de GenerateTransactionList em todo o programa, seguindo o padrão Singleton.
 
-
-- transaction_repository_list.dart
+    GenerateTransactionList._internal();: Aqui, temos um construtor privado chamado _internal(). Ele é utilizado para garantir que a classe GenerateTransactionList só possa ser instanciada internamente, ou seja, apenas dentro da própria classe. Isso impede que outras partes do código criem novas instâncias da classe diretamente, forçando o uso do construtor de fábrica para obter a instância existente.
 
 ------------------------------------
 <br>
