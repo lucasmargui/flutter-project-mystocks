@@ -4,17 +4,6 @@
 ## Recursos Utilizados
 - Flutter 3.3.5
 
-<div align="center">
-    <img src="" style="width:45%">
-
-</div>
-
-```
-```
-
-<details>
-  <summary>Clique para mostrar documentação do projeto</summary>
-  </details>
 
 
 # Documentação
@@ -528,6 +517,18 @@ Página onde os usuários podem visualizar e gerenciar suas transações finance
 ### wallet: 
 
 Página onde os usuários podem visualizar o saldo da sua carteira digital.
+
+- wallet_controller.dart: Responsável por gerenciar o estado da carteira e as interações com o repositório de transações.
+  
+- wallet_page.dart: Pesponsável por exibir e gerenciar as transações e saldos da carteira do usuário, permitindo que ele navegue entre os meses e visualize suas atividades financeiras de forma conveniente.
+
+<div align="center">
+    <h3> Controller </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/29122770-0b35-4038-a00a-d84f76be3ca7" style="width:100%">
+</div><br>
+  
+- wallet_state.dart: Classes que permitem modelar diferentes estados 
+
 
 ## repositories
 
