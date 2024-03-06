@@ -673,6 +673,39 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 ------------------------------------
 Repositório é responsável por lidar com operações relacionadas a transações, como adicionar, atualizar, excluir e obter transações, bem como calcular saldos. Segue o padrão de repositório para gerenciar os dados de transações de forma abstrata e desacoplada da camada de interface do usuário.
 
+- transaction_repository.dart: Define uma interface chamada TransactionRepository, que descreve métodos para realizar operações relacionadas a transações financeiras.Essa interface fornece um contrato claro para interagir com os dados de transações no aplicativo, permitindo a implementação de repositórios de transações que se conectam a diferentes fontes de dados, como um banco de dados local, um serviço web ou o Firebase, por exemplo.
+
+- transaction_repository_impl.dart: Define uma classe chamada TransactionRepositoryImpl que implementa a interface TransactionRepository. Implementa um repositório de transações com métodos para adicionar, atualizar, excluir e recuperar transações do repositório de dados, garantindo que exceções sejam tratadas adequadamente durante o processo.
+  Por meio da instanciação de um controlador correspondente à funcionalidade específica, fazemos uso do locator para criar ou recuperar uma instância de TransactionRepositoryImpl, permitindo assim o acesso e utilização de suas funções para manipulação de dados.
+
+
+<div align="center">
+    <h3> Lógica </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/94b5d6f3-535d-42a6-bff8-94d2042f261c" style="width:100%">
+</div><br>
+
+
+
+<div align="center">
+    <h3> Lógica utilizando os controllers </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/cdbc5c5f-1e39-4395-a9c3-f304f2f09711" style="width:100%">
+</div><br>
+
+
+<div align="center">
+    <h3> Exemplo </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd2b7682-3926-4fe1-82a7-c86fcfe45fd0" style="width:100%">
+</div><br>
+
+No método locator.registerLazySingleton, foram empregadas duas abordagens para passar a classe TransactionRepositoryImpl. Uma delas utiliza o locator para localizar o TransactionRepository que já foi registrado anteriormente e que irá instanciar um TransactionRepositoryImpl. A outra abordagem envolve passar diretamente a classe TransactionRepositoryImpl para o registro.
+
+
+
+
+
+
+
+- transaction_repository_list.dart
 
 ------------------------------------
 <br>
