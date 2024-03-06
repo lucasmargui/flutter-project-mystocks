@@ -1,5 +1,5 @@
 import '../common/models/models.dart';
-import 'extensions.dart/generate_random_number.dart';
+import 'utils.dart/generate_random_number.dart';
 
 class GenerateTransactionList {
   static final GenerateTransactionList _instance =

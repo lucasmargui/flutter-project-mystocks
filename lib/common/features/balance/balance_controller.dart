@@ -10,11 +10,9 @@ import '../../models/models.dart';
 import 'balance_state.dart';
 
 class BalanceController extends ChangeNotifier {
-  BalanceController({
-    required this.transactionRepository,
-  });
-
   final TransactionRepository transactionRepository;
+
+  BalanceController({required this.transactionRepository});
 
   BalanceState _state = BalanceInitialState();
 
@@ -109,8 +107,26 @@ class BalanceController extends ChangeNotifier {
   Future<void> updateBalance(
       {TransactionModel? oldTransaction,
       required TransactionModel newTransaction}) async {
-    final result = await transactionRepository.getBalances();
+    _changeState(BalanceLoadingState());
 
+    double totalIncome = 0;
+    double totalOutcome = 0;
+    double totalBalance = 0;
+
+    for (TransactionModel transaction
+        in GenerateTransactionList().transactions) {
+      totalBalance += transaction.value;
+      if (transaction.value < 0) {
+        totalOutcome += transaction.value;
+      } else {
+        totalIncome += transaction.value;
+      }
+    }
+
+    _balances = BalancesModel(
+        totalIncome: totalIncome,
+        totalOutcome: totalOutcome,
+        totalBalance: totalBalance);
     _changeState(BalanceSuccessState());
   }
 }

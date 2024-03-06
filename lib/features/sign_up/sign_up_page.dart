@@ -21,7 +21,7 @@ class _SignUpPageState extends State<SignUpPage> with CustomModalSheetMixin {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _controller = locator.get<SignUpController>();
+  final _signupController = locator.get<SignUpController>();
 
   @override
   void dispose() {
@@ -29,35 +29,32 @@ class _SignUpPageState extends State<SignUpPage> with CustomModalSheetMixin {
     _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _controller.dispose();
+    _signupController.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
-    // TODO: implement initState
-
-    _controller.addListener(() {
-      if (_controller.state is SignUpLoadingState) {
+    _signupController.addListener(() {
+      if (_signupController.state is SignUpLoadingState) {
         showDialog(
             context: context,
             builder: (context) => CustomCircularProgressIndicator());
       }
-      if (_controller.state is SignUpSuccessState) {
+      if (_signupController.state is SignUpSuccessState) {
         Navigator.pop(context);
         Navigator.pushReplacementNamed(context, NamedRoute.home);
       }
 
-      if (_controller.state is SignUpErrorState) {
-        final error = _controller.state as SignUpErrorState;
+      if (_signupController.state is SignUpErrorState) {
+        final error = _signupController.state as SignUpErrorState;
         Navigator.pop(context);
         showCustomModalBottomSheet(
           context: context,
-          content: (_controller.state as SignUpErrorState).message,
+          content: (_signupController.state as SignUpErrorState).message,
           buttonText: "Try again",
         );
       }
-      log(_controller.state.toString());
     });
     super.initState();
   }
@@ -121,7 +118,7 @@ class _SignUpPageState extends State<SignUpPage> with CustomModalSheetMixin {
 
               if (valid) {
                 ///lógica de login
-                _controller.signUp(
+                _signupController.signUp(
                   name: _nameController.text,
                   email: _emailController.text,
                   password: _passwordController.text,

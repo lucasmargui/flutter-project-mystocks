@@ -23,42 +23,40 @@ class _SignInPageState extends State<SignInPage> with CustomModalSheetMixin {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _controller = locator.get<SignInController>();
+  final _signinController = locator.get<SignInController>();
   @override
   void dispose() {
     ///Destrói nossos controllers
     _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _controller.dispose();
+    _signinController.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
-    // TODO: implement initState
-
-    _controller.addListener(() {
-      if (_controller.state is SignInLoadingState) {
+    _signinController.addListener(() {
+      if (_signinController.state is SignInLoadingState) {
         showDialog(
             context: context,
             builder: (context) => CustomCircularProgressIndicator());
       }
-      if (_controller.state is SignInSuccessState) {
+      if (_signinController.state is SignInSuccessState) {
         Navigator.pop(context);
         Navigator.pushReplacementNamed(context, NamedRoute.home);
       }
 
-      if (_controller.state is SignInErrorState) {
-        final error = _controller.state as SignInErrorState;
+      if (_signinController.state is SignInErrorState) {
+        final error = _signinController.state as SignInErrorState;
         Navigator.pop(context);
         showCustomModalBottomSheet(
           context: context,
-          content: (_controller.state as SignInErrorState).message,
+          content: (_signinController.state as SignInErrorState).message,
           buttonText: "Try again",
         );
       }
-      log(_controller.state.toString());
+      log(_signinController.state.toString());
     });
     super.initState();
   }
@@ -110,7 +108,7 @@ class _SignInPageState extends State<SignInPage> with CustomModalSheetMixin {
 
               if (valid) {
                 ///lógica de login
-                _controller.signIn(
+                _signinController.signIn(
                   email: _emailController.text,
                   password: _passwordController.text,
                 );

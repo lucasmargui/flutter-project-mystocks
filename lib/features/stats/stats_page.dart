@@ -18,6 +18,7 @@ class StatsPage extends StatefulWidget {
 class _StatsPageState extends State<StatsPage>
     with SingleTickerProviderStateMixin {
   final _statsController = locator.get<StatsController>();
+
   late final TabController _periodTabController;
 
   @override
