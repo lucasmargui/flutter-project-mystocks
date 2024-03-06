@@ -862,17 +862,60 @@ static final GenerateTransactionList _instance = GenerateTransactionList._intern
 ------------------------------------
 Service é responsável para agrupar classes e arquivos relacionados a serviços, como acesso a APIs, bancos de dados locais, gerenciamento de estado global e outras operações de lógica de negócios.
 
+<details>
+  <summary>Clique para mostrar detalhes sobre services </summary>
+
+------------------------------------
+ 
+### auth_service
+------------------------------------
+  Parte do projeto dedicada à autenticação e à gestão de serviços relacionados à autenticação de usuários.
+
+ - auth_service.dart : Define uma classe abstrata chamada AuthService que representa um serviço de autenticação genérico com métodos que representam operações comuns em serviços de autenticação, como registrar um novo usuário, autenticar um usuário existente e deslogar um usuário. No entanto, a implementação específica de cada um desses métodos será definida em classes concretas que herdam desta classe abstrata AuthService. Essa abstração permite a flexibilidade e o reuso de código em diferentes contextos de aplicativo.
+  
+ - firebase_auth_service.dart : Implementa um serviço de autenticação utilizando o Firebase Authentication e encapsula as operações de autenticação de usuários em um serviço (FirebaseAuthService), fornecendo métodos para login, registro e logout de usuários, enquanto interage com o Firebase Authentication e Cloud Functions. Além disso, trata exceções que podem ocorrer durante essas operações.
+   
+ - mock_auth_service.dart : Define uma classe MockAuthService que simula um serviço de autenticação com métodos para login, registro e logout de usuários. Ele é projetado para ser utilizado em ambientes de teste ou desenvolvimento, permitindo que os desenvolvedores testem a funcionalidade de autenticação sem depender de um serviço de autenticação real.
+
+  
+------------------------------------
+
+### storage
+------------------------------------
+
+Define uma classe chamada SecureStorageService que encapsula funcionalidades para armazenar e recuperar dados de forma segura usando o pacote Flutter Secure Storage.
+
+  
+<div align="center">
+    <h3> Exemplo </h3>
+    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/9c60d056-0a91-404a-9436-0133f9188b80" style="width:100%">
+</div><br>
+
+------------------------------------
+
+
 
 ------------------------------------
 <br>
 <div align="center">
 
+</details>
+
+------------------------------------
+<br>
+<div align="center">
+ 
 ## Themes
 
 </div>
 
+Themes é responsável em armazenar classes relacionados à definição de temas e estilos da aplicação.O código define uma classe chamada CustomTheme responsável por criar e retornar um tema personalizado.
+
+
+</div>
+
 ------------------------------------
-Themes é responsável em armazenar classes relacionados à definição de temas e estilos da aplicação.
+
 
 
 
