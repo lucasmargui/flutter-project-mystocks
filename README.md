@@ -75,7 +75,7 @@ Defines the basic structure of the application, including theme settings, routes
 <br>
 <div align="center">
 
-##Locator
+## Locator
 
 </div>
 
