@@ -1,43 +1,42 @@
-
 <div align="center">
 
-# Projeto MyStock #
+# MyStock Project #
 
 </div>
 <br>
 
- 
+
 <div align="center">
 
-## Main 
+##Main
 
 </div>
 
 ------------------------------------
 
-O arquivo "main.dart" é onde você configura e define toda a estrutura inicial do aplicativo, incluindo a definição da árvore de widgets que compõem a interface do usuário, a definição de rotas de navegação e qualquer lógica de inicialização necessária para o seu aplicativo.
+The "main.dart" file is where you configure and define the entire initial structure of the application, including defining the tree of widgets that make up the user interface, defining navigation routes, and any initialization logic required by your application .
 
 <details>
-  <summary>Clique para mostrar detalhes sobre "main.dart" </summary>
-  
+ <summary>Click to show details about "main.dart" </summary>
+
 ------------------------------------
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/8d9af620-4a09-46ca-9a06-2536b0af23f6" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/8d9af620-4a09-46ca-9a06-2536b0af23f6" style="width:90%">
 
 </div>
 
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f9d5646e-b433-47b5-add1-c771e2884425" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f9d5646e-b433-47b5-add1-c771e2884425" style="width:90%">
 </div>
 
 <hr>
 
-- WidgetsFlutterBinding.ensureInitialized() : Este método garante que os widgets do Flutter estejam inicializados antes de qualquer outra operação. É uma etapa importante, especialmente quando se trabalha com APIs assíncronas, como Firebase.
-  
-- setupDependencies() : Esta função é chamada para configurar as dependências do aplicativo. Isso pode incluir a configuração de serviços, instanciando objetos ou qualquer outra inicialização necessária antes de iniciar o aplicativo.Neste caso estamos inicializando os controllers,services e repositories registrados através do pacote instalado getIt, podendo acessar essas classes e suas propriedades de qualquer parte da aplicação
-  
+- WidgetsFlutterBinding.ensureInitialized(): This method ensures that Flutter widgets are initialized before any other operations. It's an important step, especially when working with asynchronous APIs like Firebase.
+
+- setupDependencies() : This function is called to configure the application dependencies. This may include configuring services, instantiating objects or any other initialization necessary before starting the application. In this case we are initializing the controllers, services and repositories registered through the installed getIt package, being able to access these classes and their properties from any part of the application
+
 </details>
 
 ------------------------------------
@@ -47,28 +46,28 @@ O arquivo "main.dart" é onde você configura e define toda a estrutura inicial 
 
 ## App
 
-</div> 
+</div>
 
 ------------------------------------
-Define a estrutura básica do aplicativo, incluindo configurações de tema, rotas e associações de widgets para cada rota específica. Ele organiza o fluxo do aplicativo e define como cada tela deve ser construída e exibida.
+Defines the basic structure of the application, including theme settings, routes, and widget associations for each specific route. It organizes the application flow and defines how each screen should be constructed and displayed.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre "app.dart"</summary>
- 
+ <summary>Click to show details about "app.dart"</summary>
+
 ------------------------------------
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/87837e0b-ebd4-4070-a6a4-3ca4c3428d6d" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/87837e0b-ebd4-4070-a6a4-3ca4c3428d6d" style="width:90%">
 
 </div>
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/ae6d8af8-bed4-40e8-8ca0-d3347212bdb0" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/ae6d8af8-bed4-40e8-8ca0-d3347212bdb0" style="width:90%">
 
 </div>
 
 
- Cada rota nomeada é mapeada para um widget correspondente, como OnboardingPage, SplashPage, SignUpPage, etc. O aplicativo usa rotas nomeadas para navegar entre diferentes telas ou páginas. Além disso, a rota "transaction" recebe argumentos, que são usados para passar informações adicionais para a página TransactionPage. Esse argumento passado é para identificar se uma transaction foi passada, se sim significa que estamos editando uma transaction da lista "GenerateTransactionList.transactions" se não, está sendo adicionado uma nova transaction a lista "GenerateTransactionList.transactions".
+ Each named route is mapped to a corresponding widget such as OnboardingPage, SplashPage, SignUpPage, etc. The app uses named routes to navigate between different screens or pages. Additionally, the "transaction" route takes arguments, which are used to pass additional information to the TransactionPage page. This passed argument is to identify whether a transaction was passed, if yes it means that we are editing a transaction from the "GenerateTransactionList.transactions" list, if not, a new transaction is being added to the "GenerateTransactionList.transactions" list.
 
 </details>
 
@@ -76,61 +75,62 @@ Define a estrutura básica do aplicativo, incluindo configurações de tema, rot
 <br>
 <div align="center">
 
-## Locator
+##Locator
 
 </div>
 
 ------------------------------------
-Define um contêiner de injeção de dependência usando GetIt e configura uma implementação específica . Isso permite que, por exemplo, a classe AuthService seja facilmente substituível por outras implementações sem modificar o código do cliente, promovendo a modularidade e a testabilidade do aplicativo.
+Defines a dependency injection container using GetIt and configures a specific implementation. This allows, for example, the AuthService class to be easily replaceable by other implementations without modifying the client code, promoting modularity and testability of the application.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre "locator.dart"</summary>
+ <summary>Click to show details about "locator.dart"</summary>
 
 ------------------------------------
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1b8478b9-4900-4c77-94bc-69cddb76028d" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1b8478b9-4900-4c77-94bc-69cddb76028d" style="width:90%">
 
 </div>
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/a40cd655-6878-4383-a2ea-98ad9e0c3bdb" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/a40cd655-6878-4383-a2ea-98ad9e0c3bdb" style="width:90%">
 
 </div>
 
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b655b80a-2621-45de-bf64-e1d944872487" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b655b80a-2621-45de-bf64-e1d944872487" style="width:90%">
 
 </div>
 
-Configura e inicializa um gerenciador de dependências utilizando a biblioteca GetIt. Ele define um objeto chamado "locator" como uma instância do GetIt.
 
-Em seguida, há uma função chamada "setupDependencies()" que registra diferentes tipos de serviços e controladores no "locator" e é chamada na inicialização de main.dart:
+Configures and initializes a dependency manager using the GetIt library. It defines an object called "locator" as an instance of GetIt.
+
+Then there is a function called "setupDependencies()" that registers different types of services and controllers in the "locator" and is called on main.dart initialization:
 
 ------------------------------------
 
-- AuthService é registrado como um singleton preguiçoso (lazy singleton) usando registerLazySingleton. Isso significa que uma única instância de AuthService será criada e compartilhada sempre que necessário.
+- AuthService is registered as a lazy singleton using registerLazySingleton. This means that a single AuthService instance will be created and shared whenever necessary.
 
-  ------------------------------------
+ ------------------------------------
 
-- SecureStorageService, UserDataService, SplashController, SignInController, SignUpController, TransactionRepository, HomeController e BalanceController são registrados como fábricas (factories) usando registerFactory. Isso significa que uma nova instância será criada sempre que uma dessas dependências for solicitada.
+- SecureStorageService, UserDataService, SplashController, SignInController, SignUpController, TransactionRepository, HomeController and BalanceController are registered as factories using registerFactory. This means that a new instance will be created whenever one of these dependencies is requested.
 
-  ------------------------------------
+ ------------------------------------
 
-- Algumas dependências, como UserDataService e HomeController, recebem parâmetros em seus construtores, que são resolvidos pelo GetIt usando outras dependências registradas anteriormente.
+- Some dependencies, such as UserDataService and HomeController, receive parameters in their constructors, which are resolved by GetIt using other previously registered dependencies.
 
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/02cca10f-17e5-4909-b4b0-5f0122e63269" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/02cca10f-17e5-4909-b4b0-5f0122e63269" style="width:90%">
 
 </div>
 
-A configuração do HomeController no locator inclui a injeção de dependência do TransactionRepositoryImpl. Isso permite que, ao registrar o HomeController, possamos usar o locator para recuperar o TransactionRepository previamente registrado. Dentro do HomeController, podemos então acessar todos os métodos definidos na implementação do TransactionRepository, ou seja, no TransactionRepositoryImpl.
+The HomeController configuration in the locator includes TransactionRepositoryImpl dependency injection. This allows that, when registering the HomeController, we can use the locator to retrieve the previously registered TransactionRepository. Within the HomeController, we can then access all the methods defined in the TransactionRepository implementation, that is, in the TransactionRepositoryImpl.
 
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/3f65a7e7-1808-4bde-9a6c-823ad07b3c97" style="width:90%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/3f65a7e7-1808-4bde-9a6c-823ad07b3c97" style="width:90%">
 
 </div>
 
@@ -147,131 +147,129 @@ A configuração do HomeController no locator inclui a injeção de dependência
 
 ------------------------------------
 
-Contém funcionalidades ou recursos compartilhados que são utilizados em diferentes partes do projeto. Evitando a duplicação de código e centralizando funcionalidades que são frequentemente usadas em várias partes da aplicação.
+Contains shared functionality or resources that are used in different parts of the project. Avoiding code duplication and centralizing features that are frequently used in various parts of the application.
 
 
 
 <details>
-  <summary>Clique para mostrar detalhes sobre common</summary>
+ <summary>Click to show details about common</summary>
 
 ------------------------------------
 
 
 ### constants
-Contém arquivos ou módulos que definem constantes ou valores fixos que são usados em diferentes partes do código. Essas constantes podem incluir valores como configurações, chaves de API, URLs, mensagens de erro, códigos de status HTTP e outras informações que são utilizadas em várias partes do sistema.
+Contains files or modules that define constants or fixed values ​​that are used in different parts of the code. These constants can include values ​​such as settings, API keys, URLs, error messages, HTTP status codes, and other information that is used in various parts of the system.
 
 
 <details>
-  <summary>Clique para mostrar detalhes sobre constants</summary>
+ <summary>Click to show details about constants</summary>
 
 
 ------------------------------------
 
-- app_colors.dart : Define uma classe chamada AppColors que contém várias constantes de cores usadas em um aplicativo.
+- app_colors.dart : Defines a class called AppColors that contains various color constants used in an application.
 
-  ------------------------------------
-  
-- app_text_styles.dart : Define uma classe chamada AppTextStyles que contém várias constantes de estilos de texto usadas em um aplicativo.
+ ------------------------------------
 
-  ------------------------------------
-  
-- date.dart: Define  métodos de acesso a constantes relacionadas ao tempo
+- app_text_styles.dart : Defines a class called AppTextStyles that contains various text style constants used in an application.
 
-  ------------------------------------
-  
-- keys.dart: Define uma classe chamada Keys que contém constantes estáticas representando chaves usadas para testes de widgets em um aplicativo Flutter.
+ ------------------------------------
 
-  ------------------------------------
-  
-- routes.dart : Define uma classe chamada NamedRoute. Essa classe define rotas nomeadas
+- date.dart: Defines methods of accessing time-related constants
 
-  ------------------------------------
-  
-- constants.dart : um conjunto de declarações de exportação em um arquivo Dart
+ ------------------------------------
 
-  
+- keys.dart: Defines a class called Keys that contains static constants representing keys used for testing widgets in a Flutter application.
+
+ ------------------------------------
+
+- routes.dart : Defines a class called NamedRoute. This class defines named routes
+
+ ------------------------------------
+
+- constants.dart: a set of export declarations in a Dart file
+
+
 
 </details>
 
 
 ------------------------------------
 
-
-
-
-### data
-Diretório que contém um arquivo responsável por personalizar as exceções. Nesse diretório, você pode encontrar arquivos que definem classes de exceção personalizadas, lidam com o tratamento de exceções de maneira específica para o projeto ou fornecem funções para lidar com erros de forma mais granular.
+### date
+Directory that contains a file responsible for customizing exceptions. In this directory, you can find files that define custom exception classes, handle exception handling in a project-specific way, or provide functions for handling errors in a more granular way.
 
 <details>
-  <summary>Clique para detalhes sobre data. </summary>
+ <summary>Click for date details. </summary>
 
 ------------------------------------
 
-- data_result.dart: define uma classe abstrata simples "DataResult" e suas duas implementações "_SuccessResult" e "_FailureResult". Usado para lidar com resultados que podem ser bem-sucedidos ou representar uma falha, e ele fornece uma maneira conveniente de trabalhar com esses resultados usando o método fold.
+- data_result.dart: defines a simple abstract class "DataResult" and its two implementations "_SuccessResult" and "_FailureResult". Used to deal with results that may be successful or represent a failure, and it provides a convenient way of working with these results using the fold method.
 
  <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/7f062c07-a2f2-46cf-91ef-2367edd5d380" style="width:60%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/7f062c07-a2f2-46cf-91ef-2367edd5d380" style="width:60%">
 </div>
 
 ------------------------------------
 
-- exceptions.dart: define uma hierarquia de exceções personalizadas
-  
+- exceptions.dart: defines a hierarchy of custom exceptions
+
 ------------------------------------
 
-- data : um conjunto de declarações de exportação em um arquivo Dart
+- data: a set of export declarations in a Dart file
 
 </details>
 
 ------------------------------------
 
 ### extensions
-Contém extensões ou complementos adicionais para o projeto principal. Essas extensões podem incluir funcionalidades adicionais, módulos específicos, plugins ou qualquer outro tipo de código que estenda ou aprimore o projeto principal de alguma forma.
+Contains additional extensions or add-ons to the main project. These extensions may include additional functionality, specific modules, plugins or any other type of code that extends or enhances the main project in some way.
 
 
 
 <details>
-  <summary>Clique para mostrar detalhes sobre extensions. </summary>
- 
+ <summary>Click to show details about extensions. </summary>
+
 ------------------------------------
 
-- date_formatter.dart: Define uma extensão (extension) chamada DateTimeFormatter para a classe DateTime. Isso significa que todas as instâncias de DateTime terão acesso aos métodos definidos nessa extensão sem precisar modificar a classe DateTime original.
+- date_formatter.dart: Defines an extension called DateTimeFormatter for the DateTime class. This means that all DateTime instances will have access to the methods defined in this extension without having to modify the original DateTime class.
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f874225b-4686-4cf0-a4e7-356a65b6b7c3" style="width:60%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f874225b-4686-4cf0-a4e7-356a65b6b7c3" style="width:60%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- page_controller_ext.dart: Define uma extensão para a classe PageController e uma enumeração chamada BottomAppBarItem destinada a uma barra de navegação na parte inferior (bottom navigation bar).
+- page_controller_ext.dart: Defines an extension for the PageController class and an enumeration called BottomAppBarItem intended for a bottom navigation bar.
 
-  ------------------------------------
-  
-- sizes.dart: Define uma classe Sizes que é responsável por ajudar na adaptação de tamanhos e layouts em diferentes dispositivos móveis e também define uma extensão para o tipo num (inteiros e doubles) que adiciona duas propriedades, w e h, para facilitar o cálculo e a adaptação de tamanhos em relação ao tamanho do dispositivo.
+ ------------------------------------
 
-  ------------------------------------
-  
-- types_ext: A primeira extensão é chamada de BoolExt e estende a classe bool. Ela adiciona um método chamado toInt(), que converte um valor booleano em um inteiro. Se o valor booleano for verdadeiro, o método retorna 1; caso contrário, retorna 0. A segunda extensão é chamada de StringExt e estende a classe String. Ela adiciona três métodos:
+- sizes.dart: Defines a Sizes class that is responsible for helping adapt sizes and layouts to different mobile devices and also defines an extension for the num type (integers and doubles) that adds two properties, w and h, to facilitate calculation and the adaptation of sizes in relation to the size of the device.
 
-  ------------------------------------
+ ------------------------------------
 
-- extensions : um conjunto de declarações de exportação em um arquivo Dart
+- types_ext: The first extension is called BoolExt and extends the bool class. It adds a method called toInt(), which converts a Boolean value to an integer. If the Boolean value is true, the method returns 1; otherwise, it returns 0. The second extension is called StringExt and extends the String class. It adds three methods:
+
+ ------------------------------------
+
+- extensions: a set of export declarations in a Dart file
 
 
-</details>  
+</details>
 
 ------------------------------------
 
 ### features
- São armazenados os arquivos relacionados a funcionalidades específicas do sistema ou aplicação. Essas funcionalidades podem ser agrupadas em pastas ou módulos dentro do diretório "features", facilitando a organização e manutenção do código. Por serem funcionalidades que são utilizadas em diferentes partes do projeto são incluídas em commons
+ Files related to specific functionalities of the system or application are stored. These features can be grouped into folders or modules within the "features" directory, making code organization and maintenance easier. Because they are features that are used in different parts of the project, they are included in commons
 
 <details>
-  <summary>Clique para mostrar detalhes sobre features. </summary>
+ <summary>Click to show details about features. </summary>
 
 ------------------------------------
 
+
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/950461f8-3b2f-4180-a091-ffad181d4be6" style="width:45%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/950461f8-3b2f-4180-a091-ffad181d4be6" style="width:45%">
 
 </div><br>
 
@@ -280,205 +278,205 @@ Contém extensões ou complementos adicionais para o projeto principal. Essas ex
 #### balance
 
 
-- balance_controller.dart: Encapsula uma classe denominada "BalanceController", a qual tem a responsabilidade de controlar o estado dos saldos financeiros em diversas partes da aplicação. Especificamente, esta classe abrange a lógica para a obtenção, cálculo e atualização desses saldos, os quais são baseados nas transações presentes na instância da classe "GenerateTransactionList().transactions". Esta última serve como uma simulação de um repositório de dados. No construtor da classe "BalanceController", é especificado um parâmetro "TransactionRepository transactionRepository", o qual é registrado por meio do "locator". Ao se utilizar o "locator" para recuperar uma instância de "BalanceController", o objeto registrado em "locator.dart" com "TransactionRepository" será retornado.
+- balance_controller.dart: Encapsulates a class called "BalanceController", which is responsible for controlling the state of financial balances in different parts of the application. Specifically, this class covers the logic for obtaining, calculating and updating these balances, which are based on the transactions present in the "GenerateTransactionList().transactions" class instance. The latter serves as a simulation of a data repository. In the constructor of the "BalanceController" class, a parameter "TransactionRepository transactionRepository" is specified, which is registered using the "locator". When using "locator" to retrieve an instance of "BalanceController", the object registered in "locator.dart" with "TransactionRepository" will be returned.
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f0c4187c-2dc6-4bd9-82db-1c395b848bde" style="width:45%">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/e95d7bdc-d8aa-439b-a4c8-81d6cdcce893" style="width:45%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/f0c4187c-2dc6-4bd9-82db-1c395b848bde" style="width:45%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/e95d7bdc-d8aa-439b-a4c8-81d6cdcce893" style="width:45%">
 </div>
 
 
 <div align="center">
-<h3> Fluxo para acessar métodos através do controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd429985-95dd-4fed-8eb3-7c436e58feb4" style="width:100%">
+<h3> Flow to access methods through the controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/dd429985-95dd-4fed-8eb3-7c436e58feb4" style="width:100%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- ballance_state.dart: Classes que permitem modelar diferentes estados
+- ballance_state.dart: Classes that allow you to model different states
 
 <div align="center">
-<h3> Fluxo dos estados </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1cac6e6a-3150-41ab-9fad-3c4e47876c4f" style="width:75%">
+<h3> Flow of states </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/1cac6e6a-3150-41ab-9fad-3c4e47876c4f" style="width:75%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- balance : um conjunto de declarações de exportação em um arquivo Dart
+- balance: a set of export declarations in a Dart file
 
-  ------------------------------------
+ ------------------------------------
 
-#### transaction
+#### transactions
 
 
 
-- trasaction_controller.dart : Encapsula uma classe denominada TransactionController onde os estados das transações são gerenciados centralmente e notificam os widgets interessados quando há mudanças. Ele também faz uso de repositórios (TransactionRepository) presentes na instância da classe "GenerateTransactionList().transactions" para interagir com os dados das transações e um serviço de armazenamento seguro (SecureStorageService) para lidar com a segurança dos dados sensíveis.
-  
-  ------------------------------------
+- trasaction_controller.dart: Encapsulates a class called TransactionController where transaction states are centrally managed and notify interested widgets when there are changes. It also makes use of repositories (TransactionRepository) present in the "GenerateTransactionList().transactions" class instance to interact with transaction data and a secure storage service (SecureStorageService) to handle the security of sensitive data.
+
+ ------------------------------------
 
 <div align="center">
-<h3> Fluxo para acessar métodos através do controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/43712960-3df2-48f2-8b5f-526a67ad4412" style="width:100%">
+<h3> Flow to access methods through the controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/43712960-3df2-48f2-8b5f-526a67ad4412" style="width:100%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- transaction_state.dart: Classes que permitem modelar diferentes estados
+- transaction_state.dart: Classes that allow you to model different states
 
 <div align="center">
-<h3> Fluxo dos estados </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2d0092e-6dc7-403a-8f80-73571c2498fa" style="width:100%">
+<h3> Flow of states </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2d0092e-6dc7-403a-8f80-73571c2498fa" style="width:100%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- transaction.dart: um conjunto de declarações de exportação em um arquivo Dart
+- transaction.dart: a set of export declarations in a Dart file
 
 
 </details>
 
-  ------------------------------------
+ ------------------------------------
+
 
 ### models
-São armazenados os modelos de dados da aplicação. Esses modelos representam as entidades principais do sistema e definem a estrutura e o comportamento dos dados que serão manipulados pela aplicação.
+The application data models are stored. These models represent the main entities of the system and define the structure and behavior of the data that will be manipulated by the application.
 
 
 <details>
-  <summary>Clique para mostrar detalhes sobre models. </summary>
+ <summary>Click to show details about models. </summary>
 
 ------------------------------------
 
-- agreements_model.dart : Define AgreementsModel. Suas propriedades incluem um título (title), um caminho para o ativo (assetPath), e uma rota nomeada (namedRoute).
+- agreements_model.dart : Define AgreementsModel. Its properties include a title (title), a path to the asset (assetPath), and a named route (namedRoute).
 
-  ------------------------------------
-  
-- balances_model.dart :  Define BalancesModel e possui três propriedades: totalIncome, totalOutcome e totalBalance, que representam, respectivamente, o total de renda, o total de despesas e o saldo total.
+ ------------------------------------
 
-  ------------------------------------
-  
-- transaction_model.dart : Define TransactionModel, e as propriedades utilizadas são description, category, value, date, status, createdAt, id, userId e syncStatus.
+- balances_model.dart: Defines BalancesModel and has three properties: totalIncome, totalOutcome and totalBalance, which represent, respectively, total income, total expenses and total balance.
 
-  ------------------------------------
-  
-- user_model.dart : Define  UserModel e possui as seguintes propriedades: id, name, email e password.
+ ------------------------------------
 
-  ------------------------------------
-   
-- models.dart : um conjunto de declarações de exportação em um arquivo Dart
+- transaction_model.dart: Defines TransactionModel, and the properties used are description, category, value, date, status, createdAt, id, userId and syncStatus.
+
+ ------------------------------------
+
+- user_model.dart: Defines UserModel and has the following properties: id, name, email and password.
+
+ ------------------------------------
+
+- models.dart: a set of export declarations in a Dart file
 
 
 </details>
 
 ------------------------------------
 
-### utils
+### uses
 
-Contém arquivos e módulos com funções auxiliares ou utilitárias que são utilizadas em diferentes partes do projeto. Essas funções podem incluir:
+Contains files and modules with auxiliary or utility functions that are used in different parts of the project. These roles may include:
 
 
 <details>
-  <summary>Clique para mostrar detalhes sobre utils. </summary>
+ <summary>Click to show details about utils. </summary>
 
 ------------------------------------
 
-- money_mask_controller.dart : Define uma classe chamada MoneyMaskedTextController, que é uma subclasse de TextEditingController. Essa classe é usada para controlar e formatar valores monetários em um campo de texto.
+- money_mask_controller.dart : Defines a class called MoneyMaskedTextController, which is a subclass of TextEditingController. This class is used to control and format monetary values ​​in a text field.
 
 <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d250f3d2-c76c-4b20-9eea-023264fd96f4" style="width:50%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d250f3d2-c76c-4b20-9eea-023264fd96f4" style="width:50%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- uppercase_text_formatter.dart : Esta classe é utilizada para formatar o texto inserido em um campo de entrada de texto para que todas as letras sejam convertidas para maiúsculas.
-  
+- uppercase_text_formatter.dart : This class is used to format text entered into a text input field so that all letters are converted to uppercase.
+
  <div align="center">
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/3d4ade86-525a-452b-a7c2-74ac24d3b67a" style="width:50%">
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/3d4ade86-525a-452b-a7c2-74ac24d3b67a" style="width:50%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- validator.dart: Define uma classe chamada Validator com métodos estáticos para validar diferentes tipos de entrada, como nome, email, senha e confirmação de senha.
+- validator.dart: Defines a class called Validator with static methods to validate different types of input such as name, email, password and password confirmation.
 
 <div align="center">
-    <h3> Validação de formulário </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/24ad355a-21ad-47e9-bcfd-d2325f14c39f" style="width:100%">
+ <h3> Form validation </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/24ad355a-21ad-47e9-bcfd-d2325f14c39f" style="width:100%">
 </div>
 
-  ------------------------------------
+ ------------------------------------
 
-- utils : um conjunto de declarações de exportação em um arquivo Dart
+- utils: a set of export declarations in a Dart file
 
 
 </details>
 
 ------------------------------------
-
 ### widgets
 
-Contém componentes ou elementos de interface do usuário (UI) que são compartilhados e reutilizados em várias partes do projeto. Esses widgets podem incluir botões, campos de entrada, barras de progresso, ou qualquer outro elemento de interface que seja comum e utilizado em diferentes partes da aplicação.
+Contains components or user interface (UI) elements that are shared and reused across multiple parts of the project. These widgets can include buttons, input fields, progress bars, or any other interface element that is common and used in different parts of the application.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre widgets. </summary>
+ <summary>Click to show details about widgets. </summary>
 
 ------------------------------------
 
-- app_header.dart: Um componente que representa o cabeçalho da aplicação, geralmente contendo o logotipo, título e possivelmente botões de navegação.
+- app_header.dart: A component that represents the application header, usually containing the logo, title and possibly navigation buttons.
 
-  ------------------------------------
+ ------------------------------------
 
-- base_page.dart: Uma página base que pode ser estendida por outras páginas para fornecer funcionalidades comuns, como a estrutura básica de layout e lógica de navegação.
+- base_page.dart: A base page that can be extended by other pages to provide common functionality such as the basic layout structure and navigation logic.
 
-  ------------------------------------
+ ------------------------------------
 
-- custom_bottom_app_bar.dart: Uma barra de navegação inferior personalizada que pode conter ícones, texto e funcionalidades de navegação para diferentes partes da aplicação.
+- custom_bottom_app_bar.dart: A custom bottom navigation bar that can contain icons, text and navigation functionality for different parts of the application.
 
-  ------------------------------------
+ ------------------------------------
 
-- custom_bottom_sheet.dart: Um componente que exibe um painel inferior personalizado, geralmente usado para apresentar opções de ação adicionais ou informações contextuais.
+- custom_bottom_sheet.dart: A component that displays a custom bottom panel, often used to present additional action options or contextual information.
 
-  ------------------------------------
+ ------------------------------------
 
-- custom_circular_progress_indicator.dart: Um indicador de progresso circular personalizado que pode ser usado para indicar carregamento ou processamento em segundo plano.
+- custom_circular_progress_indicator.dart: A custom circular progress indicator that can be used to indicate loading or background processing.
 
-  ------------------------------------
+ ------------------------------------
 
-- custom_snackbar.dart: Um componente personalizado para exibir mensagens temporárias na parte inferior da tela, geralmente usadas para fornecer feedback ao usuário sobre ações realizadas.
+- custom_snackbar.dart: A custom component to display temporary messages at the bottom of the screen, generally used to provide feedback to the user about actions taken.
 
-  ------------------------------------
+ ------------------------------------
 
-- custom_text_form_field.dart: Um campo de formulário de texto personalizado que pode incluir validações, estilos e outras personalizações específicas.
+- custom_text_form_field.dart: A custom text form field that can include specific validations, styles, and other customizations.
 
-  ------------------------------------
+ ------------------------------------
 
-- custom_text_title.dart: Um componente de título de texto personalizado usado para títulos de seções, cabeçalhos de páginas, etc.
+- custom_text_title.dart: A custom text title component used for section titles, page headers, etc.
 
-  ------------------------------------
+ ------------------------------------
 
-- greetings.dart: Um componente que pode ser usado para exibir saudações personalizadas com base em diferentes condições, como a hora do dia ou o estado do usuário.
+- greetings.dart: A component that can be used to display personalized greetings based on different conditions, such as the time of day or the user's state.
 
-  ------------------------------------
+ ------------------------------------
 
-- multi_text_button.dart: Um botão personalizado que pode exibir múltiplas linhas de texto e possivelmente ícones, usado para ações específicas na aplicação.
+- multi_text_button.dart: A custom button that can display multiple lines of text and possibly icons, used for specific actions in the application.
 
-  ------------------------------------
+ ------------------------------------
 
-- notification_widget.dart: Um componente que exibe notificações ou alertas para o usuário, como mensagens de erro, avisos ou confirmações.
+- notification_widget.dart: A component that displays notifications or alerts to the user, such as error messages, warnings or confirmations.
 
-  ------------------------------------
+ ------------------------------------
 
-- password_form_field.dart: Um campo de formulário personalizado específico para entrada de senhas, geralmente incluindo funcionalidades de ocultação de texto e validação.
+- password_form_field.dart: A custom form field specific to password entry, usually including text hiding and validation functionalities.
 
-  ------------------------------------
+ ------------------------------------
 
-- primary_button.dart: Um botão de destaque primário na aplicação, geralmente usado para ações principais ou de destaque.
+- primary_button.dart: A primary prominent button in the application, generally used for main or prominent actions.
 
-  ------------------------------------
+ ------------------------------------
 
-- transaction_listview.dart: Um componente que exibe uma lista de transações ou itens, com opções de filtragem, classificação e interações adicionais.
+- transaction_listview.dart: A component that displays a list of transactions or items, with options for filtering, sorting and additional interactions.
 
-  ------------------------------------
+ ------------------------------------
 
-- widgets.dart: Um arquivo de agregação que importa e exporta todos os widgets personalizados disponíveis na aplicação, facilitando o acesso e a utilização em outras partes do projeto.
+- widgets.dart: An aggregation file that imports and exports all custom widgets available in the application, facilitating access and use in other parts of the project.
 
 
 </details>
@@ -486,6 +484,7 @@ Contém componentes ou elementos de interface do usuário (UI) que são comparti
 </details>
 
 ------------------------------------
+
 <br>
 <div align="center">
 
@@ -495,78 +494,77 @@ Contém componentes ou elementos de interface do usuário (UI) que são comparti
 
 ------------------------------------
 
-O diretório "features" é uma abordagem organizacional adaptando os princípios de "Flux Architecture", que divide a aplicação em três componentes principais: a visualização (page), o controlador (controller) e state
-(estado)
+The "features" directory is an organizational approach adapting the principles of "Flux Architecture", which divides the application into three main components: the view (page), the controller (controller) and state
+(state)
 
 <details>
-  <summary>Clique para mostrar detalhes sobre features</summary>
+ <summary>Click to show feature details</summary>
 
 
 
 ------------------------------------
 
-### home 
+### home
 
-Página inicial da aplicação, onde os principais recursos e funcionalidades são exibidos ao usuário logo após o login.
+Application home page, where the main features and functionalities are displayed to the user immediately after logging in.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre home </summary>
+ <summary>Click to show details about home </summary>
 
 ------------------------------------
 
-- home_controller.dart: Define HomeController, gerencia o estado e a lógica de negócios relacionados à tela inicial da aplicação, busca as transações do repositório, ordena-as e atualiza o estado da tela de acordo com o resultado da busca. Ele também fornece acesso aos dados das transações e ao controlador de página
+- home_controller.dart: Defines HomeController, manages the state and business logic related to the application's home screen, searches transactions from the repository, orders them and updates the screen state according to the search result. It also provides access to transaction data and the page controller
 
-  ------------------------------------
+ ------------------------------------
 
-- home_page_view.dart: Define a estrutura e a lógica para a página principal de um aplicativo Flutter, integrando os diferentes componentes e controladores necessários para funcionalidades como navegação entre telas, adição de transações e exibição de informações.
+- home_page_view.dart: Defines the structure and logic for the home page of a Flutter application, integrating the different components and controllers required for functionality such as navigating between screens, adding transactions, and displaying information.
 
-    Quando floatingActionButton é pressionado, ele aguarda a navegação para a rota '/transaction' usando o Navigator.pushNamed. Após a navegação, ele verifica se o resultado retornado não é nulo. Dependendo da página atual do PageController, diferentes métodos dos controladores (homeController, statsController, walletController e balanceController) são chamados para atualizar os dados da aplicação
- 
-  <div align="center">
-    <h3> PageController </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/7558867f-174f-44c7-b8be-76522365cafa" style="width:70%">
+ When floatingActionButton is pressed, it waits for navigation to the '/transaction' route using the Navigator.pushNamed. After navigation, it checks that the returned result is not null. Depending on the current PageController page, different controller methods (homeController, statsController, walletController and balanceController) are called to update the application data
+
+ <div align="center">
+ <h3> PageController </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/7558867f-174f-44c7-b8be-76522365cafa" style="width:70%">
 </div><br>
 
-  ------------------------------------
+ ------------------------------------
 
-- home_page.dart: A HomePage estabelece comunicação com controladores HomeController e BalanceController, para a obtenção de dados, como transações e saldos. Essa comunicação ocorre por meio da invocação dos métodos _homeController.getAllTransactions() e _balanceController.getBalances() durante a fase de inicialização (initState).
+- home_page.dart: HomePage establishes communication with HomeController and BalanceController controllers, to obtain data, such as transactions and balances. This communication occurs through the invocation of the _homeController.getAllTransactions() and _balanceController.getBalances() methods during the initialization phase (initState).
 
-    Posteriormente, os dados obtidos são utilizados em diferentes partes da interface. O BalanceCardWidget é configurado para receber o _balanceController, permitindo assim o acesso e utilização dos dados de saldo. Por outro lado, o TransactionListView recebe as transações disponíveis através da propriedade _homeController.transactions, cujos valores são inicializados durante o initState.
+ Subsequently, the data obtained is used in different parts of the interface. The BalanceCardWidget is configured to receive the _balanceController, thus allowing access and use of balance data. On the other hand, the TransactionListView receives the available transactions through the _homeController.transactions property, whose values ​​are initialized during initState.
 
-  <div align="center">
-    <h3> Controllers </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/a88aa315-3c31-4dbd-9b93-c5ec10ccf7c6" style="width:100%">
+ <div align="center">
+ <h3> Controllers </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/a88aa315-3c31-4dbd-9b93-c5ec10ccf7c6" style="width:100%">
 </div><br>
 
 
-  ------------------------------------
+ ------------------------------------
 
-- home_page.state: Classes que permitem modelar diferentes estados
+- home_page.state: Classes that allow you to model different states
 
-  ------------------------------------
+ ------------------------------------
 
-- home.dart : um conjunto de declarações de exportação em um arquivo Dart
+- home.dart: a set of export declarations in a Dart file
 
-  
+
 </details>
 
 
 ------------------------------------
+### onboarding:
 
-### onboarding: 
-
-Página de introdução ou tutorial para novos usuários, fornecendo informações sobre como usar a aplicação e seus recursos.
+Introduction or tutorial page for new users, providing information on how to use the application and its features.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre onboarding. </summary>
- 
+ <summary>Click to show onboarding details. </summary>
+
 ------------------------------------
 
-- onboarding_page.dart : Define a estrutura e o conteúdo básico de uma página de onboarding em um aplicativo.
+- onboarding_page.dart: Defines the structure and basic content of an onboarding page in an application.
 
-  ------------------------------------
-  
-- onboarding.dart : um conjunto de declarações de exportação em um arquivo Dart. 
+ ------------------------------------
+
+- onboarding.dart: a set of export declarations in a Dart file.
 
 </details>
 
@@ -574,213 +572,215 @@ Página de introdução ou tutorial para novos usuários, fornecendo informaçõ
 
 ### profile:
 
-Página onde os usuários podem visualizar e editar suas informações pessoais e realizar logout.
+Page where users can view and edit their personal information and log out.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre profile</summary>
- 
+ <summary>Click to show profile details</summary>
+
 ------------------------------------
 
-- profile_controller.dart : Define o "controller" de perfil responsável por gerenciar o estado e as operações relacionadas ao perfil do usuário, como obter dados do usuário, atualizar o nome de usuário, atualizar a senha e excluir a conta.
+- profile_controller.dart : Defines the profile "controller" responsible for managing the state and operations related to the user profile, such as getting user data, updating the username, updating the password, and deleting the account.
 
-  ------------------------------------
+ ------------------------------------
 
-- profile_page.dart : A ProfilePage estabelece comunicação com controladores ProfileController, para a obtenção de dados do usuário. Essa comunicação ocorre por meio da invocação dos métodos _homeController.getUserData() durante a fase de inicialização (initState).
+- profile_page.dart: ProfilePage establishes communication with ProfileController controllers, to obtain user data. This communication occurs through the invocation of the _homeController.getUserData() methods during the initialization phase (initState).
 
 
-  <div align="center">
-    <h3> Controllers </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/03a681f6-5b2b-455e-a02a-48dbae1b091b" style="width:100%">
+ <div align="center">
+ <h3> Controllers </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/03a681f6-5b2b-455e-a02a-48dbae1b091b" style="width:100%">
 </div><br>
 
-  ------------------------------------
+ ------------------------------------
 
-- profile_state.dart: Classes que permitem modelar diferentes estados
+- profile_state.dart: Classes that allow you to model different states
 
 </details>
 
  ------------------------------------
 
-### sign_in: 
 
-Página de login onde os usuários inserem suas credenciais para acessar a aplicação.
+### sign_in:
 
-<details>
-  <summary>Clique para mostrar detalhes sobre sign_in </summary>
-
-------------------------------------
-
-- sign_in_controller.dart : Estrutura básica para gerenciar o estado e a lógica por trás da tela de login em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de autenticação do usuário.
-
-  ------------------------------------
-
-- sign_in_page.dart : Uma página de login funcional com validação de entrada, processamento de login e tratamento de estados de carregamento, sucesso e erro. 
-
-
-<div align="center">
-    <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/8803aada-9ba7-4379-b38c-4cae2cf1eb6a" style="width:100%">
-</div><br>
-
-Formulário: Form(key: _formKey) define um widget de formulário que pode ser referenciado e manipulado em outras partes do aplicativo, utilizando a chave _formKey para acessar e controlar seu estado. FormState é uma classe que mantém o estado do widget Form. 
-Ele é usado para realizar ações como validar, salvar ou redefinir o estado do formulário.Ao usar _formKey, você pode acessar métodos e propriedades do FormState associado ao widget Form realizando validações de formulário, salvar dados ou redefinir o estado do formulário, entre outras operações.
-
-<div align="center">
-    <h3> Formulário </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
-</div><br>
-
-  ------------------------------------
-
-- sign_in_state.dart: Classes que permitem modelar diferentes estados
-
-</details>
-
-------------------------------------
-
-### sign_up: 
-
-Página de registro onde novos usuários podem criar uma conta na aplicação fornecendo informações como nome, e-mail, senha, etc.
+Login page where users enter their credentials to access the application.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre sign_up </summary>
+ <summary>Click to show details about sign_in </summary>
 
 ------------------------------------
 
-- sign_up_controller.dart:  Estrutura básica para gerenciar o estado e a lógica por trás da tela de registro em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de registro do usuário.
-
-  ------------------------------------
-
-- sign_up_page.dart: Uma página de registro funcional com validação de entrada, processamento de registro e tratamento de estados de carregamento, sucesso e erro. 
-
-<div align="center">
-    <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d4daab47-0284-41ac-9919-f0788a843e89" style="width:100%">
-</div><br>
-
-Formulário: Form(key: _formKey) define um widget de formulário que pode ser referenciado e manipulado em outras partes do aplicativo, utilizando a chave _formKey para acessar e controlar seu estado. FormState é uma classe que mantém o estado do widget Form. 
-Ele é usado para realizar ações como validar, salvar ou redefinir o estado do formulário.Ao usar _formKey, você pode acessar métodos e propriedades do FormState associado ao widget Form realizando validações de formulário, salvar dados ou redefinir o estado do formulário, entre outras operações.
-
-<div align="center">
-    <h3> Formulário </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
-</div><br>
-
-  ------------------------------------
-
-- sign_up_state.dart: Classes que permitem modelar diferentes estados
-
-</details>
-
-------------------------------------
-
-### splash: 
-
-Página de introdução ou carregamento exibida brevemente ao iniciar a aplicação, geralmente contendo o logotipo e/ou nome da aplicação.
-
-<details>
-  <summary>Clique para mostrar detalhes sobre splash </summary>
-
-------------------------------------
-
-- splash_controller.dart: Estrutura básica para gerenciar o estado e a lógica por trás da tela de carregamento em um aplicativo Flutter, abordando os diferentes estados possíveis durante o processo de início do aplicativo.
-
-  ------------------------------------
-  
-- splash_page.dart:  Fornece uma página de inicialização  funcional para o aplicativo, dando uma introdução visual e verificando o estado de login do usuário antes de redirecioná-lo para a tela apropriada.
-
-<div align="center">
-    <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d977a17d-33c2-43e7-b13b-80a06648fca4" style="width:100%">
-</div><br>
-
-
-  ------------------------------------
-  
-- splash_state.dart: Classes que permitem modelar diferentes estados
-
-</details>
-
-------------------------------------
-
-### stats: 
-
-Página onde são exibidas estatísticas, gráficos ou dados relevantes para o usuário, como estatísticas de uso, consumo, desempenho, etc.
-
-<details>
-  <summary>Clique para mostrar detalhes sobre stats </summary>
-
-------------------------------------
-
-- stats_controller.dart:  Responsável por gerenciar o estado e a lógica por trás das estatísticas em um aplicativo Flutter, oferecendo métodos para calcular e agrupar dados com base em diferentes períodos de tempo. 
-  
-  ------------------------------------
-
-- stats_page.dart: Estrutura básica para gerenciar o estado e a lógica por trás da tela de estatísticas, abordando os diferentes estados possíveis durante o processo de início do aplicativo.
-
-  <div align="center">
-    <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/36ce6047-2b4d-426e-aa2a-1e60e1e0863a" style="width:100%">
-</div><br>
-
-
-  ------------------------------------
-  
-- stats_state.dart: Classes que permitem modelar diferentes estados
-
- </details> 
+- sign_in_controller.dart: Basic framework for managing the state and logic behind the login screen in a Flutter application, addressing the different possible states during the user authentication process.
 
  ------------------------------------
 
-### transaction: 
+- sign_in_page.dart: A functional login page with input validation, login processing and handling of loading, success and error states.
 
-Página onde os usuários podem visualizar e gerenciar suas transações financeiras, como pagamentos, transferências, depósitos, etc.
 
-<details>
-  <summary>Clique para mostrar detalhes sobre transaction </summary>
+<div align="center">
+ <h3> Controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/8803aada-9ba7-4379-b38c-4cae2cf1eb6a" style="width:100%">
+</div><br>
+
+Form: Form(key: _formKey) defines a form widget that can be referenced and manipulated in other parts of the application, using the _formKey key to access and control its state. FormState is a class that maintains the state of the Form widget.
+It is used to perform actions such as validating, saving or resetting the form state. By using _formKey, you can access methods and properties of the FormState associated with the Form widget by performing form validations, saving data or resetting the form state, among other operations .
+
+<div align="center">
+ <h3> Form </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
+</div><br>
+
+ ------------------------------------
+
+- sign_in_state.dart: Classes that allow you to model different states
+
+</details>
 
 ------------------------------------
 
-- transaction_page.dart: Fornece uma interface para que os usuários adicionem ou editem transações financeiras, com validação de entrada de dados e manipulação de diferentes estados e eventos
+### sign_up:
+
+Registration page where new users can create an account on the application by providing information such as name, email, password, etc.
+
+<details>
+ <summary>Click to show details about sign_up </summary>
+
+------------------------------------
+
+- sign_up_controller.dart: Basic framework for managing the state and logic behind the sign-up screen in a Flutter app, addressing the different possible states during the user sign-up process.
+
+ ------------------------------------
+
+- sign_up_page.dart: A functional registration page with input validation, registration processing and handling of loading, success and error states.
 
 <div align="center">
-    <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/471a6faf-d20d-4122-ae05-62ea001e4234" style="width:100%">
+ <h3> Controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d4daab47-0284-41ac-9919-f0788a843e89" style="width:100%">
+</div><br>
+
+Form: Form(key: _formKey) defines a form widget that can be referenced and manipulated in other parts of the application, using the _formKey key to access and control its state. FormState is a class that maintains the state of the Form widget.
+It is used to perform actions such as validating, saving or resetting the form state. By using _formKey, you can access methods and properties of the FormState associated with the Form widget by performing form validations, saving data or resetting the form state, among other operations .
+
+<div align="center">
+ <h3> Form </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/b2e4fd43-9a9c-4400-bfde-f509c809e804" style="width:60%">
+</div><br>
+
+ ------------------------------------
+
+- sign_up_state.dart: Classes that allow you to model different states
+
+</details>
+
+------------------------------------
+
+
+### splash:
+
+Introduction or loading page displayed briefly when starting the application, usually containing the application logo and/or name.
+
+<details>
+ <summary>Click to show splash details </summary>
+
+------------------------------------
+
+- splash_controller.dart: Basic framework for managing the state and logic behind the loading screen in a Flutter app, addressing the different possible states during the app launch process.
+
+ ------------------------------------
+
+- splash_page.dart: Provides a functional launch page for the application, giving a visual introduction and checking the user's login state before redirecting them to the appropriate screen.
+
+<div align="center">
+ <h3> Controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/d977a17d-33c2-43e7-b13b-80a06648fca4" style="width:100%">
 </div><br>
 
 
-  ------------------------------------
+ ------------------------------------
 
-- transaction_state: Classes que permitem modelar diferentes estados
+- splash_state.dart: Classes that allow you to model different states
+
+</details>
+
+------------------------------------
+
+### stats:
+
+Page where statistics, graphs or data relevant to the user are displayed, such as usage statistics, consumption, performance, etc.
+
+<details>
+ <summary>Click to show details about stats </summary>
+
+------------------------------------
+
+- stats_controller.dart: Responsible for managing the state and logic behind statistics in a Flutter application, offering methods to calculate and group data based on different time periods.
+
+ ------------------------------------
+
+- stats_page.dart: Basic framework for managing the state and logic behind the statistics screen, addressing the different possible states during the application launch process.
+
+ <div align="center">
+ <h3> Controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/36ce6047-2b4d-426e-aa2a-1e60e1e0863a" style="width:100%">
+</div><br>
+
+
+ ------------------------------------
+
+- stats_state.dart: Classes that allow you to model different states
+
+ </details>
+
+ ------------------------------------
+
+### transaction:
+
+Page where users can view and manage their financial transactions such as payments, transfers, deposits, etc.
+
+<details>
+ <summary>Click to show transaction details </summary>
+
+------------------------------------
+
+- transaction_page.dart: Provides an interface for users to add or edit financial transactions, with data entry validation and handling of different states and events
+
+<div align="center">
+ <h3> Controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/471a6faf-d20d-4122-ae05-62ea001e4234" style="width:100%">
+</div><br>
+
+
+ ------------------------------------
+
+- transaction_state: Classes that allow you to model different states
 
  </details>
 
 ------------------------------------
 
-### wallet: 
+### wallet:
 
-Página onde os usuários podem visualizar o saldo da sua carteira digital.
+Page where users can view their digital wallet balance.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre wallet </summary>
+ <summary>Click to show wallet details </summary>
 
 ------------------------------------
 
-- wallet_controller.dart: Responsável por gerenciar o estado da carteira e as interações com o repositório de transações.
+- wallet_controller.dart: Responsible for managing the state of the wallet and interactions with the transaction repository.
 
-  ------------------------------------
-  
-- wallet_page.dart: Pesponsável por exibir e gerenciar as transações e saldos da carteira do usuário, permitindo que ele navegue entre os meses e visualize suas atividades financeiras de forma conveniente.
+ ------------------------------------
+
+- wallet_page.dart: Responsible for displaying and managing the user's wallet transactions and balances, allowing them to navigate between months and view their financial activities conveniently.
 
 <div align="center">
-    <h3> Controller </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/29122770-0b35-4038-a00a-d84f76be3ca7" style="width:100%">
+ <h3> Controller </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/29122770-0b35-4038-a00a-d84f76be3ca7" style="width:100%">
 </div><br>
 
-  ------------------------------------
-  
-- wallet_state.dart: Classes que permitem modelar diferentes estados
-  
+ ------------------------------------
+
+- wallet_state.dart: Classes that allow you to model different states
+
 </details>
 
 </details>
@@ -795,57 +795,54 @@ Página onde os usuários podem visualizar o saldo da sua carteira digital.
 </div>
 
 ------------------------------------
-Repositório é responsável por lidar com operações relacionadas a transações, como adicionar, atualizar, excluir e obter transações, bem como calcular saldos. Segue o padrão de repositório para gerenciar os dados de transações de forma abstrata e desacoplada da camada de interface do usuário.
+Repository is responsible for handling transaction-related operations such as add, update, delete, and get transactions, as well as calculating balances. It follows the repository pattern to manage transaction data abstractly and decoupled from the user interface layer.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre repositories </summary>
+ <summary>Click to show details about repositories </summary>
 
 ------------------------------------
 
-- transaction_repository.dart: Define uma interface chamada TransactionRepository, que descreve métodos para realizar operações relacionadas a transações financeiras.Essa interface fornece um contrato claro para interagir com os dados de transações no aplicativo, permitindo a implementação de repositórios de transações que se conectam a diferentes fontes de dados, como um banco de dados local, um serviço web ou o Firebase, por exemplo.
+- transaction_repository.dart: Defines an interface called TransactionRepository, which describes methods for performing operations related to financial transactions. This interface provides a clear contract for interacting with transaction data in the application, allowing the implementation of transaction repositories that connect to different data sources, such as a local database, a web service, or Firebase, for example.
 
-  ------------------------------------
+ ------------------------------------
 
-- transaction_repository_impl.dart: Define uma classe chamada TransactionRepositoryImpl que implementa a interface TransactionRepository. Implementa um repositório de transações com métodos para adicionar, atualizar, excluir e recuperar transações do repositório de dados, garantindo que exceções sejam tratadas adequadamente durante o processo.
-  Por meio da instanciação de um controlador correspondente à funcionalidade específica, fazemos uso do locator para criar ou recuperar uma instância de TransactionRepositoryImpl, permitindo assim o acesso e utilização de suas funções para manipulação de dados.
-
-
-
+- transaction_repository_impl.dart: Defines a class called TransactionRepositoryImpl that implements the TransactionRepository interface. Implements a transaction store with methods to add, update, delete, and retrieve transactions from the data store, ensuring that exceptions are handled appropriately during the process.
+ By instantiating a controller corresponding to specific functionality, we use the locator to create or retrieve an instance of TransactionRepositoryImpl, thus allowing access and use of its functions for data manipulation.
 
 <div align="center">
-    <h3> Lógica </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/94b5d6f3-535d-42a6-bff8-94d2042f261c" style="width:100%">
+ <h3> Logic </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/94b5d6f3-535d-42a6-bff8-94d2042f261c" style="width:100%">
 </div><br>
 
 
 
 <div align="center">
-    <h3> Lógica utilizando os controllers </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/cdbc5c5f-1e39-4395-a9c3-f304f2f09711" style="width:100%">
+ <h3> Logic using controllers </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/cdbc5c5f-1e39-4395-a9c3-f304f2f09711" style="width:100%">
 </div><br>
 
-   No método locator.registerLazySingleton, foram empregadas duas abordagens para passar a classe TransactionRepositoryImpl. Uma delas utiliza o locator para localizar o TransactionRepository que já foi registrado anteriormente e que irá instanciar um TransactionRepositoryImpl. A outra abordagem envolve passar diretamente a classe TransactionRepositoryImpl para o registro.
+ In the locator.registerLazySingleton method, two approaches were used to pass the TransactionRepositoryImpl class. One of them uses the locator to locate the TransactionRepository that has already been registered previously and which will instantiate a TransactionRepositoryImpl. The other approach involves directly passing the TransactionRepositoryImpl class to the registry.
 
 
 
-  
+
 <div align="center">
-    <h3> Exemplo </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/c43fb53d-ad0a-4c6d-be69-6d0f3b660628" style="width:100%">
+ <h3> Example </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/c43fb53d-ad0a-4c6d-be69-6d0f3b660628" style="width:100%">
 </div><br>
 
- 
-  ------------------------------------
 
-- transaction_repository_list.dart:  Define uma classe que gera uma lista de transações fictícias, utilizando o padrão Singleton para garantir que apenas uma instância da classe seja criada e fornecendo um método conveniente para acessar essa instância. Essa lista pode ser útil para testes ou para preencher dados de exemplo em uma aplicação.
+ ------------------------------------
+
+- transaction_repository_list.dart: Defines a class that generates a list of dummy transactions, using the Singleton pattern to ensure that only one instance of the class is created and providing a convenient method to access that instance. This list can be useful for testing or for filling in example data in an application.
 
 
-   class GenerateTransactionList { ... }: Aqui, estamos definindo uma classe chamada GenerateTransactionList. Esta classe é responsável por gerar uma lista de transações.
-static final GenerateTransactionList _instance = GenerateTransactionList._internal();: Esta linha declara uma variável estática _instance que é do tipo GenerateTransactionList. A variável é marcada como final, o que significa que ela não pode ser modificada após ser inicializada. É inicializada com uma nova instância de GenerateTransactionList por meio do construtor privado _internal(), que será explicado na próxima linha.
+ class GenerateTransactionList { ... }: Here we are defining a class called GenerateTransactionList. This class is responsible for generating a list of transactions.
+static final GenerateTransactionList _instance = GenerateTransactionList._internal();: This line declares a static variable _instance which is of type GenerateTransactionList. The variable is marked as final, which means it cannot be modified after it is initialized. It is initialized with a new instance of GenerateTransactionList through the private _internal() constructor, which will be explained in the next line.
 
-    factory GenerateTransactionList() { return _instance; }: Este é um construtor de fábrica (factory constructor) que retorna uma instância de _instance. Quando o código chama GenerateTransactionList(), ele não cria uma nova instância da classe, mas sim retorna a mesma instância que foi criada anteriormente e atribuída a _instance. Isso garante que sempre haja apenas uma única instância de GenerateTransactionList em todo o programa, seguindo o padrão Singleton.
+ factory GenerateTransactionList() { return _instance; }: This is a factory constructor that returns an instance of _instance. When the code calls GenerateTransactionList(), it does not create a new instance of the class, but rather returns the same instance that was previously created and assigned to _instance. This ensures that there is always only a single instance of GenerateTransactionList in the entire program, following the Singleton pattern.
 
-    GenerateTransactionList._internal();: Aqui, temos um construtor privado chamado _internal(). Ele é utilizado para garantir que a classe GenerateTransactionList só possa ser instanciada internamente, ou seja, apenas dentro da própria classe. Isso impede que outras partes do código criem novas instâncias da classe diretamente, forçando o uso do construtor de fábrica para obter a instância existente.
+ GenerateTransactionList._internal();: Here we have a private constructor called _internal(). It is used to ensure that the GenerateTransactionList class can only be instantiated internally, that is, only within the class itself. This prevents other parts of the code from creating new instances of the class directly, forcing you to use the factory constructor to get the existing instance.
 
 
  </details>
@@ -860,35 +857,35 @@ static final GenerateTransactionList _instance = GenerateTransactionList._intern
 </div>
 
 ------------------------------------
-Service é responsável para agrupar classes e arquivos relacionados a serviços, como acesso a APIs, bancos de dados locais, gerenciamento de estado global e outras operações de lógica de negócios.
+Service is responsible for grouping classes and files related to services, such as accessing APIs, local databases, global state management, and other business logic operations.
 
 <details>
-  <summary>Clique para mostrar detalhes sobre services </summary>
+ <summary>Click to show details about services </summary>
 
 ------------------------------------
- 
+
 ### auth_service
 ------------------------------------
-  Parte do projeto dedicada à autenticação e à gestão de serviços relacionados à autenticação de usuários.
+ Part of the project dedicated to authentication and management of services related to user authentication.
 
- - auth_service.dart : Define uma classe abstrata chamada AuthService que representa um serviço de autenticação genérico com métodos que representam operações comuns em serviços de autenticação, como registrar um novo usuário, autenticar um usuário existente e deslogar um usuário. No entanto, a implementação específica de cada um desses métodos será definida em classes concretas que herdam desta classe abstrata AuthService. Essa abstração permite a flexibilidade e o reuso de código em diferentes contextos de aplicativo.
-  
- - firebase_auth_service.dart : Implementa um serviço de autenticação utilizando o Firebase Authentication e encapsula as operações de autenticação de usuários em um serviço (FirebaseAuthService), fornecendo métodos para login, registro e logout de usuários, enquanto interage com o Firebase Authentication e Cloud Functions. Além disso, trata exceções que podem ocorrer durante essas operações.
-   
- - mock_auth_service.dart : Define uma classe MockAuthService que simula um serviço de autenticação com métodos para login, registro e logout de usuários. Ele é projetado para ser utilizado em ambientes de teste ou desenvolvimento, permitindo que os desenvolvedores testem a funcionalidade de autenticação sem depender de um serviço de autenticação real.
+ - auth_service.dart : Defines an abstract class called AuthService that represents a generic authentication service with methods that represent common operations in authentication services, such as registering a new user, authenticating an existing user, and logging out a user. However, the specific implementation of each of these methods will be defined in concrete classes that inherit from this abstract AuthService class. This abstraction allows for flexibility and code reuse in different application contexts.
 
-  
+ - firebase_auth_service.dart: Implements an authentication service using Firebase Authentication and encapsulates user authentication operations in a service (FirebaseAuthService), providing methods for user login, registration and logout, while interacting with Firebase Authentication and Cloud Functions. Additionally, it handles exceptions that may occur during these operations.
+
+ - mock_auth_service.dart: Defines a MockAuthService class that simulates an authentication service with methods for user login, registration and logout. It is designed to be used in test or development environments, allowing developers to test authentication functionality without relying on an actual authentication service.
+
+
 ------------------------------------
 
 ### storage
 ------------------------------------
 
-Define uma classe chamada SecureStorageService que encapsula funcionalidades para armazenar e recuperar dados de forma segura usando o pacote Flutter Secure Storage.
+Defines a class called SecureStorageService that encapsulates functionality for storing and retrieving data securely using the Flutter Secure Storage package.
 
-  
+
 <div align="center">
-    <h3> Exemplo </h3>
-    <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/9c60d056-0a91-404a-9436-0133f9188b80" style="width:100%">
+ <h3> Example </h3>
+ <img src="https://github.com/lucasmargui/Flutter_Projeto_MyStock/assets/157809964/9c60d056-0a91-404a-9436-0133f9188b80" style="width:100%">
 </div><br>
 
 ------------------------------------
@@ -904,19 +901,17 @@ Define uma classe chamada SecureStorageService que encapsula funcionalidades par
 ------------------------------------
 <br>
 <div align="center">
- 
+
 ## Themes
 
 </div>
 
-Themes é responsável em armazenar classes relacionados à definição de temas e estilos da aplicação.O código define uma classe chamada CustomTheme responsável por criar e retornar um tema personalizado.
+Themes is responsible for storing classes related to defining application themes and styles. The code defines a class called CustomTheme responsible for creating and returning a personalized theme.
 
 
 </div>
 
 ------------------------------------
-
-
 
 
 
